@@ -20,16 +20,16 @@
 
 // ** Database settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define( 'DB_NAME', 'wp_rotaniantiqu_db' );
+define( 'DB_NAME', 'hx459480_ronati' );
 
 /** Database username */
-define( 'DB_USER', 'wp_rotaniantiqu_user' );
+define( 'DB_USER', 'hx459480_ronati' );
 
 /** Database password */
-define( 'DB_PASSWORD', 'wp_rotaniantiqu_pw' );
+define( 'DB_PASSWORD', '-Sf4c5s2;P' );
 
 /** Database hostname */
-define( 'DB_HOST', 'localhost:3306' );
+define( 'DB_HOST', 'hx459480.mysql.tools' );
 
 /** Database charset to use in creating database tables. */
 define( 'DB_CHARSET', 'utf8mb4' );
