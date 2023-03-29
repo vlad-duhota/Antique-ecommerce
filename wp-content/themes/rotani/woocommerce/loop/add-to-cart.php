@@ -44,7 +44,7 @@ global $product;
 	$args
 );?> 
 
-<a href="#" data-subtype="<?php echo carbon_get_post_meta(get_the_ID(), 'product_subtype')[0]?>" data-id="<?php echo get_the_ID()?>" class="product__learn">Learn More</a>
+<a href="#" data-subtype="<?php echo carbon_get_post_meta(get_the_ID(), 'product_subtype')[0]?>" data-id="<?php echo get_the_ID()?>" class="product__learn product__learn-btn">Learn More</a>
 <!-- <div class="info" style="display: none"
 data-address="<?php echo carbon_get_post_meta(get_the_ID(), 'product_address')?>"
 data-city="<?php echo carbon_get_post_meta(get_the_ID(), 'product_city')?>"

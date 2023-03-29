@@ -179,9 +179,22 @@ body {
   margin-top: 15px;
 }
 .shop-sec__time {
+  right: 0;
   display: flex;
   align-items: center;
   flex-direction: column;
+}
+@media (min-width: 1099px) {
+  .shop-sec__time.active {
+    position: fixed;
+    top: 64px;
+    right: 15px;
+  }
+}
+@media (min-width: 1300px) {
+  .shop-sec__time.active {
+    right: calc((100vw - 1300px) / 2);
+  }
 }
 .shop-sec__time canvas {
   display: none;
@@ -617,14 +630,14 @@ body {
 .pop-up .swiper-slide {
   overflow: hidden;
   border-radius: 15px;
-}
-.pop-up .swiper-slide a {
-  display: block;
-  line-height: 0;
+  cursor: pointer;
 }
 .pop-up .swiper-slide img {
   width: 100%;
-  height: auto;
+  height: 100%;
+  display: block;
+  -o-object-fit: cover;
+     object-fit: cover;
   border-radius: 15px;
 }
 @media (max-width: 900px) {

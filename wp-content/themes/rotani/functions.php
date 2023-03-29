@@ -207,13 +207,18 @@ function wc_get_gallery_image_html_custom( $attachment_id, $main_image = false )
 		)
 	);
 
-	return '<div data-thumb="' . esc_url( $thumbnail_src[0] ) . '" data-thumb-alt="' . esc_attr( $alt_text ) . '"class="swiper-slide woocommerce-product-gallery__image"><a href="' . esc_url( $full_src[0] ) . '">' . $image . '</a></div>';
+	return '<div data-thumb="' . esc_url( $thumbnail_src[0] ) . '" data-thumb-alt="' . esc_attr( $alt_text ) . '"class="swiper-slide woocommerce-product-gallery__image">' . $image . '</div>';
 }
 
 
 remove_action( 'woocommerce_before_shop_loop_item', 'woocommerce_template_loop_product_link_open', 10 );
  
 remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_product_link_close', 5 );
+remove_action( 'woocommerce_shop_loop_item_title','woocommerce_template_loop_product_title', 10 );
+add_action('woocommerce_shop_loop_item_title', 'abChangeProductsTitle', 10 );
+function abChangeProductsTitle() {
+echo '<h2 class="product-t"><a href="#" data-id="' . get_the_ID(). '" class="product__learn-btn">' . get_the_title() . '</a></h2>';
+}
 
 add_filter( 'woocommerce_breadcrumb_defaults', 'jk_woocommerce_breadcrumbs' );
 function jk_woocommerce_breadcrumbs() {
@@ -243,24 +248,12 @@ function jk_woocommerce_breadcrumbs() {
 //     return $new_rates;
 // }
 
-function arta_ajax_call(){
-	$total = $_POST['total'];
-	add_filter( 'woocommerce_package_rates', 'custom_shipping_cost', 10, 2 );
-	function custom_shipping_cost( $rates, $package ) {
-		$new_rates = array();
-	
-		foreach ( $rates as $rate_id => $rate ) {
-			$new_rates[ $rate_id ] = $rate;
-			$new_rates[ $rate_id ]->cost += $total; // add $5 shipping cost to all rates
-		}
-	
-		return $new_rates;
-	}
-	echo $total;
+function cart_ajax_call(){
+	echo count(WC()->cart->get_cart());
 wp_die();// this is required to terminate immediately and return a proper response
 }
-add_action('wp_ajax_arta_ajax_call', 'arta_ajax_call'); // for logged in users only
-add_action('wp_ajax_nopriv_arta_ajax_call', 'arta_ajax_call'); // for ALL users
+add_action('wp_ajax_cart_ajax_call', 'cart_ajax_call'); // for logged in users only
+add_action('wp_ajax_nopriv_cart_ajax_call', 'cart_ajax_call'); // for ALL users
 
 
 function get_wc_cart_totals_order_total_html() {

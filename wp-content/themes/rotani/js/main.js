@@ -1,4 +1,4 @@
-let vh = window.innerHeight * 0.01; 
+let vh = window.innerHeight * 0.01;
 document.documentElement.style.setProperty('--vh', `${vh}px`)
 
 const popUp = document.querySelector('.pop-up .container');
@@ -6,7 +6,7 @@ const popUpElem = document.querySelector('.pop-up');
 const bodyElem = document.querySelector('body')
 let popUpClose;
 
-$('.product__learn').click(function (e) {
+$('.product__learn-btn').click(function (e) {
   e.preventDefault();
   $.ajax({
     url: '/wp-admin/admin-ajax.php',
@@ -21,6 +21,7 @@ $('.product__learn').click(function (e) {
       bodyElem.style.overflow = 'hidden';
       var swiperThumb = new Swiper(".product__swiper-thumbs", {
         loop: true,
+
         slidesPerView: 5,
         watchSlidesProgress: true,
         allowTouchMove: false,
@@ -28,6 +29,7 @@ $('.product__learn').click(function (e) {
         speed: 800,
       });
       var swiper = new Swiper(".product__swiper", {
+        simulateTouch: true,
         speed: 800,
         loop: true,
         watchSlidesProgress: true,
@@ -162,3 +164,44 @@ if (btn1 && btn2 && products) {
     products.classList.remove('grid');
   })
 }
+
+const shop = document.querySelector('.shop-sec__banner img');
+const timer = document.querySelector('.shop-sec__time')
+
+const callback = (entries, observer) => {
+  entries.forEach((entry) => {
+    if (!entry.isIntersecting) {
+      timer.classList.add('active')
+    } else {
+      timer.classList.remove('active')
+    }
+  })
+}
+
+const options = {
+  // root: по умолчанию window, но можно задать любой элемент-контейнер
+  rootMargin: '0px 0px 0px 0px',
+  threshold: .01,
+}
+
+if (shop && timer) {
+  const observer = new IntersectionObserver(callback, options)
+
+  observer.observe(shop)
+}
+
+$('.product .add_to_cart_button').on('click', function () {
+  setTimeout(function () {
+    $.ajax({
+      url: '/wp-admin/admin-ajax.php',
+      type: 'GET',
+      data: {
+        action: 'cart_ajax_call',
+      },
+      success: function (res) {
+        $('.header__cart-num').text(res);
+      }
+    });
+  }, 4000)
+
+})
