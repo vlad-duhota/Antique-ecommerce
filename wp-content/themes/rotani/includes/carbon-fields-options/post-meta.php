@@ -1,0 +1,122 @@
+<?php
+
+if (!defined('ABSPATH')) {
+   exit;
+}
+
+use Carbon_Fields\Container;
+use Carbon_Fields\Field;
+
+// =========== ABOUT PAGE ===========
+
+
+Container::make('post meta', 'Arta settings')
+->where( 'post_type', '=', 'product' )
+->add_fields( array(
+   Field::make( "multiselect", "product_subtype", "subtype" )
+   ->add_options( array(
+      "painting_unframed" => "painting_unframed",
+      "painting_framed" => "painting_framed",
+      "painting_framed_plexi" => "painting_framed_plexi",
+      "painting_framed_glass" => "painting_framed_glass",
+      "work_on_paper_unframed" => "work_on_paper_unframed",
+      "work_on_paper_framed" => "work_on_paper_framed",
+      "work_on_paper_framed_plexi" => "work_on_paper_framed_plexi",
+      "work_on_paper_framed_glass" => "work_on_paper_framed_glass",
+      "mixed_media_unframed" => "mixed_media_unframed",
+      "mixed_media_framed" => "mixed_media_framed",
+      "mixed_media_framed_plexi" => "mixed_media_framed_plexi",
+      "mixed_media_framed_glass" => "mixed_media_framed_glass",
+      "photograph_unframed" => "photograph_unframed",
+      "photograph_framed" => "photograph_framed",
+      "photograph_framed_plexi" => "photograph_framed_plexi",
+      "photograph_framed_glass" => "photograph_framed_glass",
+      "new_media" => "new_media",
+      "sculpture" => "sculpture",
+      "pedestal" => "pedestal",
+      "pedestal_case_glass" => "pedestal_case_glass",
+      "pedestal_case_plexi"  => "pedestal_case_plexi",
+      "ceramic" => "ceramic",
+      "neon" => "neon",
+      "tapestry" => "tapestry",
+      "other_art" => "other_art",
+      "table" => "table",
+      "chair" => "chair",
+      "sofa_loveseat_chaise" => "sofa_loveseat_chaise",
+      "floor_lamp" => "floor_lamp",
+      "floor_lamp_shade" => "floor_lamp_shade",
+      "table_lamp" => "table_lamp",
+      "table_lamp_shade" => "table_lamp_shade",
+      "sconce" => "sconce",
+      "ottoman" => "ottoman",
+      "bookcase_storage" => "bookcase_storage",
+      "nightstand" => "nightstand",
+      "armoire_dresser" => "armoire_dresser",
+      "carpet_rug" => "carpet_rug",
+      "mirror" => "mirror",
+      "chandelier" => "chandelier",
+      "bedframe" => "bedframe",
+      "headboard" => "headboard",
+      "desk_vanity" => "desk_vanity",
+      "media_console" => "media_console",
+      "other_furniture" => "other_furniture",
+      "earrings" => "earrings",
+      "necklace" => "necklace",
+      "bracelet" => "bracelet",
+      "ring" => "ring",
+      "brooch" => "brooch",
+      "watch" => "watch",
+      "cufflinks" => "cufflinks",
+      "eyeglasses" => "eyeglasses",
+      "set" => "set",
+      "precious_stones" => "precious_stones",
+      "snuff_box_cigarette_case" => "snuff_box_cigarette_case",
+      "other_jewelry" => "other_jewelry",
+      "vase_vessel" => "vase_vessel",
+      "bowl" => "bowl",
+      "plaque" => "plaque",
+      "object_of_vertu" => "object_of_vertu",
+      "candelabra_candlestick" => "candelabra_candlestick",
+      "dinnerware" => "dinnerware",
+      "flatware" => "flatware",
+      "glassware" => "glassware",
+      "serveware" => "serveware",
+      "porcelain_plate" => "porcelain_plate",
+      "porcelain_bowl" => "porcelain_bowl",
+      "tabletop_accessory" => "tabletop_accessory",
+      "clock" => "clock",
+      "other_decorative_arts" => "other_decorative_arts",
+      "stamp" => "stamp",
+      "book" => "book",
+      "coin" => "coin",
+      "document_manuscript" => "document_manuscript",
+      "toy" => "toy",
+      "miniature_model" => "miniature_model",
+      "figurine_doll" => "figurine_doll",
+      "neon_sign" => "neon_sign",
+      "memorabilia" => "memorabilia",
+      "camera_electrical" => "camera_electrical",
+      "other_collectibles" => "other_collectibles",
+      "clothing" => "clothing",
+      "footwear" => "footwear",
+      "handbag" => "handbag",
+      "accessories" => "accessories",
+      "other_fashion" => "other_fashion",
+      "musical_instrument" => "musical_instrument",
+      "other" => "other"
+   ) ),
+   Field::make( 'text', 'product_address', 'Address line 1' ),
+   Field::make( 'text', 'product_city', 'City' ),
+   Field::make( 'text', 'product_region', 'Region' ),
+   Field::make( 'text', 'product_country', 'Country' ),
+   Field::make( 'text', 'product_postal', 'Postal Code' ),
+   Field::make( "multiselect", "product_stars", "Condition Report" )
+   ->add_options( array(
+      "0" => "Revive", 
+      "1" => "Fair",
+      "2" => "Good",
+      "3" => "Very good",
+      "4" => "Like New" 
+   ) ),
+) );
+

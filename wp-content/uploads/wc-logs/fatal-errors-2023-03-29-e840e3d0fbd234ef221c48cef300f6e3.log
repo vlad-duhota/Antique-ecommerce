@@ -1,0 +1,208 @@
+2023-03-29T06:58:11+00:00 CRITICAL Uncaught ArgumentCountError: 4 arguments are required, 3 given in /Users/duhotavlad/Sites/rotani/wp-content/themes/rotani/woocommerce/cart/cart-shipping.php:40
+Stack trace:
+#0 /Users/duhotavlad/Sites/rotani/wp-content/themes/rotani/woocommerce/cart/cart-shipping.php(40): printf('<p>%3$s</p>', 0, 'per_product')
+#1 /Users/duhotavlad/Sites/rotani/wp-content/plugins/woocommerce/includes/wc-core-functions.php(345): include('/Users/duhotavl...')
+#2 /Users/duhotavlad/Sites/rotani/wp-content/plugins/woocommerce/includes/wc-cart-functions.php(236): wc_get_template('cart/cart-shipp...', Array)
+#3 /Users/duhotavlad/Sites/rotani/wp-content/themes/rotani/woocommerce/cart/cart-totals.php(45): wc_cart_totals_shipping_html()
+#4 /Users/duhotavlad/Sites/rotani/wp-content/plugins/woocommerce/includes/wc-core-functions.php(345): include('/Users/duhotavl...')
+#5 /Users/duhotavlad/Sites/rotani/wp-content/plugins/woocommerce/includes/wc-template-functions.php(2160): wc_get_template('cart/cart-total...')
+#6 /Users/duhotavlad/Sites/rotani/wp-includes/class-wp-hook.php(308): woocommerce_cart_totals('')
+#7 /Users/duhotavlad/Sites/rotani/wp-includes/class-wp-hook.php(332): WP_Hook->apply_filters(NULL, Array)
+#8 /Users/duhotavlad/Sites/rotani/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#9 /Users/duhotavlad/Sites/rotani/wp-content/themes/rotani/woocommerce/cart/cart.php(300): do_action('woocommerce_car...')
+#10 /Users/duhotavlad/Sites/rotani/wp-content/plugins/woocommerce/includes/wc-core-functions.php(345): include('/Users/duhotavl...')
+#11 /Users/duhotavlad/Sites/rotani/wp-content/plugins/woocommerce/includes/shortcodes/class-wc-shortcode-cart.php(99): wc_get_template('cart/cart.php')
+#12 /Users/duhotavlad/Sites/rotani/wp-content/plugins/woocommerce/includes/class-wc-shortcodes.php(72): WC_Shortcode_Cart::output(Array)
+#13 /Users/duhotavlad/Sites/rotani/wp-content/plugins/woocommerce/includes/class-wc-shortcodes.php(85): WC_Shortcodes::shortcode_wrapper(Array)
+#14 /Users/duhotavlad/Sites/rotani/wp-includes/shortcodes.php(355): WC_Shortcodes::cart('', '', 'woocommerce_car...')
+#15 [internal function]: do_shortcode_tag(Array)
+#16 /Users/duhotavlad/Sites/rotani/wp-includes/shortcodes.php(227): preg_replace_callback('/\\[(\\[?)(woocom...', 'do_shortcode_ta...', '[woocommerce_ca...')
+#17 /Users/duhotavlad/Sites/rotani/wp-includes/class-wp-hook.php(308): do_shortcode('[woocommerce_ca...')
+#18 /Users/duhotavlad/Sites/rotani/wp-includes/plugin.php(205): WP_Hook->apply_filters('[woocommerce_ca...', Array)
+#19 /Users/duhotavlad/Sites/rotani/wp-includes/post-template.php(255): apply_filters('the_content', '<!-- wp:shortco...')
+#20 /Users/duhotavlad/Sites/rotani/wp-content/themes/rotani/index.php(4): the_content()
+#21 /Users/duhotavlad/Sites/rotani/wp-includes/template-loader.php(106): include('/Users/duhotavl...')
+#22 /Users/duhotavlad/Sites/rotani/wp-blog-header.php(19): require_once('/Users/duhotavl...')
+#23 /Users/duhotavlad/Sites/rotani/index.php(17): require('/Users/duhotavl...')
+#24 {main}
+  thrown in /Users/duhotavlad/Sites/rotani/wp-content/themes/rotani/woocommerce/cart/cart-shipping.php on line 40
+
+2023-03-29T06:58:29+00:00 CRITICAL Uncaught Error: Call to a member function get_label() on string in /Users/duhotavlad/Sites/rotani/wp-content/plugins/woocommerce/includes/wc-cart-functions.php:354
+Stack trace:
+#0 /Users/duhotavlad/Sites/rotani/wp-content/themes/rotani/woocommerce/cart/cart-shipping.php(40): wc_cart_totals_shipping_method_label('method')
+#1 /Users/duhotavlad/Sites/rotani/wp-content/plugins/woocommerce/includes/wc-core-functions.php(345): include('/Users/duhotavl...')
+#2 /Users/duhotavlad/Sites/rotani/wp-content/plugins/woocommerce/includes/wc-cart-functions.php(236): wc_get_template('cart/cart-shipp...', Array)
+#3 /Users/duhotavlad/Sites/rotani/wp-content/themes/rotani/woocommerce/cart/cart-totals.php(45): wc_cart_totals_shipping_html()
+#4 /Users/duhotavlad/Sites/rotani/wp-content/plugins/woocommerce/includes/wc-core-functions.php(345): include('/Users/duhotavl...')
+#5 /Users/duhotavlad/Sites/rotani/wp-content/plugins/woocommerce/includes/wc-template-functions.php(2160): wc_get_template('cart/cart-total...')
+#6 /Users/duhotavlad/Sites/rotani/wp-includes/class-wp-hook.php(308): woocommerce_cart_totals('')
+#7 /Users/duhotavlad/Sites/rotani/wp-includes/class-wp-hook.php(332): WP_Hook->apply_filters(NULL, Array)
+#8 /Users/duhotavlad/Sites/rotani/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#9 /Users/duhotavlad/Sites/rotani/wp-content/themes/rotani/woocommerce/cart/cart.php(300): do_action('woocommerce_car...')
+#10 /Users/duhotavlad/Sites/rotani/wp-content/plugins/woocommerce/includes/wc-core-functions.php(345): include('/Users/duhotavl...')
+#11 /Users/duhotavlad/Sites/rotani/wp-content/plugins/woocommerce/includes/shortcodes/class-wc-shortcode-cart.php(99): wc_get_template('cart/cart.php')
+#12 /Users/duhotavlad/Sites/rotani/wp-content/plugins/woocommerce/includes/class-wc-shortcodes.php(72): WC_Shortcode_Cart::output(Array)
+#13 /Users/duhotavlad/Sites/rotani/wp-content/plugins/woocommerce/includes/class-wc-shortcodes.php(85): WC_Shortcodes::shortcode_wrapper(Array)
+#14 /Users/duhotavlad/Sites/rotani/wp-includes/shortcodes.php(355): WC_Shortcodes::cart('', '', 'woocommerce_car...')
+#15 [internal function]: do_shortcode_tag(Array)
+#16 /Users/duhotavlad/Sites/rotani/wp-includes/shortcodes.php(227): preg_replace_callback('/\\[(\\[?)(woocom...', 'do_shortcode_ta...', '[woocommerce_ca...')
+#17 /Users/duhotavlad/Sites/rotani/wp-includes/class-wp-hook.php(308): do_shortcode('[woocommerce_ca...')
+#18 /Users/duhotavlad/Sites/rotani/wp-includes/plugin.php(205): WP_Hook->apply_filters('[woocommerce_ca...', Array)
+#19 /Users/duhotavlad/Sites/rotani/wp-includes/post-template.php(255): apply_filters('the_content', '<!-- wp:shortco...')
+#20 /Users/duhotavlad/Sites/rotani/wp-content/themes/rotani/index.php(4): the_content()
+#21 /Users/duhotavlad/Sites/rotani/wp-includes/template-loader.php(106): include('/Users/duhotavl...')
+#22 /Users/duhotavlad/Sites/rotani/wp-blog-header.php(19): require_once('/Users/duhotavl...')
+#23 /Users/duhotavlad/Sites/rotani/index.php(17): require('/Users/duhotavl...')
+#24 {main}
+  thrown in /Users/duhotavlad/Sites/rotani/wp-content/plugins/woocommerce/includes/wc-cart-functions.php on line 354
+
+2023-03-29T06:59:45+00:00 CRITICAL syntax error, unexpected token ";", expecting ")" in /Users/duhotavlad/Sites/rotani/wp-content/themes/rotani/woocommerce/cart/cart-shipping.php on line 40
+
+2023-03-29T07:04:30+00:00 CRITICAL Uncaught Error: Call to undefined function get_the_post() in /Users/duhotavlad/Sites/rotani/wp-content/themes/rotani/woocommerce/single-product/tabs/description.php:20
+Stack trace:
+#0 /Users/duhotavlad/Sites/rotani/wp-content/plugins/woocommerce/includes/wc-core-functions.php(345): include()
+#1 /Users/duhotavlad/Sites/rotani/wp-content/plugins/woocommerce/includes/wc-template-functions.php(1856): wc_get_template('single-product/...')
+#2 /Users/duhotavlad/Sites/rotani/wp-content/themes/rotani/woocommerce/single-product/tabs/tabs.php(47): woocommerce_product_description_tab('description', Array)
+#3 /Users/duhotavlad/Sites/rotani/wp-content/plugins/woocommerce/includes/wc-core-functions.php(345): include('/Users/duhotavl...')
+#4 /Users/duhotavlad/Sites/rotani/wp-content/plugins/woocommerce/includes/wc-template-functions.php(1618): wc_get_template('single-product/...')
+#5 /Users/duhotavlad/Sites/rotani/wp-includes/class-wp-hook.php(308): woocommerce_output_product_data_tabs('')
+#6 /Users/duhotavlad/Sites/rotani/wp-includes/class-wp-hook.php(332): WP_Hook->apply_filters('', Array)
+#7 /Users/duhotavlad/Sites/rotani/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#8 /Users/duhotavlad/Sites/rotani/wp-content/themes/rotani/woocommerce/content-single-product.php(74): do_action('woocommerce_aft...')
+#9 /Users/duhotavlad/Sites/rotani/wp-includes/template.php(785): require('/Users/duhotavl...')
+#10 /Users/duhotavlad/Sites/rotani/wp-content/plugins/woocommerce/includes/wc-core-functions.php(284): load_template('/Users/duhotavl...', false)
+#11 /Users/duhotavlad/Sites/rotani/wp-content/themes/rotani/woocommerce/single-product.php(37): wc_get_template_part('content', 'single-product')
+#12 /Users/duhotavlad/Sites/rotani/wp-includes/template-loader.php(106): include('/Users/duhotavl...')
+#13 /Users/duhotavlad/Sites/rotani/wp-blog-header.php(19): require_once('/Users/duhotavl...')
+#14 /Users/duhotavlad/Sites/rotani/index.php(17): require('/Users/duhotavl...')
+#15 {main}
+  thrown in /Users/duhotavlad/Sites/rotani/wp-content/themes/rotani/woocommerce/single-product/tabs/description.php on line 20
+
+2023-03-29T07:05:02+00:00 CRITICAL syntax error, unexpected single-quoted string " x ", expecting ")" in /Users/duhotavlad/Sites/rotani/wp-content/themes/rotani/woocommerce/cart/cart.php on line 212
+
+2023-03-29T07:06:10+00:00 CRITICAL syntax error, unexpected single-quoted string " x ", expecting ")" in /Users/duhotavlad/Sites/rotani/wp-content/themes/rotani/woocommerce/cart/cart.php on line 212
+
+2023-03-29T07:06:32+00:00 CRITICAL Unmatched '}' in /Users/duhotavlad/Sites/rotani/wp-content/themes/rotani/woocommerce/cart/cart.php on line 261
+
+2023-03-29T08:21:28+00:00 CRITICAL Uncaught TypeError: call_user_func_array(): Argument #1 ($function) must be a valid callback, function "njengah_override_checkout_fields" not found or invalid function name in /Users/duhotavlad/Sites/rotani/wp-includes/class-wp-hook.php:308
+Stack trace:
+#0 /Users/duhotavlad/Sites/rotani/wp-includes/plugin.php(205): WP_Hook->apply_filters(Array, Array)
+#1 /Users/duhotavlad/Sites/rotani/wp-content/plugins/woocommerce/includes/class-wc-checkout.php(300): apply_filters('woocommerce_che...', Array)
+#2 /Users/duhotavlad/Sites/rotani/wp-content/themes/rotani/woocommerce/checkout/form-checkout.php(39): WC_Checkout->get_checkout_fields()
+#3 /Users/duhotavlad/Sites/rotani/wp-content/plugins/woocommerce/includes/wc-core-functions.php(345): include('/Users/duhotavl...')
+#4 /Users/duhotavlad/Sites/rotani/wp-content/plugins/woocommerce/includes/shortcodes/class-wc-shortcode-checkout.php(316): wc_get_template('checkout/form-c...', Array)
+#5 /Users/duhotavlad/Sites/rotani/wp-content/plugins/woocommerce/includes/shortcodes/class-wc-shortcode-checkout.php(67): WC_Shortcode_Checkout::checkout()
+#6 /Users/duhotavlad/Sites/rotani/wp-content/plugins/woocommerce/includes/class-wc-shortcodes.php(72): WC_Shortcode_Checkout::output('')
+#7 /Users/duhotavlad/Sites/rotani/wp-content/plugins/woocommerce/includes/class-wc-shortcodes.php(95): WC_Shortcodes::shortcode_wrapper(Array, '')
+#8 /Users/duhotavlad/Sites/rotani/wp-includes/shortcodes.php(355): WC_Shortcodes::checkout('', '', 'woocommerce_che...')
+#9 [internal function]: do_shortcode_tag(Array)
+#10 /Users/duhotavlad/Sites/rotani/wp-includes/shortcodes.php(227): preg_replace_callback('/\\[(\\[?)(woocom...', 'do_shortcode_ta...', '[woocommerce_ch...')
+#11 /Users/duhotavlad/Sites/rotani/wp-includes/class-wp-hook.php(308): do_shortcode('[woocommerce_ch...')
+#12 /Users/duhotavlad/Sites/rotani/wp-includes/plugin.php(205): WP_Hook->apply_filters('[woocommerce_ch...', Array)
+#13 /Users/duhotavlad/Sites/rotani/wp-includes/post-template.php(255): apply_filters('the_content', '<!-- wp:shortco...')
+#14 /Users/duhotavlad/Sites/rotani/wp-content/themes/rotani/index.php(4): the_content()
+#15 /Users/duhotavlad/Sites/rotani/wp-includes/template-loader.php(106): include('/Users/duhotavl...')
+#16 /Users/duhotavlad/Sites/rotani/wp-blog-header.php(19): require_once('/Users/duhotavl...')
+#17 /Users/duhotavlad/Sites/rotani/index.php(17): require('/Users/duhotavl...')
+#18 {main}
+  thrown in /Users/duhotavlad/Sites/rotani/wp-includes/class-wp-hook.php on line 308
+
+2023-03-29T09:21:39+00:00 CRITICAL Uncaught Error: Call to a member function get_instance_option_key() on bool in /Users/duhotavlad/Sites/rotani/wp-content/plugins/woocommerce/includes/class-wc-ajax.php:2963
+Stack trace:
+#0 /Users/duhotavlad/Sites/rotani/wp-includes/class-wp-hook.php(308): WC_AJAX::shipping_zone_methods_save_changes('')
+#1 /Users/duhotavlad/Sites/rotani/wp-includes/class-wp-hook.php(332): WP_Hook->apply_filters(NULL, Array)
+#2 /Users/duhotavlad/Sites/rotani/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#3 /Users/duhotavlad/Sites/rotani/wp-admin/admin-ajax.php(188): do_action('wp_ajax_woocomm...')
+#4 {main}
+  thrown in /Users/duhotavlad/Sites/rotani/wp-content/plugins/woocommerce/includes/class-wc-ajax.php on line 2963
+
+2023-03-29T10:23:06+00:00 CRITICAL Uncaught TypeError: Cannot access offset of type string on string in /Users/duhotavlad/Sites/rotani/wp-content/themes/rotani/woocommerce/checkout/review-order.php:32
+Stack trace:
+#0 /Users/duhotavlad/Sites/rotani/wp-content/plugins/woocommerce/includes/wc-core-functions.php(345): include()
+#1 /Users/duhotavlad/Sites/rotani/wp-content/plugins/woocommerce/includes/wc-template-functions.php(2360): wc_get_template('checkout/review...', Array)
+#2 /Users/duhotavlad/Sites/rotani/wp-includes/class-wp-hook.php(308): woocommerce_order_review('')
+#3 /Users/duhotavlad/Sites/rotani/wp-includes/class-wp-hook.php(332): WP_Hook->apply_filters('', Array)
+#4 /Users/duhotavlad/Sites/rotani/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#5 /Users/duhotavlad/Sites/rotani/wp-content/themes/rotani/woocommerce/checkout/form-checkout.php(64): do_action('woocommerce_che...')
+#6 /Users/duhotavlad/Sites/rotani/wp-content/plugins/woocommerce/includes/wc-core-functions.php(345): include('/Users/duhotavl...')
+#7 /Users/duhotavlad/Sites/rotani/wp-content/plugins/woocommerce/includes/shortcodes/class-wc-shortcode-checkout.php(316): wc_get_template('checkout/form-c...', Array)
+#8 /Users/duhotavlad/Sites/rotani/wp-content/plugins/woocommerce/includes/shortcodes/class-wc-shortcode-checkout.php(67): WC_Shortcode_Checkout::checkout()
+#9 /Users/duhotavlad/Sites/rotani/wp-content/plugins/woocommerce/includes/class-wc-shortcodes.php(72): WC_Shortcode_Checkout::output('')
+#10 /Users/duhotavlad/Sites/rotani/wp-content/plugins/woocommerce/includes/class-wc-shortcodes.php(95): WC_Shortcodes::shortcode_wrapper(Array, '')
+#11 /Users/duhotavlad/Sites/rotani/wp-includes/shortcodes.php(355): WC_Shortcodes::checkout('', '', 'woocommerce_che...')
+#12 [internal function]: do_shortcode_tag(Array)
+#13 /Users/duhotavlad/Sites/rotani/wp-includes/shortcodes.php(227): preg_replace_callback('/\\[(\\[?)(woocom...', 'do_shortcode_ta...', '[woocommerce_ch...')
+#14 /Users/duhotavlad/Sites/rotani/wp-includes/class-wp-hook.php(308): do_shortcode('[woocommerce_ch...')
+#15 /Users/duhotavlad/Sites/rotani/wp-includes/plugin.php(205): WP_Hook->apply_filters('[woocommerce_ch...', Array)
+#16 /Users/duhotavlad/Sites/rotani/wp-includes/post-template.php(255): apply_filters('the_content', '<!-- wp:shortco...')
+#17 /Users/duhotavlad/Sites/rotani/wp-content/themes/rotani/index.php(4): the_content()
+#18 /Users/duhotavlad/Sites/rotani/wp-includes/template-loader.php(106): include('/Users/duhotavl...')
+#19 /Users/duhotavlad/Sites/rotani/wp-blog-header.php(19): require_once('/Users/duhotavl...')
+#20 /Users/duhotavlad/Sites/rotani/index.php(17): require('/Users/duhotavl...')
+#21 {main}
+  thrown in /Users/duhotavlad/Sites/rotani/wp-content/themes/rotani/woocommerce/checkout/review-order.php on line 32
+
+2023-03-29T10:31:59+00:00 CRITICAL syntax error, unexpected token "return" in /Users/duhotavlad/Sites/rotani/wp-content/themes/rotani/functions.php on line 269
+
+2023-03-29T10:32:00+00:00 CRITICAL syntax error, unexpected token "return" in /Users/duhotavlad/Sites/rotani/wp-content/themes/rotani/functions.php on line 269
+
+2023-03-29T10:32:18+00:00 CRITICAL syntax error, unexpected token "}" in /Users/duhotavlad/Sites/rotani/wp-content/themes/rotani/functions.php on line 271
+
+2023-03-29T10:32:18+00:00 CRITICAL syntax error, unexpected token "}" in /Users/duhotavlad/Sites/rotani/wp-content/themes/rotani/functions.php on line 271
+
+2023-03-29T10:34:12+00:00 CRITICAL Uncaught Error: Attempt to assign property "order_button_text" on null in /Users/duhotavlad/Sites/rotani/wp-content/themes/rotani/functions.php:274
+Stack trace:
+#0 /Users/duhotavlad/Sites/rotani/wp-includes/class-wp-hook.php(308): custom_available_payment_gateways(Array)
+#1 /Users/duhotavlad/Sites/rotani/wp-includes/plugin.php(205): WP_Hook->apply_filters(Array, Array)
+#2 /Users/duhotavlad/Sites/rotani/wp-content/plugins/woocommerce/includes/class-wc-payment-gateways.php(163): apply_filters('woocommerce_ava...', Array)
+#3 /Users/duhotavlad/Sites/rotani/wp-content/plugins/woocommerce/includes/wc-template-functions.php(3874): WC_Payment_Gateways->get_available_payment_gateways()
+#4 /Users/duhotavlad/Sites/rotani/wp-includes/class-wp-hook.php(308): wc_get_pay_buttons('')
+#5 /Users/duhotavlad/Sites/rotani/wp-includes/class-wp-hook.php(332): WP_Hook->apply_filters('', Array)
+#6 /Users/duhotavlad/Sites/rotani/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#7 /Users/duhotavlad/Sites/rotani/wp-content/themes/rotani/woocommerce/checkout/form-checkout.php(41): do_action('woocommerce_che...')
+#8 /Users/duhotavlad/Sites/rotani/wp-content/plugins/woocommerce/includes/wc-core-functions.php(345): include('/Users/duhotavl...')
+#9 /Users/duhotavlad/Sites/rotani/wp-content/plugins/woocommerce/includes/shortcodes/class-wc-shortcode-checkout.php(316): wc_get_template('checkout/form-c...', Array)
+#10 /Users/duhotavlad/Sites/rotani/wp-content/plugins/woocommerce/includes/shortcodes/class-wc-shortcode-checkout.php(67): WC_Shortcode_Checkout::checkout()
+#11 /Users/duhotavlad/Sites/rotani/wp-content/plugins/woocommerce/includes/class-wc-shortcodes.php(72): WC_Shortcode_Checkout::output('')
+#12 /Users/duhotavlad/Sites/rotani/wp-content/plugins/woocommerce/includes/class-wc-shortcodes.php(95): WC_Shortcodes::shortcode_wrapper(Array, '')
+#13 /Users/duhotavlad/Sites/rotani/wp-includes/shortcodes.php(355): WC_Shortcodes::checkout('', '', 'woocommerce_che...')
+#14 [internal function]: do_shortcode_tag(Array)
+#15 /Users/duhotavlad/Sites/rotani/wp-includes/shortcodes.php(227): preg_replace_callback('/\\[(\\[?)(woocom...', 'do_shortcode_ta...', '[woocommerce_ch...')
+#16 /Users/duhotavlad/Sites/rotani/wp-includes/class-wp-hook.php(308): do_shortcode('[woocommerce_ch...')
+#17 /Users/duhotavlad/Sites/rotani/wp-includes/plugin.php(205): WP_Hook->apply_filters('[woocommerce_ch...', Array)
+#18 /Users/duhotavlad/Sites/rotani/wp-includes/post-template.php(255): apply_filters('the_content', '<!-- wp:shortco...')
+#19 /Users/duhotavlad/Sites/rotani/wp-content/themes/rotani/index.php(4): the_content()
+#20 /Users/duhotavlad/Sites/rotani/wp-includes/template-loader.php(106): include('/Users/duhotavl...')
+#21 /Users/duhotavlad/Sites/rotani/wp-blog-header.php(19): require_once('/Users/duhotavl...')
+#22 /Users/duhotavlad/Sites/rotani/index.php(17): require('/Users/duhotavl...')
+#23 {main}
+  thrown in /Users/duhotavlad/Sites/rotani/wp-content/themes/rotani/functions.php on line 274
+
+2023-03-29T10:34:41+00:00 CRITICAL Uncaught Error: Attempt to assign property "order_button_text" on null in /Users/duhotavlad/Sites/rotani/wp-content/themes/rotani/functions.php:274
+Stack trace:
+#0 /Users/duhotavlad/Sites/rotani/wp-includes/class-wp-hook.php(308): custom_available_payment_gateways(Array)
+#1 /Users/duhotavlad/Sites/rotani/wp-includes/plugin.php(205): WP_Hook->apply_filters(Array, Array)
+#2 /Users/duhotavlad/Sites/rotani/wp-content/plugins/woocommerce/includes/class-wc-payment-gateways.php(163): apply_filters('woocommerce_ava...', Array)
+#3 /Users/duhotavlad/Sites/rotani/wp-content/plugins/woocommerce/includes/wc-template-functions.php(3874): WC_Payment_Gateways->get_available_payment_gateways()
+#4 /Users/duhotavlad/Sites/rotani/wp-includes/class-wp-hook.php(308): wc_get_pay_buttons('')
+#5 /Users/duhotavlad/Sites/rotani/wp-includes/class-wp-hook.php(332): WP_Hook->apply_filters('', Array)
+#6 /Users/duhotavlad/Sites/rotani/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#7 /Users/duhotavlad/Sites/rotani/wp-content/themes/rotani/woocommerce/checkout/form-checkout.php(41): do_action('woocommerce_che...')
+#8 /Users/duhotavlad/Sites/rotani/wp-content/plugins/woocommerce/includes/wc-core-functions.php(345): include('/Users/duhotavl...')
+#9 /Users/duhotavlad/Sites/rotani/wp-content/plugins/woocommerce/includes/shortcodes/class-wc-shortcode-checkout.php(316): wc_get_template('checkout/form-c...', Array)
+#10 /Users/duhotavlad/Sites/rotani/wp-content/plugins/woocommerce/includes/shortcodes/class-wc-shortcode-checkout.php(67): WC_Shortcode_Checkout::checkout()
+#11 /Users/duhotavlad/Sites/rotani/wp-content/plugins/woocommerce/includes/class-wc-shortcodes.php(72): WC_Shortcode_Checkout::output('')
+#12 /Users/duhotavlad/Sites/rotani/wp-content/plugins/woocommerce/includes/class-wc-shortcodes.php(95): WC_Shortcodes::shortcode_wrapper(Array, '')
+#13 /Users/duhotavlad/Sites/rotani/wp-includes/shortcodes.php(355): WC_Shortcodes::checkout('', '', 'woocommerce_che...')
+#14 [internal function]: do_shortcode_tag(Array)
+#15 /Users/duhotavlad/Sites/rotani/wp-includes/shortcodes.php(227): preg_replace_callback('/\\[(\\[?)(woocom...', 'do_shortcode_ta...', '[woocommerce_ch...')
+#16 /Users/duhotavlad/Sites/rotani/wp-includes/class-wp-hook.php(308): do_shortcode('[woocommerce_ch...')
+#17 /Users/duhotavlad/Sites/rotani/wp-includes/plugin.php(205): WP_Hook->apply_filters('[woocommerce_ch...', Array)
+#18 /Users/duhotavlad/Sites/rotani/wp-includes/post-template.php(255): apply_filters('the_content', '<!-- wp:shortco...')
+#19 /Users/duhotavlad/Sites/rotani/wp-content/themes/rotani/index.php(4): the_content()
+#20 /Users/duhotavlad/Sites/rotani/wp-includes/template-loader.php(106): include('/Users/duhotavl...')
+#21 /Users/duhotavlad/Sites/rotani/wp-blog-header.php(19): require_once('/Users/duhotavl...')
+#22 /Users/duhotavlad/Sites/rotani/index.php(17): require('/Users/duhotavl...')
+#23 {main}
+  thrown in /Users/duhotavlad/Sites/rotani/wp-content/themes/rotani/functions.php on line 274
+
