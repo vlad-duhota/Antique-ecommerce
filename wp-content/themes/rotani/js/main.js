@@ -13,7 +13,7 @@ $('.product__learn-btn').click(function (e) {
     type: 'POST',
     data: {
       action: 'popup_ajax_call',
-      id: parseInt($(e.target).attr('data-id'))
+      id: parseInt($(e.currentTarget).attr('data-id'))
     },
     success: function (res) {
       popUp.innerHTML = res;

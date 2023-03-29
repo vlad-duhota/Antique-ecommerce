@@ -317,6 +317,9 @@ body {
                 grid-template-columns: 284px 1fr;
                 align-items: center;
                 gap: 45px;
+                a {
+                    display: block;
+                }
                 @media (max-width: 992px) {
                     grid-template-columns: 150px 1fr;
                     gap: 20px;

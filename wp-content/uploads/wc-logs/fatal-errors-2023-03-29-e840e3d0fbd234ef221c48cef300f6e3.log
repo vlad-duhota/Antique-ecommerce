@@ -206,3 +206,97 @@ Stack trace:
 #23 {main}
   thrown in /Users/duhotavlad/Sites/rotani/wp-content/themes/rotani/functions.php on line 274
 
+2023-03-29T19:53:46+00:00 CRITICAL syntax error, unexpected token "}", expecting "," or ";" in /Users/duhotavlad/Sites/rotani/wp-content/themes/rotani/functions.php on line 309
+
+2023-03-29T19:53:47+00:00 CRITICAL syntax error, unexpected token "}", expecting "," or ";" in /Users/duhotavlad/Sites/rotani/wp-content/themes/rotani/functions.php on line 309
+
+2023-03-29T19:54:23+00:00 CRITICAL Uncaught Error: Call to a member function is_on_sale() on null in /Users/duhotavlad/Sites/rotani/wp-content/themes/rotani/woocommerce/single-product/sale-flash.php:25
+Stack trace:
+#0 /Users/duhotavlad/Sites/rotani/wp-content/plugins/woocommerce/includes/wc-core-functions.php(345): include()
+#1 /Users/duhotavlad/Sites/rotani/wp-content/plugins/woocommerce/includes/wc-template-functions.php(1683): wc_get_template('single-product/...')
+#2 /Users/duhotavlad/Sites/rotani/wp-includes/class-wp-hook.php(308): woocommerce_show_product_sale_flash('')
+#3 /Users/duhotavlad/Sites/rotani/wp-includes/class-wp-hook.php(332): WP_Hook->apply_filters('', Array)
+#4 /Users/duhotavlad/Sites/rotani/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#5 /Users/duhotavlad/Sites/rotani/wp-content/themes/rotani/woocommerce/content-single-product.php(44): do_action('woocommerce_bef...')
+#6 /Users/duhotavlad/Sites/rotani/wp-includes/template.php(785): require('/Users/duhotavl...')
+#7 /Users/duhotavlad/Sites/rotani/wp-content/plugins/woocommerce/includes/wc-core-functions.php(284): load_template('/Users/duhotavl...', false)
+#8 /Users/duhotavlad/Sites/rotani/wp-content/themes/rotani/functions.php(168): wc_get_template_part('content', 'single-product')
+#9 /Users/duhotavlad/Sites/rotani/wp-includes/class-wp-hook.php(308): popup_ajax_call('')
+#10 /Users/duhotavlad/Sites/rotani/wp-includes/class-wp-hook.php(332): WP_Hook->apply_filters('', Array)
+#11 /Users/duhotavlad/Sites/rotani/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#12 /Users/duhotavlad/Sites/rotani/wp-admin/admin-ajax.php(203): do_action('wp_ajax_nopriv_...')
+#13 {main}
+  thrown in /Users/duhotavlad/Sites/rotani/wp-content/themes/rotani/woocommerce/single-product/sale-flash.php on line 25
+
+2023-03-29T19:54:25+00:00 CRITICAL Uncaught Error: Call to a member function is_on_sale() on null in /Users/duhotavlad/Sites/rotani/wp-content/themes/rotani/woocommerce/single-product/sale-flash.php:25
+Stack trace:
+#0 /Users/duhotavlad/Sites/rotani/wp-content/plugins/woocommerce/includes/wc-core-functions.php(345): include()
+#1 /Users/duhotavlad/Sites/rotani/wp-content/plugins/woocommerce/includes/wc-template-functions.php(1683): wc_get_template('single-product/...')
+#2 /Users/duhotavlad/Sites/rotani/wp-includes/class-wp-hook.php(308): woocommerce_show_product_sale_flash('')
+#3 /Users/duhotavlad/Sites/rotani/wp-includes/class-wp-hook.php(332): WP_Hook->apply_filters('', Array)
+#4 /Users/duhotavlad/Sites/rotani/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#5 /Users/duhotavlad/Sites/rotani/wp-content/themes/rotani/woocommerce/content-single-product.php(44): do_action('woocommerce_bef...')
+#6 /Users/duhotavlad/Sites/rotani/wp-includes/template.php(785): require('/Users/duhotavl...')
+#7 /Users/duhotavlad/Sites/rotani/wp-content/plugins/woocommerce/includes/wc-core-functions.php(284): load_template('/Users/duhotavl...', false)
+#8 /Users/duhotavlad/Sites/rotani/wp-content/themes/rotani/functions.php(168): wc_get_template_part('content', 'single-product')
+#9 /Users/duhotavlad/Sites/rotani/wp-includes/class-wp-hook.php(308): popup_ajax_call('')
+#10 /Users/duhotavlad/Sites/rotani/wp-includes/class-wp-hook.php(332): WP_Hook->apply_filters('', Array)
+#11 /Users/duhotavlad/Sites/rotani/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#12 /Users/duhotavlad/Sites/rotani/wp-admin/admin-ajax.php(203): do_action('wp_ajax_nopriv_...')
+#13 {main}
+  thrown in /Users/duhotavlad/Sites/rotani/wp-content/themes/rotani/woocommerce/single-product/sale-flash.php on line 25
+
+2023-03-29T19:56:06+00:00 CRITICAL Uncaught Error: Call to a member function is_on_sale() on null in /Users/duhotavlad/Sites/rotani/wp-content/themes/rotani/woocommerce/single-product/sale-flash.php:25
+Stack trace:
+#0 /Users/duhotavlad/Sites/rotani/wp-content/plugins/woocommerce/includes/wc-core-functions.php(345): include()
+#1 /Users/duhotavlad/Sites/rotani/wp-content/plugins/woocommerce/includes/wc-template-functions.php(1683): wc_get_template('single-product/...')
+#2 /Users/duhotavlad/Sites/rotani/wp-includes/class-wp-hook.php(308): woocommerce_show_product_sale_flash('')
+#3 /Users/duhotavlad/Sites/rotani/wp-includes/class-wp-hook.php(332): WP_Hook->apply_filters('', Array)
+#4 /Users/duhotavlad/Sites/rotani/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#5 /Users/duhotavlad/Sites/rotani/wp-content/themes/rotani/woocommerce/content-single-product.php(44): do_action('woocommerce_bef...')
+#6 /Users/duhotavlad/Sites/rotani/wp-includes/template.php(785): require('/Users/duhotavl...')
+#7 /Users/duhotavlad/Sites/rotani/wp-content/plugins/woocommerce/includes/wc-core-functions.php(284): load_template('/Users/duhotavl...', false)
+#8 /Users/duhotavlad/Sites/rotani/wp-content/themes/rotani/functions.php(168): wc_get_template_part('content', 'single-product')
+#9 /Users/duhotavlad/Sites/rotani/wp-includes/class-wp-hook.php(308): popup_ajax_call('')
+#10 /Users/duhotavlad/Sites/rotani/wp-includes/class-wp-hook.php(332): WP_Hook->apply_filters('', Array)
+#11 /Users/duhotavlad/Sites/rotani/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#12 /Users/duhotavlad/Sites/rotani/wp-admin/admin-ajax.php(203): do_action('wp_ajax_nopriv_...')
+#13 {main}
+  thrown in /Users/duhotavlad/Sites/rotani/wp-content/themes/rotani/woocommerce/single-product/sale-flash.php on line 25
+
+2023-03-29T19:56:12+00:00 CRITICAL Uncaught Error: Call to a member function is_on_sale() on null in /Users/duhotavlad/Sites/rotani/wp-content/themes/rotani/woocommerce/single-product/sale-flash.php:25
+Stack trace:
+#0 /Users/duhotavlad/Sites/rotani/wp-content/plugins/woocommerce/includes/wc-core-functions.php(345): include()
+#1 /Users/duhotavlad/Sites/rotani/wp-content/plugins/woocommerce/includes/wc-template-functions.php(1683): wc_get_template('single-product/...')
+#2 /Users/duhotavlad/Sites/rotani/wp-includes/class-wp-hook.php(308): woocommerce_show_product_sale_flash('')
+#3 /Users/duhotavlad/Sites/rotani/wp-includes/class-wp-hook.php(332): WP_Hook->apply_filters('', Array)
+#4 /Users/duhotavlad/Sites/rotani/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#5 /Users/duhotavlad/Sites/rotani/wp-content/themes/rotani/woocommerce/content-single-product.php(44): do_action('woocommerce_bef...')
+#6 /Users/duhotavlad/Sites/rotani/wp-includes/template.php(785): require('/Users/duhotavl...')
+#7 /Users/duhotavlad/Sites/rotani/wp-content/plugins/woocommerce/includes/wc-core-functions.php(284): load_template('/Users/duhotavl...', false)
+#8 /Users/duhotavlad/Sites/rotani/wp-content/themes/rotani/functions.php(168): wc_get_template_part('content', 'single-product')
+#9 /Users/duhotavlad/Sites/rotani/wp-includes/class-wp-hook.php(308): popup_ajax_call('')
+#10 /Users/duhotavlad/Sites/rotani/wp-includes/class-wp-hook.php(332): WP_Hook->apply_filters('', Array)
+#11 /Users/duhotavlad/Sites/rotani/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#12 /Users/duhotavlad/Sites/rotani/wp-admin/admin-ajax.php(203): do_action('wp_ajax_nopriv_...')
+#13 {main}
+  thrown in /Users/duhotavlad/Sites/rotani/wp-content/themes/rotani/woocommerce/single-product/sale-flash.php on line 25
+
+2023-03-29T19:56:58+00:00 CRITICAL Uncaught Error: Call to a member function is_on_sale() on null in /Users/duhotavlad/Sites/rotani/wp-content/themes/rotani/woocommerce/single-product/sale-flash.php:25
+Stack trace:
+#0 /Users/duhotavlad/Sites/rotani/wp-content/plugins/woocommerce/includes/wc-core-functions.php(345): include()
+#1 /Users/duhotavlad/Sites/rotani/wp-content/plugins/woocommerce/includes/wc-template-functions.php(1683): wc_get_template('single-product/...')
+#2 /Users/duhotavlad/Sites/rotani/wp-includes/class-wp-hook.php(308): woocommerce_show_product_sale_flash('')
+#3 /Users/duhotavlad/Sites/rotani/wp-includes/class-wp-hook.php(332): WP_Hook->apply_filters('', Array)
+#4 /Users/duhotavlad/Sites/rotani/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#5 /Users/duhotavlad/Sites/rotani/wp-content/themes/rotani/woocommerce/content-single-product.php(44): do_action('woocommerce_bef...')
+#6 /Users/duhotavlad/Sites/rotani/wp-includes/template.php(785): require('/Users/duhotavl...')
+#7 /Users/duhotavlad/Sites/rotani/wp-content/plugins/woocommerce/includes/wc-core-functions.php(284): load_template('/Users/duhotavl...', false)
+#8 /Users/duhotavlad/Sites/rotani/wp-content/themes/rotani/functions.php(168): wc_get_template_part('content', 'single-product')
+#9 /Users/duhotavlad/Sites/rotani/wp-includes/class-wp-hook.php(308): popup_ajax_call('')
+#10 /Users/duhotavlad/Sites/rotani/wp-includes/class-wp-hook.php(332): WP_Hook->apply_filters('', Array)
+#11 /Users/duhotavlad/Sites/rotani/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#12 /Users/duhotavlad/Sites/rotani/wp-admin/admin-ajax.php(203): do_action('wp_ajax_nopriv_...')
+#13 {main}
+  thrown in /Users/duhotavlad/Sites/rotani/wp-content/themes/rotani/woocommerce/single-product/sale-flash.php on line 25
+

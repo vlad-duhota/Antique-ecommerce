@@ -295,3 +295,15 @@ add_filter( 'woocommerce_order_button_text', 'wc_custom_order_button_text' );
 function wc_custom_order_button_text() {
 	return __( 'Pay ', 'woocommerce' ) . strip_tags(get_wc_cart_totals_order_total_html());
 }
+
+remove_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_thumbnail', 10 );
+add_action( 'woocommerce_before_shop_loop_item_title', 'custom_loop_product_thumbnail', 10 );
+function custom_loop_product_thumbnail() {
+    global $product;
+    $size = 'full';
+	
+    $image_size = apply_filters( 'single_product_archive_thumbnail_size', $size );
+	echo '<a href="#" data-id="' . $product ->get_id() . '" class="product__learn-btn">';
+    echo $product ? $product->get_image( $image_size ) : '';
+	echo '</a>';
+}
