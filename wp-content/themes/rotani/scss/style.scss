@@ -1137,7 +1137,7 @@ body {
         }
     }
     #billing_email_field,
-    #billing_city_field {
+    #billing_address_1_field {
         grid-column-start: 1;
         grid-column-end: 3;
         @media (max-width: 1099px) {
@@ -1194,10 +1194,9 @@ body {
                 font-size: 14px;
                 padding: 15px;
             }
-            color: #9b9b9b;
+            color: #010005;
             transition: color 0.3s, border 0.3s;
             &:focus-visible {
-                color: #010005;
                 border-color: #010005;
             }
             &::placeholder {

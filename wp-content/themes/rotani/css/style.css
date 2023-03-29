@@ -1296,13 +1296,13 @@ body {
   }
 }
 .checkout-sec #billing_email_field,
-.checkout-sec #billing_city_field {
+.checkout-sec #billing_address_1_field {
   grid-column-start: 1;
   grid-column-end: 3;
 }
 @media (max-width: 1099px) {
   .checkout-sec #billing_email_field,
-  .checkout-sec #billing_city_field {
+  .checkout-sec #billing_address_1_field {
     grid-column-end: 2;
   }
 }
@@ -1353,7 +1353,7 @@ body {
   font-family: "Poppins";
   font-weight: 400;
   font-size: 17px;
-  color: #9b9b9b;
+  color: #010005;
   transition: color 0.3s, border 0.3s;
 }
 @media (max-width: 576px) {
@@ -1365,7 +1365,6 @@ body {
 }
 .checkout-sec .woocommerce-billing-fields__field-wrapper input:focus-visible,
 .checkout-sec .woocommerce-billing-fields__field-wrapper .select2:focus-visible {
-  color: #010005;
   border-color: #010005;
 }
 .checkout-sec .woocommerce-billing-fields__field-wrapper input::-moz-placeholder, .checkout-sec .woocommerce-billing-fields__field-wrapper .select2::-moz-placeholder {

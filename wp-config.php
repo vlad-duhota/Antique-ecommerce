@@ -1,3 +1,4 @@
+
 <?php
 /**
  * The base configuration for WordPress
@@ -36,6 +37,8 @@ define( 'DB_CHARSET', 'utf8mb4' );
 
 /** The database collate type. Don't change this if in doubt. */
 define( 'DB_COLLATE', '' );
+define( 'WP_HOME',           'http://'.$_SERVER['HTTP_HOST'] );
+define( 'WP_SITEURL',        'http://'.$_SERVER['HTTP_HOST'] );
 
 /**#@+
  * Authentication unique keys and salts.
