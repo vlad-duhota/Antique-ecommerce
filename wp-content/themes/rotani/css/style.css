@@ -319,6 +319,27 @@ body {
 .shop-sec .products .product__right .price {
   color: #010005;
 }
+.shop-sec .products .product__right .added_to_cart {
+  background: #010005;
+  border-radius: 47px;
+  padding: 13px 27px;
+  display: inline-flex;
+  justify-content: center;
+  gap: 14px;
+  color: #fff;
+}
+@media (max-width: 576px) {
+  .shop-sec .products .product__right .added_to_cart {
+    order: 100;
+    flex: 1 1 100%;
+    padding: 7px 20px;
+    gap: 9px;
+  }
+  .shop-sec .products .product__right .added_to_cart svg {
+    height: 20px;
+    width: auto;
+  }
+}
 .shop-sec .products .product__right .add_to_cart_button {
   background: #010005;
   border-radius: 47px;
@@ -339,6 +360,12 @@ body {
     height: 20px;
     width: auto;
   }
+}
+.shop-sec .products .product__right .add_to_cart_button.added {
+  display: none;
+}
+.shop-sec .products .product__right .add_to_cart_button.added + .added_to_cart {
+  display: inline-flex;
 }
 .shop-sec .products .product__left {
   flex: 1 1 100%;
@@ -1276,6 +1303,9 @@ body {
   }
 }
 
+.checkout-sec .container {
+  position: relative;
+}
 .checkout-sec__title {
   margin-bottom: 27px;
   font-size: 19px;
@@ -1313,15 +1343,11 @@ body {
   position: relative;
 }
 .checkout-sec .woocommerce-billing-fields__field-wrapper label {
-  position: absolute;
-  left: 26px;
-  top: -10px;
-  padding: 0 9px;
   display: block;
   background: #fff;
   z-index: 3;
   font-size: 15px;
-  color: #9b9b9b;
+  color: #010005;
 }
 .checkout-sec .woocommerce-billing-fields__field-wrapper label abbr {
   display: none;
@@ -1329,8 +1355,6 @@ body {
 @media (max-width: 576px) {
   .checkout-sec .woocommerce-billing-fields__field-wrapper label {
     font-size: 12px;
-    left: 15px;
-    padding: 0 4px;
   }
 }
 .checkout-sec .woocommerce-billing-fields__field-wrapper .select2 span {
@@ -1349,9 +1373,9 @@ body {
 .checkout-sec .woocommerce-billing-fields__field-wrapper input,
 .checkout-sec .woocommerce-billing-fields__field-wrapper .select2 {
   width: 100%;
-  border: 1px solid #9b9b9b;
-  border-radius: 47px;
-  padding: 15px 26px;
+  border: none;
+  border-bottom: 1px solid #9b9b9b;
+  padding: 8px 0 15px;
   background: transparent;
   font-family: "Poppins";
   font-weight: 400;
@@ -1492,4 +1516,22 @@ body {
 .select2-selection__arrow {
   top: 50% !important;
   transform: translateY(-50%) !important;
+}
+
+.return {
+  text-align: center;
+  height: 100%;
+  display: flex;
+  align-items: centers;
+}
+.return .return-to-shop {
+  margin-top: 15px;
+  text-decoration: underline;
+}
+
+.woocommerce-NoticeGroup {
+  position: absolute;
+  top: 0;
+  right: 15px;
+  color: #df2828;
 }
