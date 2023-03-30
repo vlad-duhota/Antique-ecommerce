@@ -273,6 +273,12 @@ body {
                 padding: 15px 0;
             }
             border-bottom: 1px solid #d9d9d9;
+            .stock {
+                display: none;
+            }
+            .out-of-stock {
+                display: block;
+            }
             &__right {
                 display: flex;
                 flex-direction: column;
@@ -310,6 +316,10 @@ body {
                         }
                     }
                 }
+                .product_type_simple:not(.add_to_cart_button) {
+                    display: none;
+                }
+
                 .add_to_cart_button {
                     background: #010005;
                     border-radius: 47px;
@@ -679,7 +689,7 @@ body {
         .quantity {
             display: none;
         }
-        button {
+        .added_to_cart {
             display: inline-flex;
             min-width: 224px;
 
@@ -702,9 +712,40 @@ body {
             text-transform: capitalize;
             font-weight: 400;
         }
+        button {
+            display: inline-flex;
+            min-width: 224px;
+            font-size: 17px;
+            cursor: pointer;
+            justify-content: center;
+            gap: 18px;
+            color: #010005;
+            border: 1px solid #000000;
+            border-radius: 47px;
+            padding: 13px 40px;
+            @media (max-width: 992px) {
+                min-width: none;
+                width: calc(50% - 10px);
+                padding: 13px 20px;
+            }
+            @media (max-width: 576px) {
+                width: 100%;
+            }
+            background: #fff;
+            text-transform: capitalize;
+            font-weight: 400;
+        }
         .wc-buy-now-btn-single {
             background: #010005;
             color: #fff;
+        }
+        .single_add_to_cart_button {
+            &.added {
+                display: none;
+                & + .added_to_cart {
+                    display: inline-flex;
+                }
+            }
         }
     }
     .woocommerce-notices-wrapper {
@@ -786,6 +827,9 @@ body {
         background: rgba(229, 229, 229, 0.22);
         border-radius: 31px;
         padding: 50px;
+        @media (min-width: 1099px) {
+            min-height: 192px;
+        }
         @media (max-width: 1099px) {
             padding: 30px 15px;
         }
@@ -847,6 +891,7 @@ body {
     }
     &__form {
         max-width: 334px;
+        position: relative;
         @media (max-width: 992px) {
             flex: 1 1 100%;
             max-width: 100%;
@@ -858,7 +903,8 @@ body {
         h3 {
             font-family: "Poppins", sans-serif;
             font-size: 18px;
-            margin-bottom: 17px;
+            position: absolute;
+            top: -39px;
             text-transform: capitalize;
         }
         form {
@@ -889,16 +935,17 @@ body {
         input {
             width: 100%;
             display: block;
-            padding: 13px 26px;
+            padding: 13px 0;
             font-family: "Poppins";
             font-weight: 400;
             font-size: 17px;
             color: #9b9b9b;
-            border: 1px solid #9b9b9b;
-            border-radius: 47px;
+            border: none;
+            border-bottom: 1px solid #9b9b9b;
+            background: transparent;
             @media (max-width: 576px) {
                 font-size: 14px;
-                padding: 13px;
+                padding: 13px 0;
             }
             &::placeholder {
                 font-family: "Poppins";
@@ -1245,7 +1292,45 @@ body {
             gap: 20px;
         }
     }
+    .woocommerce-privacy-policy-text {
+        text-align: center;
+        margin-top: 23px;
+    }
     .woocommerce-checkout-review-order {
+        .payment_method_stripe {
+            input {
+                display: none;
+            }
+            & > label {
+                margin-bottom: 27px;
+                font-size: 19px;
+                font-family: "Poppins", sans-serif;
+                color: #000000;
+                display: block;
+            }
+            fieldset {
+                border: none;
+            }
+            .form-row {
+                margin: 23px 0 0 0 !important;
+            }
+            .wc-stripe-elements-field {
+                margin: 0 0 0 0 !important;
+                border: none !important;
+                border-bottom: 1px solid #9b9b9b !important;
+                padding: 8px 0 15px;
+                background: transparent;
+                font-family: "Poppins";
+                font-weight: 400;
+                font-size: 17px;
+
+                @media (max-width: 576px) {
+                    font-size: 14px;
+                    padding: 15px;
+                }
+                color: #010005;
+            }
+        }
         & > .checkout-review {
             border: 1px solid #d9d9d9;
             border-radius: 25px;
