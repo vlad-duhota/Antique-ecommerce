@@ -307,3 +307,22 @@ function custom_loop_product_thumbnail() {
     echo $product ? $product->get_image( $image_size ) : '';
 	echo '</a>';
 }
+
+add_action( 'woocommerce_after_checkout_validation', 'misha_one_err', 9999, 2);
+ 
+function misha_one_err( $fields, $errors ){
+ 
+	// if any validation errors
+	if( ! empty( $errors->get_error_codes() ) ) {
+ 
+		// remove all of them
+		foreach( $errors->get_error_codes() as $code ) {
+			$errors->remove( $code );
+		}
+ 
+		// add our custom one
+		$errors->add( 'validation', 'Please fill the fields!' );
+ 
+	}
+ 
+}

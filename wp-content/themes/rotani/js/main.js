@@ -190,7 +190,7 @@ if (shop && timer) {
   observer.observe(shop)
 }
 
-$('.product .add_to_cart_button').on('click', function () {
+$('.product .add_to_cart_button').on('click', function (e) {
   setTimeout(function () {
     $.ajax({
       url: '/wp-admin/admin-ajax.php',
