@@ -893,6 +893,9 @@ body {
         max-width: 334px;
         position: relative;
         @media (max-width: 992px) {
+            padding-top: 20px;
+        }
+        @media (max-width: 992px) {
             flex: 1 1 100%;
             max-width: 100%;
             margin-top: 20px;
@@ -905,6 +908,17 @@ body {
             font-size: 18px;
             position: absolute;
             top: -39px;
+            @media (max-width: 1099px) {
+                top: -20px;
+            }
+            @media (max-width: 992px) {
+                top: -10px;
+            }
+            @media (max-width: 576px) {
+                width: 100%;
+                left: 50%;
+                transform: translateX(-50%);
+            }
             text-transform: capitalize;
         }
         form {
