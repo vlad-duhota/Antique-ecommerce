@@ -1007,6 +1007,11 @@ body {
 }
 @media (max-width: 992px) {
   .footer__form {
+    padding-top: 20px;
+  }
+}
+@media (max-width: 992px) {
+  .footer__form {
     flex: 1 1 100%;
     max-width: 100%;
     margin-top: 20px;
@@ -1021,6 +1026,23 @@ body {
   position: absolute;
   top: -39px;
   text-transform: capitalize;
+}
+@media (max-width: 1099px) {
+  .footer__form h3 {
+    top: -20px;
+  }
+}
+@media (max-width: 992px) {
+  .footer__form h3 {
+    top: -10px;
+  }
+}
+@media (max-width: 576px) {
+  .footer__form h3 {
+    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
 .footer__form form {
   position: relative;
