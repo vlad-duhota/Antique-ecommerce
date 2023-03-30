@@ -1,0 +1,26 @@
+{
+    "open sans": {
+        "normal": "\/Users\/duhotavlad\/Sites\/rotani\/wp-content\/uploads\/wpo_wcpdf_c603763f719ce9882012c31fddd43245\/fonts\/OpenSans-Normal",
+        "bold": "\/Users\/duhotavlad\/Sites\/rotani\/wp-content\/uploads\/wpo_wcpdf_c603763f719ce9882012c31fddd43245\/fonts\/OpenSans-Bold",
+        "italic": "\/Users\/duhotavlad\/Sites\/rotani\/wp-content\/uploads\/wpo_wcpdf_c603763f719ce9882012c31fddd43245\/fonts\/OpenSans-Italic",
+        "bold_italic": "\/Users\/duhotavlad\/Sites\/rotani\/wp-content\/uploads\/wpo_wcpdf_c603763f719ce9882012c31fddd43245\/fonts\/OpenSans-BoldItalic"
+    },
+    "segoe": {
+        "normal": "\/Users\/duhotavlad\/Sites\/rotani\/wp-content\/uploads\/wpo_wcpdf_c603763f719ce9882012c31fddd43245\/fonts\/Segoe-Normal",
+        "bold": "\/Users\/duhotavlad\/Sites\/rotani\/wp-content\/uploads\/wpo_wcpdf_c603763f719ce9882012c31fddd43245\/fonts\/Segoe-Bold",
+        "italic": "\/Users\/duhotavlad\/Sites\/rotani\/wp-content\/uploads\/wpo_wcpdf_c603763f719ce9882012c31fddd43245\/fonts\/Segoe-Italic",
+        "bold_italic": "\/Users\/duhotavlad\/Sites\/rotani\/wp-content\/uploads\/wpo_wcpdf_c603763f719ce9882012c31fddd43245\/fonts\/Segoe-BoldItalic"
+    },
+    "roboto slab": {
+        "normal": "\/Users\/duhotavlad\/Sites\/rotani\/wp-content\/uploads\/wpo_wcpdf_c603763f719ce9882012c31fddd43245\/fonts\/RobotoSlab-Normal",
+        "bold": "\/Users\/duhotavlad\/Sites\/rotani\/wp-content\/uploads\/wpo_wcpdf_c603763f719ce9882012c31fddd43245\/fonts\/RobotoSlab-Bold",
+        "italic": "\/Users\/duhotavlad\/Sites\/rotani\/wp-content\/uploads\/wpo_wcpdf_c603763f719ce9882012c31fddd43245\/fonts\/RobotoSlab-Italic",
+        "bold_italic": "\/Users\/duhotavlad\/Sites\/rotani\/wp-content\/uploads\/wpo_wcpdf_c603763f719ce9882012c31fddd43245\/fonts\/RobotoSlab-BoldItalic"
+    },
+    "currencies": {
+        "normal": "\/Users\/duhotavlad\/Sites\/rotani\/wp-content\/uploads\/wpo_wcpdf_c603763f719ce9882012c31fddd43245\/fonts\/currencies",
+        "bold": "\/Users\/duhotavlad\/Sites\/rotani\/wp-content\/uploads\/wpo_wcpdf_c603763f719ce9882012c31fddd43245\/fonts\/currencies",
+        "italic": "\/Users\/duhotavlad\/Sites\/rotani\/wp-content\/uploads\/wpo_wcpdf_c603763f719ce9882012c31fddd43245\/fonts\/currencies",
+        "bold_italic": "\/Users\/duhotavlad\/Sites\/rotani\/wp-content\/uploads\/wpo_wcpdf_c603763f719ce9882012c31fddd43245\/fonts\/currencies"
+    }
+}
