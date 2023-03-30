@@ -296,6 +296,12 @@ body {
     padding: 15px 0;
   }
 }
+.shop-sec .products .product .stock {
+  display: none;
+}
+.shop-sec .products .product .out-of-stock {
+  display: block;
+}
 .shop-sec .products .product__right {
   display: flex;
   flex-direction: column;
@@ -339,6 +345,9 @@ body {
     height: 20px;
     width: auto;
   }
+}
+.shop-sec .products .product__right .product_type_simple:not(.add_to_cart_button) {
+  display: none;
 }
 .shop-sec .products .product__right .add_to_cart_button {
   background: #010005;
@@ -760,9 +769,36 @@ body {
 .pop-up form .quantity {
   display: none;
 }
+.pop-up form .added_to_cart {
+  display: inline-flex;
+  min-width: 224px;
+  cursor: pointer;
+  justify-content: center;
+  gap: 18px;
+  color: #010005;
+  border: 1px solid #000000;
+  border-radius: 47px;
+  padding: 13px 40px;
+  background: #fff;
+  text-transform: capitalize;
+  font-weight: 400;
+}
+@media (max-width: 992px) {
+  .pop-up form .added_to_cart {
+    min-width: none;
+    width: calc(50% - 10px);
+    padding: 13px 20px;
+  }
+}
+@media (max-width: 576px) {
+  .pop-up form .added_to_cart {
+    width: 100%;
+  }
+}
 .pop-up form button {
   display: inline-flex;
   min-width: 224px;
+  font-size: 17px;
   cursor: pointer;
   justify-content: center;
   gap: 18px;
@@ -789,6 +825,12 @@ body {
 .pop-up form .wc-buy-now-btn-single {
   background: #010005;
   color: #fff;
+}
+.pop-up form .single_add_to_cart_button.added {
+  display: none;
+}
+.pop-up form .single_add_to_cart_button.added + .added_to_cart {
+  display: inline-flex;
 }
 .pop-up .woocommerce-notices-wrapper {
   display: none;
@@ -885,6 +927,11 @@ body {
   align-items: center;
   justify-content: space-between;
 }
+@media (min-width: 1099px) {
+  .footer-top {
+    min-height: 192px;
+  }
+}
 @media (max-width: 1099px) {
   .footer-top {
     padding: 30px 15px;
@@ -956,6 +1003,7 @@ body {
 }
 .footer__form {
   max-width: 334px;
+  position: relative;
 }
 @media (max-width: 992px) {
   .footer__form {
@@ -970,7 +1018,8 @@ body {
 .footer__form h3 {
   font-family: "Poppins", sans-serif;
   font-size: 18px;
-  margin-bottom: 17px;
+  position: absolute;
+  top: -39px;
   text-transform: capitalize;
 }
 .footer__form form {
@@ -1005,18 +1054,19 @@ body {
 .footer__form input {
   width: 100%;
   display: block;
-  padding: 13px 26px;
+  padding: 13px 0;
   font-family: "Poppins";
   font-weight: 400;
   font-size: 17px;
   color: #9b9b9b;
-  border: 1px solid #9b9b9b;
-  border-radius: 47px;
+  border: none;
+  border-bottom: 1px solid #9b9b9b;
+  background: transparent;
 }
 @media (max-width: 576px) {
   .footer__form input {
     font-size: 14px;
-    padding: 13px;
+    padding: 13px 0;
   }
 }
 .footer__form input::-moz-placeholder {
@@ -1425,6 +1475,43 @@ body {
   .checkout-sec .woocommerce-billing-fields__field-wrapper {
     grid-template-columns: repeat(1, 1fr);
     gap: 20px;
+  }
+}
+.checkout-sec .woocommerce-privacy-policy-text {
+  text-align: center;
+  margin-top: 23px;
+}
+.checkout-sec .woocommerce-checkout-review-order .payment_method_stripe input {
+  display: none;
+}
+.checkout-sec .woocommerce-checkout-review-order .payment_method_stripe > label {
+  margin-bottom: 27px;
+  font-size: 19px;
+  font-family: "Poppins", sans-serif;
+  color: #000000;
+  display: block;
+}
+.checkout-sec .woocommerce-checkout-review-order .payment_method_stripe fieldset {
+  border: none;
+}
+.checkout-sec .woocommerce-checkout-review-order .payment_method_stripe .form-row {
+  margin: 23px 0 0 0 !important;
+}
+.checkout-sec .woocommerce-checkout-review-order .payment_method_stripe .wc-stripe-elements-field {
+  margin: 0 0 0 0 !important;
+  border: none !important;
+  border-bottom: 1px solid #9b9b9b !important;
+  padding: 8px 0 15px;
+  background: transparent;
+  font-family: "Poppins";
+  font-weight: 400;
+  font-size: 17px;
+  color: #010005;
+}
+@media (max-width: 576px) {
+  .checkout-sec .woocommerce-checkout-review-order .payment_method_stripe .wc-stripe-elements-field {
+    font-size: 14px;
+    padding: 15px;
   }
 }
 .checkout-sec .woocommerce-checkout-review-order > .checkout-review {

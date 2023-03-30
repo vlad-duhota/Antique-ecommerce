@@ -51,6 +51,13 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 	do_action( 'woocommerce_shop_loop_item_title' );?>
 	<?php $firstAttr = array_shift(get_post_meta( get_the_ID() , '_product_attributes' )[0])?>
 	<p class="product__atr"><?php echo $firstAttr['name']?> : <?php echo $firstAttr['value']?></p>
+	<?php
+    // Availability
+    $availability = $product->get_availability();
+    if ($availability['availability']) :
+        echo apply_filters( 'woocommerce_stock_html', '<p class="stock ' . esc_attr( $availability['class'] ) . '">' . esc_html( $availability['availability'] ) . '</p>', $availability['availability'] );
+    endif;
+?>
 <?php
 $tags = get_the_terms( $post->ID, 'product_tag' );
 if($tags){
