@@ -43,6 +43,13 @@ global $product;
 	$product,
 	$args
 );?> 
+	<?php
+    // Availability
+    $availability = $product->get_availability();
+    if ($availability['availability']) :
+        echo apply_filters( 'woocommerce_stock_html', '<p class="add_to_cart_button ' . esc_attr( $availability['class'] ) . '">' . esc_html( $availability['availability'] ) . '</p>', $availability['availability'] );
+    endif;
+?>
 
 <a href="#" data-subtype="<?php echo carbon_get_post_meta(get_the_ID(), 'product_subtype')[0]?>" data-id="<?php echo get_the_ID()?>" class="product__learn product__learn-btn">Learn More</a>
 <!-- <div class="info" style="display: none"

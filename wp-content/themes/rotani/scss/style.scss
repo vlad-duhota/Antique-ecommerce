@@ -1,3 +1,14 @@
+@font-face {
+    font-family: "Proxima";
+    src: url("../fonts/proximanova_regular.woff");
+    font-weight: 400;
+}
+@font-face {
+    font-family: "Proxima";
+    src: url("../fonts/proximanova_bold.woff");
+    font-weight: 700;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -23,9 +34,10 @@ input:not(.tel-input) {
 h1,
 h2,
 h3 {
-    font-family: "Lora", serif;
-    color: #010005;
+    font-family: "adobe-caslon-pro", serif;
     font-weight: 400;
+    color: #010005;
+    letter-spacing: normal;
 }
 .h1 {
     font-size: 39px;
@@ -70,13 +82,11 @@ h3 {
 }
 
 body {
-    font-family: "Poppins", sans-serif;
+    font-family: "Proxima";
     font-weight: 400;
     font-size: 17px;
     color: #777777;
-    @media (max-width: 1099px) {
-        font-size: 14px;
-    }
+    letter-spacing: 0.25px;
 }
 
 .text {
@@ -171,6 +181,9 @@ body {
         }
     }
     &__time {
+        * {
+            letter-spacing: normal;
+        }
         &.active {
             @media (min-width: 1099px) {
                 position: fixed;
@@ -210,7 +223,8 @@ body {
     .time_circles {
         display: flex;
         span {
-            font-family: "Lora" !important;
+            font-family: "adobe-caslon-pro", serif !important;
+            letter-spacing: normal;
             font-weight: 400;
             font-size: 58px !important;
             text-align: center;
@@ -273,11 +287,8 @@ body {
                 padding: 15px 0;
             }
             border-bottom: 1px solid #d9d9d9;
-            .stock {
-                display: none;
-            }
-            .out-of-stock {
-                display: block;
+            .in-stock {
+                display: none !important;
             }
             &__right {
                 display: flex;
@@ -302,6 +313,7 @@ body {
                     border-radius: 47px;
                     padding: 13px 27px;
                     display: inline-flex;
+
                     justify-content: center;
                     gap: 14px;
                     color: #fff;
@@ -324,6 +336,7 @@ body {
                     background: #010005;
                     border-radius: 47px;
                     padding: 13px 27px;
+                    align-items: center;
                     display: inline-flex;
                     justify-content: center;
                     gap: 14px;
@@ -405,7 +418,8 @@ body {
             padding-top: 30px;
             .product {
                 border: none;
-                display: block;
+                flex-direction: column;
+                align-items: stretch;
                 position: relative;
                 padding: 0;
                 .add_to_cart_button {
@@ -648,6 +662,36 @@ body {
             margin: 15px 0;
         }
     }
+    .stock {
+        margin-top: auto;
+
+        margin-bottom: 18px;
+        display: inline-flex;
+        max-width: 224px;
+        width: 100%;
+        font-size: 17px;
+        cursor: pointer;
+        justify-content: center;
+        gap: 18px;
+        color: #010005;
+        border: 1px solid #000000;
+        border-radius: 47px;
+        padding: 13px 40px;
+        @media (max-width: 992px) {
+            min-width: none;
+            width: calc(50% - 10px);
+            padding: 13px 20px;
+        }
+        @media (max-width: 576px) {
+            width: 100%;
+        }
+        background: #fff;
+        text-transform: capitalize;
+        font-weight: 400;
+    }
+    .in-stock {
+        display: none;
+    }
     .product-details {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -657,7 +701,7 @@ body {
             gap: 20px;
         }
         &__title {
-            font-family: "Poppins", sans-serif;
+            font-family: "Proxima";
             font-size: 20px;
             margin-bottom: 8px;
         }
@@ -735,6 +779,9 @@ body {
             text-transform: capitalize;
             font-weight: 400;
         }
+        .in-stock {
+            display: none !important;
+        }
         .wc-buy-now-btn-single {
             background: #010005;
             color: #fff;
@@ -752,7 +799,7 @@ body {
         display: none;
     }
     .info-title {
-        font-family: "Poppins", sans-serif;
+        font-family: "Proxima";
         font-size: 20px;
         margin-bottom: 19px;
     }
@@ -821,8 +868,16 @@ body {
 }
 
 .footer {
-    padding-top: 47px;
+    padding: 47px 0;
     margin-top: auto;
+    &-center {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        gap: 20px;
+        max-width: 225px;
+    }
     &-top {
         background: rgba(229, 229, 229, 0.22);
         border-radius: 31px;
@@ -893,7 +948,6 @@ body {
         max-width: 334px;
         position: relative;
         @media (max-width: 992px) {
-            padding-top: 20px;
         }
         @media (max-width: 992px) {
             flex: 1 1 100%;
@@ -904,21 +958,10 @@ body {
             }
         }
         h3 {
-            font-family: "Poppins", sans-serif;
+            font-family: "Proxima";
             font-size: 18px;
-            position: absolute;
-            top: -39px;
-            @media (max-width: 1099px) {
-                top: -20px;
-            }
-            @media (max-width: 992px) {
-                top: -10px;
-            }
-            @media (max-width: 576px) {
-                width: 100%;
-                left: 50%;
-                transform: translateX(-50%);
-            }
+
+            margin-bottom: 18px;
             text-transform: capitalize;
         }
         form {
@@ -950,7 +993,7 @@ body {
             width: 100%;
             display: block;
             padding: 13px 0;
-            font-family: "Poppins";
+            font-family: "Proxima";
             font-weight: 400;
             font-size: 17px;
             color: #9b9b9b;
@@ -962,7 +1005,7 @@ body {
                 padding: 13px 0;
             }
             &::placeholder {
-                font-family: "Poppins";
+                font-family: "Proxima";
                 font-weight: 400;
                 font-size: 17px;
                 @media (max-width: 576px) {
@@ -996,7 +1039,7 @@ body {
             display: none;
         }
         h3 {
-            font-family: "Poppins", sans-serif;
+            font-family: "Proxima";
             font-weight: 400;
             font-size: 17px;
             &:nth-child(2) {
@@ -1021,10 +1064,14 @@ body {
             border-radius: 25px;
             h2 {
                 font-size: 17px;
-                font-family: "Poppins", sans-serif;
+                font-family: "Proxima";
                 font-weight: 400;
                 margin-bottom: 31px;
             }
+            .shipping {
+                flex-wrap: wrap;
+            }
+
             .cart-block {
                 margin-bottom: 15px;
                 display: flex;
@@ -1126,7 +1173,8 @@ body {
                     font-size: 16px;
                     padding-right: 20px;
                 }
-                font-family: "Lora";
+                font-family: "adobe-caslon-pro", serif;
+                letter-spacing: normal;
                 color: #010005;
                 text-transform: capitalize;
             }
@@ -1213,7 +1261,7 @@ body {
     &__title {
         margin-bottom: 27px;
         font-size: 19px;
-        font-family: "Poppins", sans-serif;
+        font-family: "Proxima";
     }
     form.woocommerce-checkout {
         display: grid;
@@ -1257,7 +1305,7 @@ body {
         .select2 {
             span {
                 border: none;
-                font-family: "Poppins";
+                font-family: "Proxima";
                 font-weight: 400;
                 font-size: 17px;
                 padding-left: 0;
@@ -1274,7 +1322,7 @@ body {
             border-bottom: 1px solid #9b9b9b;
             padding: 8px 0 15px;
             background: transparent;
-            font-family: "Poppins";
+            font-family: "Proxima";
             font-weight: 400;
             font-size: 17px;
             @media (max-width: 576px) {
@@ -1287,7 +1335,7 @@ body {
                 border-color: #010005;
             }
             &::placeholder {
-                font-family: "Poppins";
+                font-family: "Proxima";
                 font-weight: 400;
                 font-size: 17px;
                 @media (max-width: 576px) {
@@ -1318,7 +1366,7 @@ body {
             & > label {
                 margin-bottom: 27px;
                 font-size: 19px;
-                font-family: "Poppins", sans-serif;
+                font-family: "Proxima";
                 color: #000000;
                 display: block;
             }
@@ -1334,7 +1382,7 @@ body {
                 border-bottom: 1px solid #9b9b9b !important;
                 padding: 8px 0 15px;
                 background: transparent;
-                font-family: "Poppins";
+                font-family: "Proxima";
                 font-weight: 400;
                 font-size: 17px;
 
@@ -1369,6 +1417,7 @@ body {
                 font-size: 20px;
             }
         }
+
         .order-total {
             margin-top: 30px;
             padding-top: 13px;
@@ -1415,7 +1464,8 @@ body {
                 color: #010005;
                 font-weight: 400;
                 text-transform: capitalize;
-                font-family: "Lora";
+                font-family: "adobe-caslon-pro", serif;
+                letter-spacing: normal;
             }
             p {
                 font-size: 20px;
@@ -1450,4 +1500,95 @@ body {
     top: 0;
     right: 15px;
     color: #df2828;
+}
+
+.woocommerce-shipping-calculator {
+    flex: 1 1 100%;
+    margin-top: 10px;
+    button[type="submit"] {
+        display: block;
+        margin: 25px auto 0;
+        width: calc(100% - 200px);
+        @media (max-width: 576px) {
+            width: 100%;
+        }
+        text-align: center;
+        background: #010005;
+        color: #fff;
+        padding: 13px;
+        border: none;
+        font-weight: 500;
+        font-size: 17px;
+        border-radius: 47px;
+    }
+    .select2 {
+        span {
+            border: none;
+            font-family: "Proxima";
+            font-weight: 400;
+            font-size: 17px;
+            padding-left: 0;
+            color: #9b9b9b;
+            @media (max-width: 576px) {
+                font-size: 14px;
+            }
+        }
+    }
+    input,
+    .select2 {
+        width: 100%;
+        border: none;
+        border-bottom: 1px solid #9b9b9b;
+        padding: 8px 0 15px;
+        background: transparent;
+        font-family: "Proxima";
+        font-weight: 400;
+        font-size: 17px;
+        @media (max-width: 576px) {
+            font-size: 14px;
+            padding: 15px;
+        }
+        color: #010005;
+        transition: color 0.3s, border 0.3s;
+        &:focus-visible {
+            border-color: #010005;
+        }
+        &::placeholder {
+            font-family: "Proxima";
+            font-weight: 400;
+            font-size: 17px;
+            @media (max-width: 576px) {
+                font-size: 14px;
+            }
+            color: #9b9b9b;
+        }
+    }
+}
+
+.thank {
+    text-align: center;
+    .container {
+        max-width: 600px;
+        border-top: 1px solid #010005;
+        border-bottom: 1px solid#010005;
+        padding-top: 45px;
+        padding-bottom: 45px;
+    }
+    p {
+        margin-top: 10px;
+    }
+}
+
+.woocommerce-order-received {
+    main {
+        flex: 1 1 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    .woocommerce {
+        flex: 1 1 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 }

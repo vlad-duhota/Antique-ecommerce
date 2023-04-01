@@ -15,5 +15,6 @@ Container::make('theme_options', 'Theme options')
     ->add_fields( array(
         Field::make( 'text', 'footer_socials_link', __( 'Social Link' ) ),
         Field::make( 'image', 'footer_socials_img', __( 'Social Icon' ) ),
-    ) )
+    ) ),
+    Field::make( 'text', 'thank_tel', 'Thank page phone number'),
 ) );

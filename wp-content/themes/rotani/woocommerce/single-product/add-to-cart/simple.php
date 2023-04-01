@@ -54,6 +54,13 @@ if ( $product->is_in_stock() ) : ?>
 <!-- <button type="button" onClick="Arta.open()">Estimate Shipping</button> -->
 		<?php do_action( 'woocommerce_after_add_to_cart_button' ); ?>
 	</form>
+	<?php
+    // Availability
+    $availability = $product->get_availability();
+    if ($availability['availability']) :
+        echo apply_filters( 'woocommerce_stock_html', '<p class="' . esc_attr( $availability['class'] ) . '">' . esc_html( $availability['availability'] ) . '</p>', $availability['availability'] );
+    endif;
+?>
 	<?php do_action( 'woocommerce_after_add_to_cart_form' ); ?>
 
 <?php endif; ?>
