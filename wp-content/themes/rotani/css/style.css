@@ -1,4 +1,14 @@
 @charset "UTF-8";
+@font-face {
+  font-family: "Proxima";
+  src: url("../fonts/proximanova_regular.woff");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Proxima";
+  src: url("../fonts/proximanova_bold.woff");
+  font-weight: 700;
+}
 * {
   margin: 0;
   padding: 0;
@@ -27,9 +37,10 @@ input:not(.tel-input):focus::placeholder {
 h1,
 h2,
 h3 {
-  font-family: "Lora", serif;
-  color: #010005;
+  font-family: "adobe-caslon-pro", serif;
   font-weight: 400;
+  color: #010005;
+  letter-spacing: normal;
 }
 
 .h1 {
@@ -65,15 +76,11 @@ h3 {
 }
 
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: "Proxima";
   font-weight: 400;
   font-size: 17px;
   color: #777777;
-}
-@media (max-width: 1099px) {
-  body {
-    font-size: 14px;
-  }
+  letter-spacing: 0.25px;
 }
 
 .text p:not(:last-child) {
@@ -184,6 +191,9 @@ body {
   align-items: center;
   flex-direction: column;
 }
+.shop-sec__time * {
+  letter-spacing: normal;
+}
 @media (min-width: 1099px) {
   .shop-sec__time.active {
     position: fixed;
@@ -226,7 +236,8 @@ body {
   display: flex;
 }
 .shop-sec .time_circles span {
-  font-family: "Lora" !important;
+  font-family: "adobe-caslon-pro", serif !important;
+  letter-spacing: normal;
   font-weight: 400;
   font-size: 58px !important;
   text-align: center;
@@ -296,11 +307,8 @@ body {
     padding: 15px 0;
   }
 }
-.shop-sec .products .product .stock {
-  display: none;
-}
-.shop-sec .products .product .out-of-stock {
-  display: block;
+.shop-sec .products .product .in-stock {
+  display: none !important;
 }
 .shop-sec .products .product__right {
   display: flex;
@@ -353,6 +361,7 @@ body {
   background: #010005;
   border-radius: 47px;
   padding: 13px 27px;
+  align-items: center;
   display: inline-flex;
   justify-content: center;
   gap: 14px;
@@ -445,7 +454,8 @@ body {
 }
 .shop-sec .products.grid .product {
   border: none;
-  display: block;
+  flex-direction: column;
+  align-items: stretch;
   position: relative;
   padding: 0;
 }
@@ -721,6 +731,39 @@ body {
     margin: 15px 0;
   }
 }
+.pop-up .stock {
+  margin-top: auto;
+  margin-bottom: 18px;
+  display: inline-flex;
+  max-width: 224px;
+  width: 100%;
+  font-size: 17px;
+  cursor: pointer;
+  justify-content: center;
+  gap: 18px;
+  color: #010005;
+  border: 1px solid #000000;
+  border-radius: 47px;
+  padding: 13px 40px;
+  background: #fff;
+  text-transform: capitalize;
+  font-weight: 400;
+}
+@media (max-width: 992px) {
+  .pop-up .stock {
+    min-width: none;
+    width: calc(50% - 10px);
+    padding: 13px 20px;
+  }
+}
+@media (max-width: 576px) {
+  .pop-up .stock {
+    width: 100%;
+  }
+}
+.pop-up .in-stock {
+  display: none;
+}
 .pop-up .product-details {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -733,7 +776,7 @@ body {
   }
 }
 .pop-up .product-details__title {
-  font-family: "Poppins", sans-serif;
+  font-family: "Proxima";
   font-size: 20px;
   margin-bottom: 8px;
 }
@@ -822,6 +865,9 @@ body {
     width: 100%;
   }
 }
+.pop-up form .in-stock {
+  display: none !important;
+}
 .pop-up form .wc-buy-now-btn-single {
   background: #010005;
   color: #fff;
@@ -836,7 +882,7 @@ body {
   display: none;
 }
 .pop-up .info-title {
-  font-family: "Poppins", sans-serif;
+  font-family: "Proxima";
   font-size: 20px;
   margin-bottom: 19px;
 }
@@ -916,8 +962,16 @@ body {
 }
 
 .footer {
-  padding-top: 47px;
+  padding: 47px 0;
   margin-top: auto;
+}
+.footer-center {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  gap: 20px;
+  max-width: 225px;
 }
 .footer-top {
   background: rgba(229, 229, 229, 0.22);
@@ -1007,11 +1061,6 @@ body {
 }
 @media (max-width: 992px) {
   .footer__form {
-    padding-top: 20px;
-  }
-}
-@media (max-width: 992px) {
-  .footer__form {
     flex: 1 1 100%;
     max-width: 100%;
     margin-top: 20px;
@@ -1021,28 +1070,10 @@ body {
   }
 }
 .footer__form h3 {
-  font-family: "Poppins", sans-serif;
+  font-family: "Proxima";
   font-size: 18px;
-  position: absolute;
-  top: -39px;
+  margin-bottom: 18px;
   text-transform: capitalize;
-}
-@media (max-width: 1099px) {
-  .footer__form h3 {
-    top: -20px;
-  }
-}
-@media (max-width: 992px) {
-  .footer__form h3 {
-    top: -10px;
-  }
-}
-@media (max-width: 576px) {
-  .footer__form h3 {
-    width: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-  }
 }
 .footer__form form {
   position: relative;
@@ -1077,7 +1108,7 @@ body {
   width: 100%;
   display: block;
   padding: 13px 0;
-  font-family: "Poppins";
+  font-family: "Proxima";
   font-weight: 400;
   font-size: 17px;
   color: #9b9b9b;
@@ -1092,13 +1123,13 @@ body {
   }
 }
 .footer__form input::-moz-placeholder {
-  font-family: "Poppins";
+  font-family: "Proxima";
   font-weight: 400;
   font-size: 17px;
   color: #9b9b9b;
 }
 .footer__form input::placeholder {
-  font-family: "Poppins";
+  font-family: "Proxima";
   font-weight: 400;
   font-size: 17px;
   color: #9b9b9b;
@@ -1136,7 +1167,7 @@ body {
   }
 }
 .cart-top h3 {
-  font-family: "Poppins", sans-serif;
+  font-family: "Proxima";
   font-weight: 400;
   font-size: 17px;
 }
@@ -1164,9 +1195,12 @@ body {
 }
 .cart-sec .cart-collaterals h2 {
   font-size: 17px;
-  font-family: "Poppins", sans-serif;
+  font-family: "Proxima";
   font-weight: 400;
   margin-bottom: 31px;
+}
+.cart-sec .cart-collaterals .shipping {
+  flex-wrap: wrap;
 }
 .cart-sec .cart-collaterals .cart-block {
   margin-bottom: 15px;
@@ -1276,7 +1310,8 @@ body {
 .cart .woocommerce-cart-form__cart-item .product-name h2 {
   margin-bottom: 4px;
   font-size: 20px;
-  font-family: "Lora";
+  font-family: "adobe-caslon-pro", serif;
+  letter-spacing: normal;
   color: #010005;
   text-transform: capitalize;
 }
@@ -1381,7 +1416,7 @@ body {
 .checkout-sec__title {
   margin-bottom: 27px;
   font-size: 19px;
-  font-family: "Poppins", sans-serif;
+  font-family: "Proxima";
 }
 .checkout-sec form.woocommerce-checkout {
   display: grid;
@@ -1431,7 +1466,7 @@ body {
 }
 .checkout-sec .woocommerce-billing-fields__field-wrapper .select2 span {
   border: none;
-  font-family: "Poppins";
+  font-family: "Proxima";
   font-weight: 400;
   font-size: 17px;
   padding-left: 0;
@@ -1449,7 +1484,7 @@ body {
   border-bottom: 1px solid #9b9b9b;
   padding: 8px 0 15px;
   background: transparent;
-  font-family: "Poppins";
+  font-family: "Proxima";
   font-weight: 400;
   font-size: 17px;
   color: #010005;
@@ -1467,14 +1502,14 @@ body {
   border-color: #010005;
 }
 .checkout-sec .woocommerce-billing-fields__field-wrapper input::-moz-placeholder, .checkout-sec .woocommerce-billing-fields__field-wrapper .select2::-moz-placeholder {
-  font-family: "Poppins";
+  font-family: "Proxima";
   font-weight: 400;
   font-size: 17px;
   color: #9b9b9b;
 }
 .checkout-sec .woocommerce-billing-fields__field-wrapper input::placeholder,
 .checkout-sec .woocommerce-billing-fields__field-wrapper .select2::placeholder {
-  font-family: "Poppins";
+  font-family: "Proxima";
   font-weight: 400;
   font-size: 17px;
   color: #9b9b9b;
@@ -1509,7 +1544,7 @@ body {
 .checkout-sec .woocommerce-checkout-review-order .payment_method_stripe > label {
   margin-bottom: 27px;
   font-size: 19px;
-  font-family: "Poppins", sans-serif;
+  font-family: "Proxima";
   color: #000000;
   display: block;
 }
@@ -1525,7 +1560,7 @@ body {
   border-bottom: 1px solid #9b9b9b !important;
   padding: 8px 0 15px;
   background: transparent;
-  font-family: "Poppins";
+  font-family: "Proxima";
   font-weight: 400;
   font-size: 17px;
   color: #010005;
@@ -1606,7 +1641,8 @@ body {
   color: #010005;
   font-weight: 400;
   text-transform: capitalize;
-  font-family: "Lora";
+  font-family: "adobe-caslon-pro", serif;
+  letter-spacing: normal;
 }
 @media (max-width: 576px) {
   .checkout-sec .checkout-products .cart_item h4 {
@@ -1643,4 +1679,112 @@ body {
   top: 0;
   right: 15px;
   color: #df2828;
+}
+
+.woocommerce-shipping-calculator {
+  flex: 1 1 100%;
+  margin-top: 10px;
+}
+.woocommerce-shipping-calculator button[type=submit] {
+  display: block;
+  margin: 25px auto 0;
+  width: calc(100% - 200px);
+  text-align: center;
+  background: #010005;
+  color: #fff;
+  padding: 13px;
+  border: none;
+  font-weight: 500;
+  font-size: 17px;
+  border-radius: 47px;
+}
+@media (max-width: 576px) {
+  .woocommerce-shipping-calculator button[type=submit] {
+    width: 100%;
+  }
+}
+.woocommerce-shipping-calculator .select2 span {
+  border: none;
+  font-family: "Proxima";
+  font-weight: 400;
+  font-size: 17px;
+  padding-left: 0;
+  color: #9b9b9b;
+}
+@media (max-width: 576px) {
+  .woocommerce-shipping-calculator .select2 span {
+    font-size: 14px;
+  }
+}
+.woocommerce-shipping-calculator input,
+.woocommerce-shipping-calculator .select2 {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #9b9b9b;
+  padding: 8px 0 15px;
+  background: transparent;
+  font-family: "Proxima";
+  font-weight: 400;
+  font-size: 17px;
+  color: #010005;
+  transition: color 0.3s, border 0.3s;
+}
+@media (max-width: 576px) {
+  .woocommerce-shipping-calculator input,
+  .woocommerce-shipping-calculator .select2 {
+    font-size: 14px;
+    padding: 15px;
+  }
+}
+.woocommerce-shipping-calculator input:focus-visible,
+.woocommerce-shipping-calculator .select2:focus-visible {
+  border-color: #010005;
+}
+.woocommerce-shipping-calculator input::-moz-placeholder, .woocommerce-shipping-calculator .select2::-moz-placeholder {
+  font-family: "Proxima";
+  font-weight: 400;
+  font-size: 17px;
+  color: #9b9b9b;
+}
+.woocommerce-shipping-calculator input::placeholder,
+.woocommerce-shipping-calculator .select2::placeholder {
+  font-family: "Proxima";
+  font-weight: 400;
+  font-size: 17px;
+  color: #9b9b9b;
+}
+@media (max-width: 576px) {
+  .woocommerce-shipping-calculator input::-moz-placeholder, .woocommerce-shipping-calculator .select2::-moz-placeholder {
+    font-size: 14px;
+  }
+  .woocommerce-shipping-calculator input::placeholder,
+  .woocommerce-shipping-calculator .select2::placeholder {
+    font-size: 14px;
+  }
+}
+
+.thank {
+  text-align: center;
+}
+.thank .container {
+  max-width: 600px;
+  border-top: 1px solid #010005;
+  border-bottom: 1px solid #010005;
+  padding-top: 45px;
+  padding-bottom: 45px;
+}
+.thank p {
+  margin-top: 10px;
+}
+
+.woocommerce-order-received main {
+  flex: 1 1 100%;
+  display: flex;
+  flex-direction: column;
+}
+.woocommerce-order-received .woocommerce {
+  flex: 1 1 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
