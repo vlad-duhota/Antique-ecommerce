@@ -327,3 +327,33 @@ function misha_one_err( $fields, $errors ){
  
 }
 
+add_filter('woocommerce_get_availability_text', 'themeprefix_change_soldout', 10, 2 );
+
+/**
+* Change Sold Out Text to Something Else
+*/
+function themeprefix_change_soldout ( $text, $product) {
+if ( !$product->is_in_stock() ) {
+$text = 'Sold';
+}
+return $text;
+}
+
+function filter_woocommerce_get_catalog_ordering_args( $args, $orderby, $order ) {
+	switch( $orderby ) {
+	case 'availability':
+	$args['orderby'] = 'meta_value_num';
+	$args['order'] = 'DESC';
+	$args['meta_key'] = '_stock';
+	break;
+	}
+	return $args;
+	}
+	add_filter( 'woocommerce_get_catalog_ordering_args', 'filter_woocommerce_get_catalog_ordering_args', 10, 3 );
+	// Orderby setting
+	function filter_orderby( $orderby ) {
+	$orderby['availability'] = __( 'Availability', 'woocommerce' );
+	return $orderby;
+	}
+	add_filter( 'woocommerce_default_catalog_orderby_options', 'filter_orderby', 10, 1 );
+	add_filter( 'woocommerce_catalog_orderby', 'filter_orderby', 10, 1 );

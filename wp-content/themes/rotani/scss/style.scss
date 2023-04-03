@@ -279,6 +279,10 @@ body {
             }
         }
         .product {
+            .out-of-stock {
+                opacity: 0.4;
+                cursor: disabled;
+            }
             display: flex;
             align-items: center;
             padding: 23px 0;
