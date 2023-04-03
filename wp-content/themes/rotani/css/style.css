@@ -301,6 +301,10 @@ body {
   padding: 23px 0;
   border-bottom: 1px solid #d9d9d9;
 }
+.shop-sec .products .product .out-of-stock {
+  opacity: 0.4;
+  cursor: disabled;
+}
 @media (max-width: 768px) {
   .shop-sec .products .product {
     display: block;
