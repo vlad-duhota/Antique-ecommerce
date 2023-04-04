@@ -136,6 +136,9 @@ body {
 
 .shop-sec {
     &__banner {
+        h1 {
+            text-transform: none;
+        }
         &-img {
             width: 100%;
             height: auto;
