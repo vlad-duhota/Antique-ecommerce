@@ -1229,7 +1229,7 @@ body {
 .cart-sec .cart-collaterals .order-total p {
   font-size: 25px;
 }
-.cart-sec .cart-collaterals .checkout-button {
+.cart-sec .cart-collaterals .checkout-btn {
   display: block;
   margin: 25px auto 0;
   width: calc(100% - 30px);
