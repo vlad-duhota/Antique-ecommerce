@@ -103,9 +103,135 @@ defined( 'ABSPATH' ) || exit;
 
 	</div>
 
-	<div class="wc-proceed-to-checkout">
-		<?php do_action( 'woocommerce_proceed_to_checkout' ); ?>
-	</div>
+	<!-- <div class="wc-proceed-to-checkout"> -->
+	<!-- do_action('woocommerce_proceed_to_checkout') -->
+	<!-- </div> -->
+	<?php
+		$objects = "objects:[";
+			foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
+				$_product   = apply_filters( 'woocommerce_cart_item_product', $cart_item['data'], $cart_item, $cart_item_key );
+				$product_id = apply_filters( 'woocommerce_cart_item_product_id', $cart_item['product_id'], $cart_item, $cart_item_key );
+
+				if ( $_product && $_product->exists() && $cart_item['quantity'] > 0 && apply_filters( 'woocommerce_cart_item_visible', true, $cart_item, $cart_item_key ) ) {
+					$product_permalink = apply_filters( 'woocommerce_cart_item_permalink', $_product->is_visible() ? $_product->get_permalink( $cart_item ) : '', $cart_item, $cart_item_key );
+					?>
+
+						<?php
+						$thumbnail = apply_filters( 'woocommerce_cart_item_thumbnail', $_product->get_image(), $cart_item, $cart_item_key );
+						if ($product_permalink )
+						$objects .= '   {
+							"current_packing": [
+							  "no_packing"
+							],
+							"depth": "3",
+							"details": {
+							  "creation_date": "1980",
+							  "creator": "Bob Smithson",
+							  "notes": "Artist signature in the lower left corner",
+							  "title":' . "'" . wp_kses_post( apply_filters( 'woocommerce_cart_item_name', $_product->get_name())) . "'" . '
+							},
+							"height": "32",
+							"subtype": "painting_unframed",
+							"width": "15",
+							"unit_of_measurement": "in",
+							"weight": "3.0",
+							"weight_unit": "lb",
+							"value": "75000",
+							"value_currency": "USD"
+						  }'
+						?>
+
+					
+					
+
+					<?php
+				}
+			}
+			?>
+
+
+<?php
+	$objects .= "]";
+
+$url = "https://api.arta.io/hosted_sessions";
+
+$curl = curl_init($url);
+curl_setopt($curl, CURLOPT_URL, $url);
+curl_setopt($curl, CURLOPT_POST, true);
+curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+
+$headers = array(
+   "Content-Type: application/json",
+   "Authorization: ARTA_APIKey KVAo7YRbeJz5jn3oDeTFD7Gq",
+);
+curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
+
+$data = <<<DATA
+{
+  "hosted_session": {
+    "additional_services": [
+      "signature_delivery"
+    ],
+    "cancel_url": "http://example.com/cancelled",
+    "insurance": "arta_transit_insurance",
+    "internal_reference": "Purchase Order: 2801",
+    "objects": [
+      {
+        "current_packing": [
+          "no_packing"
+        ],
+        "depth": "3",
+        "details": {
+          "creation_date": "1980",
+          "creator": "Bob Smithson",
+          "notes": "Artist signature in the lower left corner",
+          "title": "Black Rectangle"
+        },
+        "height": "32",
+        "subtype": "painting_unframed",
+        "width": "15",
+        "unit_of_measurement": "in",
+        "weight": "3.0",
+        "weight_unit": "lb",
+        "value": "75000",
+        "value_currency": "USD"
+      }
+    ],
+    "origin": {
+      "address_line_1": "11 W 53rd St",
+      "city": "New York",
+      "contacts": [
+        {
+          "email_address": "mary@example.com",
+          "name": "Mary Quinn Sullivan",
+          "phone_number": "(333) 333-3333"
+        }
+      ],
+      "country": "US",
+      "postal_code": "10019",
+      "region": "NY"
+    },
+    "preferred_quote_types": ["premium", "select", "parcel"],
+    "public_reference": "Order #1437",
+    "shipping_notes": "New customer",
+    "success_url": "http://example.com/success"
+  }
+}
+DATA;
+
+curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
+
+//for debug only!
+curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
+curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+
+$resp = curl_exec($curl);
+curl_close($curl);
+
+?>
+<a class="checkout-btn" href="<?php echo json_decode($resp)->url?>">Checkout</a>
+
+
 
 	<?php do_action( 'woocommerce_after_cart_totals' ); ?>
 

@@ -357,3 +357,4 @@ function filter_woocommerce_get_catalog_ordering_args( $args, $orderby, $order )
 	}
 	add_filter( 'woocommerce_default_catalog_orderby_options', 'filter_orderby', 10, 1 );
 	add_filter( 'woocommerce_catalog_orderby', 'filter_orderby', 10, 1 );
+
