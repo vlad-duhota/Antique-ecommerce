@@ -2,7 +2,8 @@
 <html <?php language_attributes() ?>>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://use.typekit.net/ita2fvt.css">
+    <link href="https://fonts.cdnfonts.com/css/bentonsans-regular" rel="stylesheet">
+    <link href="//db.onlinewebfonts.com/c/8faaa6cd5665d29fd22add73734fa4f8?family=Mercury+Display" rel="stylesheet" type="text/css"/>
     <!-- <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500&family=Poppins:wght@400;500&display=swap" rel="stylesheet"> -->
     <?php wp_head() ?>
     

@@ -1,7 +1,6 @@
     </main>
     <footer class="footer">
         <div class="container">
-        <div class="footer-top">
                 <ul class="footer__socials">
                     <?php foreach(carbon_get_theme_option('footer_socials') as $item) : ?>
                         <li>
@@ -13,8 +12,15 @@
                     <?php endforeach;?>
                 </ul>
                 <div class="footer-center">
-                    <p>©<?php the_date('Y')?> Ronati Antiques. All Rights Reserved </p>
+                <a href="<?php echo get_home_url(); ?>" class="header__logo">
+                    <?php $custom_logo_id = get_theme_mod( 'custom_logo' ); ?>
+                    <?php echo wp_get_attachment_image( $custom_logo_id, 'full' ); ?>
+                </a>
+                <div class="footer-center__info">
+                <p>©<?php the_date('Y')?> Ronati Antiques. All Rights Reserved </p>
                     <a href="<?php echo get_home_url()?>/terms">Terms and conditions</a>
+                </div>
+                  
                 </div>
                 <!-- <a href="<?php echo get_home_url(); ?>" class="footer__logo">
                     <?php $custom_logo_id = get_theme_mod( 'custom_logo' ); ?>
@@ -25,7 +31,6 @@
                     <?php echo do_shortcode('[contact-form-7 id="25" title="Footer form"]')?>
                 </div>
             </div>
-        </div>
     </footer>
 </div>
 
