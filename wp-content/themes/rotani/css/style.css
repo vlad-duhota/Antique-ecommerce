@@ -1,14 +1,4 @@
 @charset "UTF-8";
-@font-face {
-  font-family: "Proxima";
-  src: url("../fonts/proximanova_regular.woff");
-  font-weight: 400;
-}
-@font-face {
-  font-family: "Proxima";
-  src: url("../fonts/proximanova_bold.woff");
-  font-weight: 700;
-}
 * {
   margin: 0;
   padding: 0;
@@ -37,7 +27,7 @@ input:not(.tel-input):focus::placeholder {
 h1,
 h2,
 h3 {
-  font-family: "adobe-caslon-pro", serif;
+  font-family: "Mercury Display", serif;
   font-weight: 400;
   color: #010005;
   letter-spacing: normal;
@@ -76,7 +66,7 @@ h3 {
 }
 
 body {
-  font-family: "Proxima";
+  font-family: "BentonSans Regular", sans-serif;
   font-weight: 400;
   font-size: 17px;
   color: #777777;
@@ -134,7 +124,6 @@ body {
 .shop-sec__banner-img {
   width: 100%;
   height: auto;
-  border-radius: 35px;
   margin-bottom: 64px;
 }
 @media (max-width: 1099px) {
@@ -239,7 +228,7 @@ body {
   display: flex;
 }
 .shop-sec .time_circles span {
-  font-family: "adobe-caslon-pro", serif !important;
+  font-family: "Mercury Display", serif !important;
   letter-spacing: normal;
   font-weight: 400;
   font-size: 58px !important;
@@ -305,8 +294,9 @@ body {
   border-bottom: 1px solid #d9d9d9;
 }
 .shop-sec .products .product .out-of-stock {
-  opacity: 0.4;
-  cursor: disabled;
+  background: #010005 !important;
+  color: #fff !important;
+  border: 1px solid #fff !important;
 }
 @media (max-width: 768px) {
   .shop-sec .products .product {
@@ -342,7 +332,7 @@ body {
 }
 .shop-sec .products .product__right .added_to_cart {
   background: #010005;
-  border-radius: 47px;
+  border: 1px solid #fff;
   padding: 13px 27px;
   display: inline-flex;
   justify-content: center;
@@ -365,14 +355,14 @@ body {
   display: none;
 }
 .shop-sec .products .product__right .add_to_cart_button {
-  background: #010005;
-  border-radius: 47px;
+  border: 1px solid #010005;
+  background: #fff;
   padding: 13px 27px;
   align-items: center;
   display: inline-flex;
   justify-content: center;
   gap: 14px;
-  color: #fff;
+  color: #010005;
 }
 @media (max-width: 576px) {
   .shop-sec .products .product__right .add_to_cart_button {
@@ -414,7 +404,6 @@ body {
   }
 }
 .shop-sec .products .product__left img {
-  border-radius: 15px;
   width: 100%;
   height: auto;
 }
@@ -444,7 +433,6 @@ body {
   margin-top: 15px;
   padding: 14px 20px;
   background: rgba(255, 0, 0, 0.07);
-  border-radius: 47px;
   color: #df2828;
   font-size: 16px;
 }
@@ -573,7 +561,6 @@ body {
   width: 100%;
   height: 100%;
   background: #fff;
-  border-radius: 25px;
   max-width: 1300px;
   overflow: hidden;
 }
@@ -685,7 +672,6 @@ body {
 }
 .pop-up .swiper-slide {
   overflow: hidden;
-  border-radius: 15px;
   cursor: pointer;
 }
 .pop-up .swiper-slide img {
@@ -694,7 +680,6 @@ body {
   display: block;
   -o-object-fit: cover;
      object-fit: cover;
-  border-radius: 15px;
 }
 @media (max-width: 900px) {
   .pop-up .swiper-slide img {
@@ -750,7 +735,6 @@ body {
   gap: 18px;
   color: #010005;
   border: 1px solid #000000;
-  border-radius: 47px;
   padding: 13px 40px;
   background: #fff;
   text-transform: capitalize;
@@ -783,7 +767,7 @@ body {
   }
 }
 .pop-up .product-details__title {
-  font-family: "Proxima";
+  font-family: "BentonSans Regular";
   font-size: 20px;
   margin-bottom: 8px;
 }
@@ -827,7 +811,6 @@ body {
   gap: 18px;
   color: #010005;
   border: 1px solid #000000;
-  border-radius: 47px;
   padding: 13px 40px;
   background: #fff;
   text-transform: capitalize;
@@ -854,7 +837,6 @@ body {
   gap: 18px;
   color: #010005;
   border: 1px solid #000000;
-  border-radius: 47px;
   padding: 13px 40px;
   background: #fff;
   text-transform: capitalize;
@@ -889,7 +871,7 @@ body {
   display: none;
 }
 .pop-up .info-title {
-  font-family: "Proxima";
+  font-family: "BentonSans Regular";
   font-size: 20px;
   margin-bottom: 19px;
 }
@@ -969,47 +951,51 @@ body {
 }
 
 .footer {
-  padding: 47px 0;
   margin-top: auto;
+  padding-top: 80px;
 }
 .footer-center {
-  display: flex;
-  flex-direction: column;
   text-align: center;
-  align-items: center;
-  gap: 20px;
-  max-width: 225px;
 }
-.footer-top {
-  background: rgba(229, 229, 229, 0.22);
-  border-radius: 31px;
-  padding: 50px;
+.footer-center__info {
+  display: flex;
+  margin-top: 15px;
+  flex-direction: column;
+  gap: 15px;
+}
+@media (min-width: 1200px) {
+  .footer-center__info {
+    margin-top: 20px;
+    flex-direction: row;
+    gap: 26px;
+  }
+}
+.footer .container {
+  position: relative;
+  padding-top: 37px;
+  padding-bottom: 30px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-@media (min-width: 1099px) {
-  .footer-top {
-    min-height: 192px;
-  }
-}
-@media (max-width: 1099px) {
-  .footer-top {
-    padding: 30px 15px;
-  }
-}
-@media (max-width: 576px) {
-  .footer-top {
-    padding: 15px;
-  }
+.footer .container::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 30px);
+  height: 2px;
+  background: #010005;
 }
 @media (max-width: 992px) {
-  .footer-top {
+  .footer .container {
     flex-wrap: wrap;
   }
 }
 @media (max-width: 576px) {
-  .footer-top {
+  .footer .container {
     justify-content: center;
   }
 }
@@ -1036,7 +1022,7 @@ body {
 .footer__socials {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 25px;
 }
 @media (max-width: 576px) {
   .footer__socials {
@@ -1044,12 +1030,6 @@ body {
     justify-content: center;
     margin-bottom: 20px;
   }
-}
-.footer__socials li {
-  width: 39px;
-  height: 39px;
-  border-radius: 50%;
-  border: 1px solid #010005;
 }
 .footer__socials a {
   display: flex;
@@ -1077,7 +1057,7 @@ body {
   }
 }
 .footer__form h3 {
-  font-family: "Proxima";
+  font-family: "BentonSans Regular";
   font-size: 18px;
   margin-bottom: 18px;
   text-transform: capitalize;
@@ -1115,7 +1095,7 @@ body {
   width: 100%;
   display: block;
   padding: 13px 0;
-  font-family: "Proxima";
+  font-family: "BentonSans Regular";
   font-weight: 400;
   font-size: 17px;
   color: #9b9b9b;
@@ -1130,13 +1110,13 @@ body {
   }
 }
 .footer__form input::-moz-placeholder {
-  font-family: "Proxima";
+  font-family: "BentonSans Regular";
   font-weight: 400;
   font-size: 17px;
   color: #9b9b9b;
 }
 .footer__form input::placeholder {
-  font-family: "Proxima";
+  font-family: "BentonSans Regular";
   font-weight: 400;
   font-size: 17px;
   color: #9b9b9b;
@@ -1153,7 +1133,6 @@ body {
   position: absolute;
   width: 40px;
   background: #010005;
-  border-radius: 47px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1174,7 +1153,7 @@ body {
   }
 }
 .cart-top h3 {
-  font-family: "Proxima";
+  font-family: "BentonSans Regular";
   font-weight: 400;
   font-size: 17px;
 }
@@ -1193,7 +1172,6 @@ body {
 .cart-sec .cart-collaterals {
   padding: 18px 28px 36px 28px;
   border: 1px solid #d9d9d9;
-  border-radius: 25px;
 }
 @media (max-width: 1400px) {
   .cart-sec .cart-collaterals {
@@ -1202,7 +1180,7 @@ body {
 }
 .cart-sec .cart-collaterals h2 {
   font-size: 17px;
-  font-family: "Proxima";
+  font-family: "BentonSans Regular";
   font-weight: 400;
   margin-bottom: 31px;
 }
@@ -1232,7 +1210,7 @@ body {
 .cart-sec .cart-collaterals .order-total p {
   font-size: 25px;
 }
-.cart-sec .cart-collaterals .checkout-btn {
+.cart-sec .cart-collaterals .checkout-button {
   display: block;
   margin: 25px auto 0;
   width: calc(100% - 30px);
@@ -1240,11 +1218,9 @@ body {
   background: #010005;
   color: #fff;
   padding: 13px;
-  border-radius: 47px;
 }
 .cart-sec .woocommerce-cart-form__contents {
   border: 1px solid #d9d9d9;
-  border-radius: 25px;
   padding: 20px 28px;
 }
 @media (max-width: 1400px) {
@@ -1299,7 +1275,6 @@ body {
   display: block;
   width: 100%;
   height: auto;
-  border-radius: 15px;
 }
 .cart .woocommerce-cart-form__cart-item .product-name {
   flex: 1 1 100%;
@@ -1317,7 +1292,7 @@ body {
 .cart .woocommerce-cart-form__cart-item .product-name h2 {
   margin-bottom: 4px;
   font-size: 20px;
-  font-family: "adobe-caslon-pro", serif;
+  font-family: "Mercury Display", serif;
   letter-spacing: normal;
   color: #010005;
   text-transform: capitalize;
@@ -1423,7 +1398,7 @@ body {
 .checkout-sec__title {
   margin-bottom: 27px;
   font-size: 19px;
-  font-family: "Proxima";
+  font-family: "BentonSans Regular";
 }
 .checkout-sec form.woocommerce-checkout {
   display: grid;
@@ -1473,7 +1448,7 @@ body {
 }
 .checkout-sec .woocommerce-billing-fields__field-wrapper .select2 span {
   border: none;
-  font-family: "Proxima";
+  font-family: "BentonSans Regular";
   font-weight: 400;
   font-size: 17px;
   padding-left: 0;
@@ -1491,7 +1466,7 @@ body {
   border-bottom: 1px solid #9b9b9b;
   padding: 8px 0 15px;
   background: transparent;
-  font-family: "Proxima";
+  font-family: "BentonSans Regular";
   font-weight: 400;
   font-size: 17px;
   color: #010005;
@@ -1509,14 +1484,14 @@ body {
   border-color: #010005;
 }
 .checkout-sec .woocommerce-billing-fields__field-wrapper input::-moz-placeholder, .checkout-sec .woocommerce-billing-fields__field-wrapper .select2::-moz-placeholder {
-  font-family: "Proxima";
+  font-family: "BentonSans Regular";
   font-weight: 400;
   font-size: 17px;
   color: #9b9b9b;
 }
 .checkout-sec .woocommerce-billing-fields__field-wrapper input::placeholder,
 .checkout-sec .woocommerce-billing-fields__field-wrapper .select2::placeholder {
-  font-family: "Proxima";
+  font-family: "BentonSans Regular";
   font-weight: 400;
   font-size: 17px;
   color: #9b9b9b;
@@ -1551,7 +1526,7 @@ body {
 .checkout-sec .woocommerce-checkout-review-order .payment_method_stripe > label {
   margin-bottom: 27px;
   font-size: 19px;
-  font-family: "Proxima";
+  font-family: "BentonSans Regular";
   color: #000000;
   display: block;
 }
@@ -1567,7 +1542,7 @@ body {
   border-bottom: 1px solid #9b9b9b !important;
   padding: 8px 0 15px;
   background: transparent;
-  font-family: "Proxima";
+  font-family: "BentonSans Regular";
   font-weight: 400;
   font-size: 17px;
   color: #010005;
@@ -1580,7 +1555,6 @@ body {
 }
 .checkout-sec .woocommerce-checkout-review-order > .checkout-review {
   border: 1px solid #d9d9d9;
-  border-radius: 25px;
   padding: 28px;
 }
 @media (max-width: 1099px) {
@@ -1623,7 +1597,6 @@ body {
   border: none;
   font-weight: 500;
   font-size: 17px;
-  border-radius: 47px;
 }
 @media (max-width: 576px) {
   .checkout-sec .woocommerce-checkout-review-order .button {
@@ -1640,7 +1613,6 @@ body {
 .checkout-sec .checkout-products .cart_item img {
   width: 120px;
   height: auto;
-  border-radius: 15px;
 }
 .checkout-sec .checkout-products .cart_item h4 {
   font-size: 20px;
@@ -1648,7 +1620,7 @@ body {
   color: #010005;
   font-weight: 400;
   text-transform: capitalize;
-  font-family: "adobe-caslon-pro", serif;
+  font-family: "Mercury Display", serif;
   letter-spacing: normal;
 }
 @media (max-width: 576px) {
@@ -1703,7 +1675,6 @@ body {
   border: none;
   font-weight: 500;
   font-size: 17px;
-  border-radius: 47px;
 }
 @media (max-width: 576px) {
   .woocommerce-shipping-calculator button[type=submit] {
@@ -1712,7 +1683,7 @@ body {
 }
 .woocommerce-shipping-calculator .select2 span {
   border: none;
-  font-family: "Proxima";
+  font-family: "BentonSans Regular";
   font-weight: 400;
   font-size: 17px;
   padding-left: 0;
@@ -1730,7 +1701,7 @@ body {
   border-bottom: 1px solid #9b9b9b;
   padding: 8px 0 15px;
   background: transparent;
-  font-family: "Proxima";
+  font-family: "BentonSans Regular";
   font-weight: 400;
   font-size: 17px;
   color: #010005;
@@ -1748,14 +1719,14 @@ body {
   border-color: #010005;
 }
 .woocommerce-shipping-calculator input::-moz-placeholder, .woocommerce-shipping-calculator .select2::-moz-placeholder {
-  font-family: "Proxima";
+  font-family: "BentonSans Regular";
   font-weight: 400;
   font-size: 17px;
   color: #9b9b9b;
 }
 .woocommerce-shipping-calculator input::placeholder,
 .woocommerce-shipping-calculator .select2::placeholder {
-  font-family: "Proxima";
+  font-family: "BentonSans Regular";
   font-weight: 400;
   font-size: 17px;
   color: #9b9b9b;
