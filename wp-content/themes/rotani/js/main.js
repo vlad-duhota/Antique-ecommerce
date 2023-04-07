@@ -206,3 +206,32 @@ $('.product .add_to_cart_button').on('click', function (e) {
 
 })
 
+$('.cart-sec .remove').on('click', function () {
+  setTimeout(function () {
+    $.ajax({
+      url: '/wp-admin/admin-ajax.php',
+      type: 'GET',
+      data: {
+        action: 'cart_ajax_call',
+      },
+      success: function (res) {
+        console.log(res);
+        if (parseInt(res) === 0) {
+          $.ajax({
+            url: '/wp-admin/admin-ajax.php',
+            type: 'GET',
+            data: {
+              action: 'empty_ajax_call',
+            },
+            success: function (res) {
+              document.querySelector('main').innerHTML = res;
+            }
+          });
+        }
+      }
+    });
+  }, 2000)
+})
+
+
+

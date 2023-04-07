@@ -358,3 +358,31 @@ function filter_woocommerce_get_catalog_ordering_args( $args, $orderby, $order )
 	add_filter( 'woocommerce_default_catalog_orderby_options', 'filter_orderby', 10, 1 );
 	add_filter( 'woocommerce_catalog_orderby', 'filter_orderby', 10, 1 );
 
+
+
+	function empty_ajax_call(){?>
+	<section class="cart-sec return">
+		<div class="container">
+			Your cart is empty.
+			<?php if ( wc_get_page_id( 'shop' ) > 0 ) : ?>
+				<p class="return-to-shop">
+					<a class="button wc-backward<?php echo esc_attr( wc_wp_theme_get_element_class_name( 'button' ) ? ' ' . wc_wp_theme_get_element_class_name( 'button' ) : '' ); ?>" href="<?php echo esc_url( apply_filters( 'woocommerce_return_to_shop_redirect', wc_get_page_permalink( 'shop' ) ) ); ?>">
+						<?php
+							/**
+							 * Filter "Return To Shop" text.
+							 *
+							 * @since 4.6.0
+							 * @param string $default_text Default text.
+							 */
+							echo esc_html( apply_filters( 'woocommerce_return_to_shop_text', __( 'Click here to browse items to add to your cart', 'woocommerce' ) ) );
+						?>
+					</a>
+				</p>
+			<?php endif; ?>
+			</div>
+		</section>
+		<?php
+		wp_die();// this is required to terminate immediately and return a proper response
+	}
+	add_action('wp_ajax_empty_ajax_call', 'empty_ajax_call'); // for logged in users only
+	add_action('wp_ajax_nopriv_empty_ajax_call', 'empty_ajax_call'); // for ALL users
