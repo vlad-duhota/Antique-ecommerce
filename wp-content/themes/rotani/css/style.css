@@ -724,9 +724,9 @@ body {
     margin: 15px 0;
   }
 }
-.pop-up .stock {
+.pop-up .stock,
+.pop-up .view-cart {
   margin-top: auto;
-  margin-bottom: 18px;
   display: inline-flex;
   max-width: 224px;
   width: 100%;
@@ -742,14 +742,16 @@ body {
   font-weight: 400;
 }
 @media (max-width: 992px) {
-  .pop-up .stock {
+  .pop-up .stock,
+  .pop-up .view-cart {
     min-width: none;
     width: calc(50% - 10px);
     padding: 13px 20px;
   }
 }
 @media (max-width: 576px) {
-  .pop-up .stock {
+  .pop-up .stock,
+  .pop-up .view-cart {
     width: 100%;
   }
 }

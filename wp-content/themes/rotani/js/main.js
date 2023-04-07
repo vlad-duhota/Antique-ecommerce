@@ -205,3 +205,4 @@ $('.product .add_to_cart_button').on('click', function (e) {
   }, 4000)
 
 })
+
