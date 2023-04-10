@@ -83,32 +83,63 @@ function start_arta_shipping_method() {
 			 * @return void
 			 */
 			public function calculate_shipping( $package = array() ) {
-				//$weight = 0;
+				$txt = '';
 				$cost   = 0;
 
 				foreach ( $package['contents'] as $item_id => $values ){
 					$_product = $values['data'];
 					//$weight   = $weight + $_product->get_weight() * $values['quantity'];
-					$cost     += $this->arta_request_cost( 1, 1, $_product->get_weight() )  * $values['quantity'];
+					//$cost     += $this->arta_request_cost( 1, 1, $_product->get_weight() ) * $values['quantity'];
+
+					$width           = $_product->get_width();
+					$height          = $_product->get_height();
+					$length          = $_product->get_length();
+					$weight          = $_product->get_weight();
+					$product_country = carbon_get_post_meta( 44, 'product_country' );
+					$product_region  = carbon_get_post_meta( 44, 'product_region' );
+					$product_city    = carbon_get_post_meta( 44, 'product_city' );
+					$product_postal  = carbon_get_post_meta( 44, 'product_postal' );
+					$product_address = carbon_get_post_meta( 44, 'product_address' );
+
+					$cost += self::arta_request_cost( $width, $height, $length, $weight, $product_country, $product_region, $product_city, $product_postal, $product_address );
 				}
 				//$weight = wc_get_weight( $weight, 'kg' );
 
 				$rate = array(
 					'id'    => $this->id,
 					'label' => $this->title,
-					'cost'  => $cost
+					'cost'  => $cost,
 				);
 
 				$this->add_rate( $rate );
 			}
 
-			public function arta_request_cost( $width=0, $height=0, $weight=0 ){
+			public static function arta_request_cost( $width=0, $height=0, $length=0, $weight=0, $product_country='', $product_region='', $product_city='', $product_postal='', $product_address='' ){
+				$js_request = '';
 				$ARTA_Shipping_Method = new Arta_Shipping_Method();
+				$arta_api_url = 'https://api.arta.io/requests';
+				$width        = (float)$width;
+				$height       = (float)$height;
+				$length       = (float)$length;
+				$weight       = (float)$weight;
+				$arta_apikey  = $ARTA_Shipping_Method->settings['apikey'];
 
-				$width       = (float)$width;
-				$height      = (float)$height;
-				$weight      = (float)$weight;
-				$ARTA_apikey = $ARTA_Shipping_Method->settings['apikey'];
+				$response = wp_remote_post( $arta_api_url, array(
+					'timeout'     => 6000,
+					'redirection' => 5,
+					'httpversion' => '1.0',
+					'blocking'    => true,
+					'headers'     => array('content-type'=>'application/json', 'Authorization'=>'ARTA_APIKey '.$arta_apikey, 'Arta-Quote-Timeout'=>6000, ),
+					'body'        => $js_request,
+					'cookies'     => array(),
+					'method'      => 'POST',
+					'data_format' => 'body',
+				) );
+				if ( is_wp_error( $response ) ) {
+					// $response->get_error_message();
+				} else {
+					$data = json_decode( $response['body'] );
+				}
 
 				return (float)10;
 			}
