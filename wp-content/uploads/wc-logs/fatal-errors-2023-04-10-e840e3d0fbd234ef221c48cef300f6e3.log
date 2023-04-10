@@ -1,0 +1,26 @@
+2023-04-10T13:58:41+00:00 CRITICAL Uncaught TypeError: json_decode(): Argument #1 ($json) must be of type string, array given in /var/www/test5/wp-content/themes/rotani/header.php:59
+Stack trace:
+#0 /var/www/test5/wp-content/themes/rotani/header.php(59): json_decode()
+#1 /var/www/test5/wp-includes/template.php(783): require_once('...')
+#2 /var/www/test5/wp-includes/template.php(718): load_template()
+#3 /var/www/test5/wp-includes/general-template.php(48): locate_template()
+#4 /var/www/test5/wp-content/themes/rotani/woocommerce/archive-product.php(20): get_header()
+#5 /var/www/test5/wp-includes/template-loader.php(106): include('...')
+#6 /var/www/test5/wp-blog-header.php(19): require_once('...')
+#7 /var/www/test5/index.php(17): require('...')
+#8 {main}
+  thrown in /var/www/test5/wp-content/themes/rotani/header.php on line 59
+
+2023-04-10T13:58:58+00:00 CRITICAL Uncaught TypeError: json_decode(): Argument #1 ($json) must be of type string, array given in /var/www/test5/wp-content/themes/rotani/header.php:59
+Stack trace:
+#0 /var/www/test5/wp-content/themes/rotani/header.php(59): json_decode()
+#1 /var/www/test5/wp-includes/template.php(783): require_once('...')
+#2 /var/www/test5/wp-includes/template.php(718): load_template()
+#3 /var/www/test5/wp-includes/general-template.php(48): locate_template()
+#4 /var/www/test5/wp-content/themes/rotani/woocommerce/archive-product.php(20): get_header()
+#5 /var/www/test5/wp-includes/template-loader.php(106): include('...')
+#6 /var/www/test5/wp-blog-header.php(19): require_once('...')
+#7 /var/www/test5/index.php(17): require('...')
+#8 {main}
+  thrown in /var/www/test5/wp-content/themes/rotani/header.php on line 59
+

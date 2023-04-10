@@ -1,0 +1,22 @@
+
+
+//===TZ===
+https://docs.google.com/document/d/1PKmJimSD7473k-WASTG-imkexYRwCo-I9rgDVwTYtY4/edit
+
+
+//===GIT===
+https://github.com/vlad-duhota/rot-antique/
+
+
+//===DEV===
+http://2597802.hx459480.web.hosting-test.net/
+login: admin
+pass: #5AEPX3zd4NH
+
+
+//===API===
+https://developers.arta.io/guides/estimates/
+KEY: KVAo7YRbeJz5jn3oDeTFD7Gq
+example-api-php: https://wcblogs.com/create-woocommerce-custom-shipping-methods/
+запрос на расценки: https://api-reference.arta.io/group/endpoint-requests
+
