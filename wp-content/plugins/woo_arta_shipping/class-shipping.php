@@ -83,13 +83,12 @@ function start_arta_shipping_method() {
 			 * @return void
 			 */
 			public function calculate_shipping( $package = array() ) {
-				$txt = '';
-				$cost   = 0;
+				$txt  = '';
+				$cost = 0;
 
 				foreach ( $package['contents'] as $item_id => $values ){
-					$_product = $values['data'];
-					//$weight   = $weight + $_product->get_weight() * $values['quantity'];
-					//$cost     += $this->arta_request_cost( 1, 1, $_product->get_weight() ) * $values['quantity'];
+					$_product        = $values['data'];
+					$quantity        = $values['quantity'];
 
 					$width           = $_product->get_width();
 					$height          = $_product->get_height();
@@ -103,14 +102,19 @@ function start_arta_shipping_method() {
 
 					$cost += self::arta_request_cost( $width, $height, $length, $weight, $product_country, $product_region, $product_city, $product_postal, $product_address );
 				}
-				//$weight = wc_get_weight( $weight, 'kg' );
 
 				$rate = array(
 					'id'    => $this->id,
 					'label' => $this->title,
 					'cost'  => $cost,
 				);
+				$this->add_rate( $rate );
 
+				$rate = array(
+					'id'    => $this->id.'11',
+					'label' => $this->title,
+					'cost'  => $cost+10,
+				);
 				$this->add_rate( $rate );
 			}
 
