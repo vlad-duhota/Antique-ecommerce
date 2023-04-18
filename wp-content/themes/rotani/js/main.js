@@ -165,29 +165,17 @@ if (btn1 && btn2 && products) {
   })
 }
 
-const shop = document.querySelector('.shop-sec__banner img');
-const timer = document.querySelector('.shop-sec__time')
-
-const callback = (entries, observer) => {
-  entries.forEach((entry) => {
-    if (!entry.isIntersecting) {
-      timer.classList.add('active')
+const timer = document.querySelector('.shop-sec__time');
+if (timer) {
+  const timerPos = document.querySelector('.header').offsetHeight + timer.getBoundingClientRect().top - 110;
+  console.log(timerPos)
+  window.addEventListener('scroll', function () {
+    if (window.scrollY > timerPos) {
+      timer.classList.add('active');
     } else {
-      timer.classList.remove('active')
+      timer.classList.remove('active');
     }
   })
-}
-
-const options = {
-  // root: по умолчанию window, но можно задать любой элемент-контейнер
-  rootMargin: '0px 0px 0px 0px',
-  threshold: .01,
-}
-
-if (shop && timer) {
-  const observer = new IntersectionObserver(callback, options)
-
-  observer.observe(shop)
 }
 
 $('.product .add_to_cart_button').on('click', function (e) {

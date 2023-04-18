@@ -8,9 +8,13 @@ use Carbon_Fields\Field;
 
 Container::make('theme_options', 'Theme options')
 ->add_fields( array(
+    Field::make( 'text', 'shop_uptitle', 'Shop uptitle'),
+    Field::make( 'text', 'shop_title', 'Shop title'),
+    Field::make( 'text', 'shop_subtitle', 'Shop subtitle'),
+    Field::make( 'text', 'shop_tag_1', 'Shop tag 1'),
+    Field::make( 'text', 'shop_tag_2', 'Shop tag 2'),
+    Field::make( 'rich_text', 'shop_text', 'Shop banner text'),
     Field::make( 'image', 'shop_img', 'Shop banner image'),
-    Field::make( 'text', 'shop_title', 'Shop banner title'),
-    Field::make( 'text', 'shop_text', 'Shop banner text'),
     Field::make( 'complex', 'footer_socials', __( 'Footer Socials' ) )
     ->add_fields( array(
         Field::make( 'text', 'footer_socials_link', __( 'Social Link' ) ),

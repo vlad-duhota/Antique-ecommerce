@@ -391,3 +391,9 @@ function filter_woocommerce_get_catalog_ordering_args( $args, $orderby, $order )
 	}
 	add_action('wp_ajax_empty_ajax_call', 'empty_ajax_call'); // for logged in users only
 	add_action('wp_ajax_nopriv_empty_ajax_call', 'empty_ajax_call'); // for ALL users
+// Remove all currency symbols
+function sww_remove_wc_currency_symbols( $currency_symbol, $currency ) {
+	$currency_symbol = 'USD';
+	return $currency_symbol;
+}
+add_filter('woocommerce_currency_symbol', 'sww_remove_wc_currency_symbols', 10, 2);

@@ -1,0 +1,26 @@
+[18-Apr-2023 13:03:47 UTC] PHP Warning:  mysqli_real_connect(): (HY000/1045): Access denied for user 'user'@'localhost' (using password: YES) in /Users/duhotavlad/Sites/rotani/wp-includes/class-wpdb.php on line 1775
+[18-Apr-2023 13:03:48 UTC] PHP Warning:  mysqli_real_connect(): (HY000/1045): Access denied for user 'user'@'localhost' (using password: YES) in /Users/duhotavlad/Sites/rotani/wp-includes/class-wpdb.php on line 1775
+[18-Apr-2023 13:04:02 UTC] PHP Warning:  mysqli_real_connect(): (HY000/1045): Access denied for user 'user'@'localhost' (using password: YES) in /Users/duhotavlad/Sites/rotani/wp-includes/class-wpdb.php on line 1775
+[18-Apr-2023 13:05:13 UTC] PHP Warning:  mysqli_real_connect(): (HY000/1045): Access denied for user 'user'@'localhost' (using password: YES) in /Users/duhotavlad/Sites/rotani/wp-includes/class-wpdb.php on line 1775
+[18-Apr-2023 13:05:16 UTC] PHP Warning:  mysqli_real_connect(): (HY000/1045): Access denied for user 'user'@'localhost' (using password: YES) in /Users/duhotavlad/Sites/rotani/wp-includes/class-wpdb.php on line 1775
+[18-Apr-2023 13:05:16 UTC] PHP Warning:  mysqli_real_connect(): (HY000/1045): Access denied for user 'user'@'localhost' (using password: YES) in /Users/duhotavlad/Sites/rotani/wp-includes/class-wpdb.php on line 1775
+[18-Apr-2023 13:05:17 UTC] PHP Warning:  mysqli_real_connect(): (HY000/1045): Access denied for user 'user'@'localhost' (using password: YES) in /Users/duhotavlad/Sites/rotani/wp-includes/class-wpdb.php on line 1775
+[18-Apr-2023 13:05:17 UTC] PHP Warning:  mysqli_real_connect(): (HY000/1045): Access denied for user 'user'@'localhost' (using password: YES) in /Users/duhotavlad/Sites/rotani/wp-includes/class-wpdb.php on line 1775
+[18-Apr-2023 13:05:17 UTC] PHP Warning:  mysqli_real_connect(): (HY000/1045): Access denied for user 'user'@'localhost' (using password: YES) in /Users/duhotavlad/Sites/rotani/wp-includes/class-wpdb.php on line 1775
+[18-Apr-2023 13:05:17 UTC] PHP Warning:  mysqli_real_connect(): (HY000/1045): Access denied for user 'user'@'localhost' (using password: YES) in /Users/duhotavlad/Sites/rotani/wp-includes/class-wpdb.php on line 1775
+[18-Apr-2023 13:05:17 UTC] PHP Warning:  mysqli_real_connect(): (HY000/1045): Access denied for user 'user'@'localhost' (using password: YES) in /Users/duhotavlad/Sites/rotani/wp-includes/class-wpdb.php on line 1775
+[18-Apr-2023 13:05:18 UTC] PHP Warning:  mysqli_real_connect(): (HY000/1045): Access denied for user 'user'@'localhost' (using password: YES) in /Users/duhotavlad/Sites/rotani/wp-includes/class-wpdb.php on line 1775
+[18-Apr-2023 13:05:18 UTC] PHP Warning:  mysqli_real_connect(): (HY000/1045): Access denied for user 'user'@'localhost' (using password: YES) in /Users/duhotavlad/Sites/rotani/wp-includes/class-wpdb.php on line 1775
+[18-Apr-2023 13:05:29 UTC] PHP Warning:  mysqli_real_connect(): (HY000/1045): Access denied for user 'user'@'localhost' (using password: YES) in /Users/duhotavlad/Sites/rotani/wp-includes/class-wpdb.php on line 1775
+[18-Apr-2023 13:05:57 UTC] PHP Warning:  mysqli_real_connect(): (HY000/1045): Access denied for user 'user'@'localhost' (using password: YES) in /Users/duhotavlad/Sites/rotani/wp-includes/class-wpdb.php on line 1775
+[18-Apr-2023 13:06:56 UTC] PHP Fatal error:  Uncaught TypeError: array_shift(): Argument #1 ($array) must be of type array, null given in /Users/duhotavlad/Sites/rotani/wp-content/themes/rotani/woocommerce/content-product.php:52
+Stack trace:
+#0 /Users/duhotavlad/Sites/rotani/wp-content/themes/rotani/woocommerce/content-product.php(52): array_shift(NULL)
+#1 /Users/duhotavlad/Sites/rotani/wp-includes/template.php(785): require('/Users/duhotavl...')
+#2 /Users/duhotavlad/Sites/rotani/wp-content/plugins/woocommerce/includes/wc-core-functions.php(284): load_template('/Users/duhotavl...', false)
+#3 /Users/duhotavlad/Sites/rotani/wp-content/themes/rotani/woocommerce/archive-product.php(80): wc_get_template_part('content', 'product')
+#4 /Users/duhotavlad/Sites/rotani/wp-includes/template-loader.php(106): include('/Users/duhotavl...')
+#5 /Users/duhotavlad/Sites/rotani/wp-blog-header.php(19): require_once('/Users/duhotavl...')
+#6 /Users/duhotavlad/Sites/rotani/index.php(17): require('/Users/duhotavl...')
+#7 {main}
+  thrown in /Users/duhotavlad/Sites/rotani/wp-content/themes/rotani/woocommerce/content-product.php on line 52

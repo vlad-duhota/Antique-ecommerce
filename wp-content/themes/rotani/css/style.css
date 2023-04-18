@@ -27,9 +27,9 @@ input:not(.tel-input):focus::placeholder {
 h1,
 h2,
 h3 {
-  font-family: "Mercury Display", serif;
-  font-weight: 400;
-  color: #010005;
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  color: #000;
   letter-spacing: normal;
 }
 
@@ -47,6 +47,7 @@ h3 {
 .h2 {
   font-size: 30px;
   text-transform: capitalize;
+  font-weight: 300;
 }
 
 .wrapper {
@@ -66,11 +67,11 @@ h3 {
 }
 
 body {
-  font-family: "BentonSans Regular", sans-serif;
-  font-weight: 400;
-  font-size: 17px;
-  color: #777777;
-  letter-spacing: 0.25px;
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  color: #323232;
+  letter-spacing: 0.01em;
 }
 
 .text p:not(:last-child) {
@@ -118,64 +119,16 @@ body {
   font-size: 13px;
 }
 
-.shop-sec__banner h1 {
-  text-transform: none;
+.shop-sec .container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 45px;
 }
-.shop-sec__banner-img {
-  width: 100%;
-  height: auto;
-  margin-bottom: 64px;
-}
-@media (max-width: 1099px) {
-  .shop-sec__banner-img {
-    margin-bottom: 40px;
+@media (min-width: 1099px) {
+  .shop-sec .container {
+    grid-template-columns: 1fr 181px;
+    gap: 138px;
   }
-}
-@media (max-width: 576px) {
-  .shop-sec__banner-img {
-    margin-bottom: 20px;
-  }
-}
-.shop-sec__banner-cols {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-bottom: 80px;
-}
-@media (max-width: 1099px) {
-  .shop-sec__banner-cols {
-    padding-bottom: 40px;
-  }
-}
-@media (max-width: 576px) {
-  .shop-sec__banner-cols {
-    flex-direction: column;
-    justify-content: flex-start;
-  }
-}
-.shop-sec__banner-content {
-  flex: 0 1 720px;
-}
-@media (max-width: 576px) {
-  .shop-sec__banner-content {
-    flex: 1 1 auto;
-    text-align: center;
-  }
-}
-@media (max-width: 1099px) {
-  .shop-sec__banner-content {
-    padding-right: 45px;
-  }
-}
-@media (max-width: 576px) {
-  .shop-sec__banner-content {
-    padding: 0;
-    margin-bottom: 15px;
-    margin-top: auto;
-  }
-}
-.shop-sec__banner-content p {
-  margin-top: 15px;
 }
 .shop-sec__time {
   right: 0;
@@ -183,13 +136,18 @@ body {
   align-items: center;
   flex-direction: column;
 }
+@media (max-width: 1099px) {
+  .shop-sec__time {
+    order: -1;
+  }
+}
 .shop-sec__time * {
   letter-spacing: normal;
 }
 @media (min-width: 1099px) {
   .shop-sec__time.active {
     position: fixed;
-    top: 64px;
+    top: 15px;
     right: 15px;
   }
 }
@@ -213,7 +171,8 @@ body {
 }
 .shop-sec__time-title {
   margin-bottom: 8px;
-  font-size: 24px;
+  font-size: 16px;
+  text-transform: uppercase;
   text-align: center;
 }
 @media (max-width: 1099px) {
@@ -228,12 +187,12 @@ body {
   display: flex;
 }
 .shop-sec .time_circles span {
-  font-family: "Mercury Display", serif !important;
+  font-family: "Lato", sans-serif;
   letter-spacing: normal;
-  font-weight: 400;
-  font-size: 58px !important;
+  font-weight: 300;
+  font-size: 57px !important;
   text-align: center;
-  color: #010005;
+  color: #000000;
 }
 @media (max-width: 1099px) {
   .shop-sec .time_circles span {
@@ -241,11 +200,12 @@ body {
   }
 }
 .shop-sec .time_circles h4 {
-  font-size: 17px !important;
+  font-family: "Lato", sans-serif;
+  font-size: 15px !important;
   text-transform: capitalize;
-  font-weight: 400;
+  font-weight: 300;
   text-align: left;
-  color: #626262;
+  color: #000000;
   padding-top: 8px;
 }
 @media (max-width: 1099px) {
@@ -265,11 +225,6 @@ body {
 }
 .shop-sec .time_circles div:last-child h4 {
   text-align: right;
-}
-@media (min-width: 1099px) {
-  .shop-sec .products {
-    padding-right: 257px;
-  }
 }
 .shop-sec .products.grid {
   display: grid;
@@ -294,9 +249,11 @@ body {
   border-bottom: 1px solid #d9d9d9;
 }
 .shop-sec .products .product .out-of-stock {
-  background: #010005 !important;
-  color: #fff !important;
-  border: 1px solid #fff !important;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0.01em;
+  color: #a0872a;
 }
 @media (max-width: 768px) {
   .shop-sec .products .product {
@@ -312,7 +269,7 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 16px;
-  min-width: 150px;
+  min-width: 180px;
 }
 @media (max-width: 768px) {
   .shop-sec .products .product__right {
@@ -417,7 +374,7 @@ body {
   }
 }
 .shop-sec .products .product__title h2 {
-  font-size: 24px;
+  font-size: 17px;
   text-transform: capitalize;
   margin-bottom: 14px;
 }
@@ -456,6 +413,7 @@ body {
   padding: 0;
 }
 .shop-sec .products.grid .product .add_to_cart_button {
+  display: none;
   padding: 12px 20px;
 }
 .shop-sec .products.grid .product__left {
@@ -495,11 +453,6 @@ body {
   position: relative;
   padding-bottom: 30px;
 }
-@media (min-width: 1099px) {
-  .shop-sec .shop__btns {
-    padding-right: 257px;
-  }
-}
 @media (max-width: 576px) {
   .shop-sec .shop__btns {
     justify-content: center;
@@ -514,12 +467,7 @@ body {
   height: 1px;
   left: 0;
   bottom: 0;
-  background: #d9d9d9;
-}
-@media (min-width: 1099px) {
-  .shop-sec .shop__btns::before {
-    width: calc(100% - 257px);
-  }
+  background: #000;
 }
 .shop-sec .shop__btns button {
   background: transparent;
@@ -562,7 +510,7 @@ body {
   width: 100%;
   height: 100%;
   background: #fff;
-  max-width: 1300px;
+  max-width: 1136px;
   overflow: hidden;
 }
 .pop-up .product__swiper {
@@ -770,7 +718,7 @@ body {
   }
 }
 .pop-up .product-details__title {
-  font-family: "BentonSans Regular";
+  font-family: "Lato", sans-serif;
   font-size: 20px;
   margin-bottom: 8px;
 }
@@ -874,7 +822,7 @@ body {
   display: none;
 }
 .pop-up .info-title {
-  font-family: "BentonSans Regular";
+  font-family: "Lato", sans-serif;
   font-size: 20px;
   margin-bottom: 19px;
 }
@@ -1060,7 +1008,7 @@ body {
   }
 }
 .footer__form h3 {
-  font-family: "BentonSans Regular";
+  font-family: "Lato", sans-serif;
   font-size: 18px;
   margin-bottom: 18px;
   text-transform: capitalize;
@@ -1098,7 +1046,7 @@ body {
   width: 100%;
   display: block;
   padding: 13px 0;
-  font-family: "BentonSans Regular";
+  font-family: "Lato", sans-serif;
   font-weight: 400;
   font-size: 17px;
   color: #9b9b9b;
@@ -1113,13 +1061,13 @@ body {
   }
 }
 .footer__form input::-moz-placeholder {
-  font-family: "BentonSans Regular";
+  font-family: "Lato", sans-serif;
   font-weight: 400;
   font-size: 17px;
   color: #9b9b9b;
 }
 .footer__form input::placeholder {
-  font-family: "BentonSans Regular";
+  font-family: "Lato", sans-serif;
   font-weight: 400;
   font-size: 17px;
   color: #9b9b9b;
@@ -1156,7 +1104,7 @@ body {
   }
 }
 .cart-top h3 {
-  font-family: "BentonSans Regular";
+  font-family: "Lato", sans-serif;
   font-weight: 400;
   font-size: 17px;
 }
@@ -1183,7 +1131,7 @@ body {
 }
 .cart-sec .cart-collaterals h2 {
   font-size: 17px;
-  font-family: "BentonSans Regular";
+  font-family: "Lato", sans-serif;
   font-weight: 400;
   margin-bottom: 31px;
 }
@@ -1201,23 +1149,30 @@ body {
   color: #010005;
 }
 .cart-sec .cart-collaterals .cart-block p {
-  font-weight: 500;
+  font-weight: 400;
   color: #010005;
-  font-size: 20px;
+  font-size: 18px;
+}
+.cart-sec .cart-collaterals .cart-block p strong {
+  font-weight: 400;
 }
 .cart-sec .cart-collaterals .order-total {
   margin-top: 30px;
   padding-top: 13px;
   border-top: 1px solid #d9d9d9;
 }
+.cart-sec .cart-collaterals .order-total p {
+  font-size: 23px;
+}
 .cart-sec .cart-collaterals .checkout-button {
   display: block;
   margin: 25px auto 0;
-  width: calc(100% - 30px);
   text-align: center;
+  font-size: 17px;
+  font-weight: 400;
   background: #010005;
   color: #fff;
-  padding: 13px;
+  padding: 16px;
 }
 .cart-sec .woocommerce-cart-form__contents {
   border: 1px solid #d9d9d9;
@@ -1292,9 +1247,10 @@ body {
 .cart .woocommerce-cart-form__cart-item .product-name h2 {
   margin-bottom: 4px;
   font-size: 20px;
-  font-family: "Mercury Display", serif;
+  font-family: "Lato", sans-serif;
   letter-spacing: normal;
-  color: #010005;
+  font-weight: 400;
+  color: #000;
   text-transform: capitalize;
 }
 @media (max-width: 1400px) {
@@ -1334,7 +1290,7 @@ body {
   }
 }
 .cart .woocommerce-cart-form__cart-item .product-remove {
-  margin-left: 180px;
+  margin-left: 141px;
   padding-right: 30px;
 }
 @media (max-width: 1400px) {
@@ -1398,7 +1354,8 @@ body {
 .checkout-sec__title {
   margin-bottom: 27px;
   font-size: 19px;
-  font-family: "BentonSans Regular";
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
 }
 .checkout-sec form.woocommerce-checkout {
   display: grid;
@@ -1448,7 +1405,7 @@ body {
 }
 .checkout-sec .woocommerce-billing-fields__field-wrapper .select2 span {
   border: none;
-  font-family: "BentonSans Regular";
+  font-family: "Lato", sans-serif;
   font-weight: 400;
   font-size: 17px;
   padding-left: 0;
@@ -1466,7 +1423,7 @@ body {
   border-bottom: 1px solid #9b9b9b;
   padding: 8px 0 15px;
   background: transparent;
-  font-family: "BentonSans Regular";
+  font-family: "Lato", sans-serif;
   font-weight: 400;
   font-size: 17px;
   color: #010005;
@@ -1484,14 +1441,14 @@ body {
   border-color: #010005;
 }
 .checkout-sec .woocommerce-billing-fields__field-wrapper input::-moz-placeholder, .checkout-sec .woocommerce-billing-fields__field-wrapper .select2::-moz-placeholder {
-  font-family: "BentonSans Regular";
+  font-family: "Lato", sans-serif;
   font-weight: 400;
   font-size: 17px;
   color: #9b9b9b;
 }
 .checkout-sec .woocommerce-billing-fields__field-wrapper input::placeholder,
 .checkout-sec .woocommerce-billing-fields__field-wrapper .select2::placeholder {
-  font-family: "BentonSans Regular";
+  font-family: "Lato", sans-serif;
   font-weight: 400;
   font-size: 17px;
   color: #9b9b9b;
@@ -1526,7 +1483,7 @@ body {
 .checkout-sec .woocommerce-checkout-review-order .payment_method_stripe > label {
   margin-bottom: 27px;
   font-size: 19px;
-  font-family: "BentonSans Regular";
+  font-family: "Lato", sans-serif;
   color: #000000;
   display: block;
 }
@@ -1542,7 +1499,7 @@ body {
   border-bottom: 1px solid #9b9b9b !important;
   padding: 8px 0 15px;
   background: transparent;
-  font-family: "BentonSans Regular";
+  font-family: "Lato", sans-serif;
   font-weight: 400;
   font-size: 17px;
   color: #010005;
@@ -1574,31 +1531,34 @@ body {
 }
 .checkout-sec .woocommerce-checkout-review-order .checkout-block p,
 .checkout-sec .woocommerce-checkout-review-order .checkout-block .ship {
-  font-weight: 500;
+  font-weight: 400;
   color: #010005;
-  font-size: 20px;
+  font-size: 18px;
+}
+.checkout-sec .woocommerce-checkout-review-order .checkout-block p strong,
+.checkout-sec .woocommerce-checkout-review-order .checkout-block .ship strong {
+  font-weight: 400;
 }
 .checkout-sec .woocommerce-checkout-review-order .order-total {
   margin-top: 30px;
   padding-top: 13px;
   border-top: 1px solid #d9d9d9;
 }
+.checkout-sec .woocommerce-checkout-review-order .order-total p {
+  font-size: 23px;
+}
 .checkout-sec .woocommerce-checkout-review-order .button {
   display: block;
+  width: 100%;
   margin: 25px auto 0;
-  width: calc(100% - 200px);
+  font-weight: 400;
   text-align: center;
   background: #010005;
   color: #fff;
-  padding: 13px;
+  padding: 16px;
   border: none;
   font-weight: 500;
   font-size: 17px;
-}
-@media (max-width: 576px) {
-  .checkout-sec .woocommerce-checkout-review-order .button {
-    width: 100%;
-  }
 }
 .checkout-sec .checkout-products .cart_item {
   display: flex;
@@ -1680,7 +1640,7 @@ body {
 }
 .woocommerce-shipping-calculator .select2 span {
   border: none;
-  font-family: "BentonSans Regular";
+  font-family: "Lato", sans-serif;
   font-weight: 400;
   font-size: 17px;
   padding-left: 0;
@@ -1698,7 +1658,7 @@ body {
   border-bottom: 1px solid #9b9b9b;
   padding: 8px 0 15px;
   background: transparent;
-  font-family: "BentonSans Regular";
+  font-family: "Lato", sans-serif;
   font-weight: 400;
   font-size: 17px;
   color: #010005;
@@ -1716,14 +1676,14 @@ body {
   border-color: #010005;
 }
 .woocommerce-shipping-calculator input::-moz-placeholder, .woocommerce-shipping-calculator .select2::-moz-placeholder {
-  font-family: "BentonSans Regular";
+  font-family: "Lato", sans-serif;
   font-weight: 400;
   font-size: 17px;
   color: #9b9b9b;
 }
 .woocommerce-shipping-calculator input::placeholder,
 .woocommerce-shipping-calculator .select2::placeholder {
-  font-family: "BentonSans Regular";
+  font-family: "Lato", sans-serif;
   font-weight: 400;
   font-size: 17px;
   color: #9b9b9b;
@@ -1766,4 +1726,85 @@ body {
 
 .woocommerce-checkout .woocommerce-notices-wrapper {
   display: none;
+}
+
+.hero {
+  padding: 60px 0;
+}
+@media (max-width: 576px) {
+  .hero {
+    padding: 45px 0;
+  }
+}
+.hero .container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 25px;
+}
+@media (min-width: 768px) {
+  .hero .container {
+    grid-template-columns: 1fr 350px;
+    gap: 45px;
+  }
+}
+@media (min-width: 1099px) {
+  .hero .container {
+    grid-template-columns: 1fr 454px;
+    gap: 70px;
+  }
+}
+.hero__col_2 img {
+  width: 100%;
+  height: auto;
+}
+@media (min-width: 1099px) {
+  .hero p {
+    font-size: 19px;
+  }
+}
+@media (max-width: 576px) {
+  .hero {
+    text-align: center;
+  }
+}
+.hero__uptitle {
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #000000;
+}
+.hero__title {
+  font-weight: 300;
+  margin: 15px 0;
+  font-size: 34px;
+}
+@media (max-width: 576px) {
+  .hero__title {
+    font-size: 28px;
+  }
+}
+.hero__tags {
+  margin: 20px 0 40px;
+  display: flex;
+  gap: 19px;
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 0.03em;
+  color: #a0872a;
+}
+@media (max-width: 576px) {
+  .hero__tags {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+@media (max-width: 1099px) {
+  .hero__tags {
+    margin: 15px 0;
+    gap: 8px;
+  }
+}
+.hero__tags p {
+  font-size: 15px;
 }
