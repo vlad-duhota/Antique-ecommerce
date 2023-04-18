@@ -49,9 +49,10 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 	 * @hooked woocommerce_template_loop_product_title - 10
 	 */
 	do_action( 'woocommerce_shop_loop_item_title' );?>
+	<?php if(get_post_meta( get_the_ID() , '_product_attributes' )) : ?>
 	<?php $firstAttr = array_shift(get_post_meta( get_the_ID() , '_product_attributes' )[0])?>
 	<p class="product__atr"><?php echo $firstAttr['name']?> : <?php echo $firstAttr['value']?></p>
-
+		<?php endif;?>
 <?php
 $tags = get_the_terms( $post->ID, 'product_tag' );
 if($tags){
