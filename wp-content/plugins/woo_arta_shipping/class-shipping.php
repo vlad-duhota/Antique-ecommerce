@@ -109,14 +109,21 @@ function start_arta_shipping_method() {
 					//$txt = print_r( $arr, true );
 					//file_put_contents( '/var/www/arr_res.txt', $txt );
 
-					foreach( $arr['data'] as $arr_i ){
+					if( $arr['err'] ){
 						$this->add_rate( array(
-							'id'    => $arr_i['id'].'_'.$this->id,
-							'label' => $this->title.' ('.$arr_i['quote_type'].')',
-							'cost'  => $arr_i['total'],
+							'id'    => $this->id,
+							'label' => $this->title.' ('.$arr['err'].')',
+							'cost'  => 0,
 						) );
+					}else{
+						foreach( $arr['data'] as $arr_i ){
+							$this->add_rate( array(
+								'id'    => $arr_i['id'].'_'.$this->id,
+								'label' => $this->title.' ('.$arr_i['quote_type'].')',
+								'cost'  => $arr_i['total'],
+							) );
+						}
 					}
-
 				}
 			}
 
@@ -149,19 +156,19 @@ function start_arta_shipping_method() {
 				$product_currency_unit    = get_woocommerce_currency();
 
 				$js_request = str_replace( 'x_destination_country',              $dest_country,              $js_request );
-				$js_request = str_replace( 'x_destination_region',               $dest_region,               $js_request );
-				$js_request = str_replace( 'x_destination_city',                 $dest_city,                 $js_request );
+				$js_request = str_replace( 'x_destination_region',               '',                  $js_request ); //$dest_region
+				$js_request = str_replace( 'x_destination_city',                 '',                  $js_request ); //$dest_city
 				$js_request = str_replace( 'x_destination_postal_code',          $dest_postal,               $js_request );
-				$js_request = str_replace( 'x_destination_address_line_1',       $dest_addr,                 $js_request );
+				$js_request = str_replace( 'x_destination_address_line_1',       '',                  $js_request ); //$dest_addr
 				$js_request = str_replace( 'x_destination_address_line_2',       '',                  $js_request );
 				$js_request = str_replace( 'x_destination_address_line_3',       '',                  $js_request );
 				$js_request = str_replace( 'x_destination_title',                'order',             $js_request );
 
-				$js_request = str_replace( 'x_destination_contact_name',         'xxx',               $js_request );
-				$js_request = str_replace( 'x_destination_contact_email',        'xxx',               $js_request );
-				$js_request = str_replace( 'x_destination_contact_phone',        'xxx',               $js_request );
+				$js_request = str_replace( 'x_destination_contact_name',         '',                  $js_request );
+				$js_request = str_replace( 'x_destination_contact_email',        '',                  $js_request );
+				$js_request = str_replace( 'x_destination_contact_phone',        '',                  $js_request );
 
-				$js_request = str_replace( 'x_order_title',                      'xxx',               $js_request );
+				$js_request = str_replace( 'x_order_title',                      '',                  $js_request );
 
 				$js_request = str_replace( 'x_objects_title',                    'product',           $js_request );
 				$js_request = str_replace( 'x_objects_width',                     $product_width,            $js_request );
@@ -178,16 +185,16 @@ function start_arta_shipping_method() {
 				$js_request = str_replace( 'x_objects_currency_xvalue',           $product_currency_unit,    $js_request );
 
 				$js_request = str_replace( 'x_origin_country',                    $product_country,          $js_request );
-				$js_request = str_replace( 'x_origin_region',                     $product_region,           $js_request );
-				$js_request = str_replace( 'x_origin_city',                       $product_city,             $js_request );
+				$js_request = str_replace( 'x_origin_region',                     '',                 $js_request ); //$product_region
+				$js_request = str_replace( 'x_origin_city',                       '',                 $js_request ); //$product_city
 				$js_request = str_replace( 'x_origin_postal_code',                $product_postal,           $js_request );
-				$js_request = str_replace( 'x_origin_address_line_1',             $product_address,          $js_request );
+				$js_request = str_replace( 'x_origin_address_line_1',             '',                 $js_request ); //$product_address
 				$js_request = str_replace( 'x_origin_address_line_2',             '',                 $js_request );
 				$js_request = str_replace( 'x_origin_address_line_3',             '',                 $js_request );
 
 				$js_request = str_replace( 'x_origin_contacts_email',             get_option('admin_email'), $js_request );
-				$js_request = str_replace( 'x_origin_contacts_name',              get_option('xxx'),         $js_request );
-				$js_request = str_replace( 'x_origin_contacts_phone',             get_option('xxx'),         $js_request );
+				$js_request = str_replace( 'x_origin_contacts_name',              '',                 $js_request );
+				$js_request = str_replace( 'x_origin_contacts_phone',             '',                 $js_request );
 
 				$response = wp_remote_post( $url, array(
 					'timeout'     => 6000,
