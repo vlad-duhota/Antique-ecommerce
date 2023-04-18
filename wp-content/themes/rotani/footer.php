@@ -12,13 +12,11 @@
                     <?php endforeach;?>
                 </ul>
                 <div class="footer-center">
-                <a href="<?php echo get_home_url(); ?>" class="header__logo">
-                    <?php $custom_logo_id = get_theme_mod( 'custom_logo' ); ?>
-                    <?php echo wp_get_attachment_image( $custom_logo_id, 'full' ); ?>
-                </a>
+           
                 <div class="footer-center__info">
-                <p>©<?php the_date('Y')?> Ronati Antiques. All Rights Reserved </p>
+                    <p> Mark Hampton LLC <br> Alexa Hampton Inc.</p>
                     <a href="<?php echo get_home_url()?>/terms">Terms and conditions</a>
+                    <p>©<?php the_date('Y')?></p>
                 </div>
                   
                 </div>
@@ -27,7 +25,7 @@
                     <?php echo wp_get_attachment_image( $custom_logo_id, 'full' ); ?>
                 </a> -->
                 <div class="footer__form">
-                    <h3>Join our mailing list</h3>
+    
                     <?php echo do_shortcode('[contact-form-7 id="25" title="Footer form"]')?>
                 </div>
             </div>

@@ -167,7 +167,7 @@ if (btn1 && btn2 && products) {
 
 const timer = document.querySelector('.shop-sec__time');
 if (timer) {
-  const timerPos = document.querySelector('.header').offsetHeight + timer.getBoundingClientRect().top - 110;
+  const timerPos = $(timer).offset().top;
   console.log(timerPos)
   window.addEventListener('scroll', function () {
     if (window.scrollY > timerPos) {
