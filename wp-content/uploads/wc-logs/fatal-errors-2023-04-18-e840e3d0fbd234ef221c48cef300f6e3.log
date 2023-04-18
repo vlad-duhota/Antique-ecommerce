@@ -1,0 +1,81 @@
+2023-04-18T11:45:25+00:00 CRITICAL Uncaught TypeError: Cannot access offset of type string on string in /var/www/test5/wp-content/plugins/woo_arta_shipping/class-shipping.php:110
+Stack trace:
+#0 /var/www/test5/wp-content/plugins/woocommerce/includes/abstracts/abstract-wc-shipping-method.php(233): Arta_Shipping_Method->calculate_shipping()
+#1 /var/www/test5/wp-content/plugins/woocommerce/includes/class-wc-shipping.php(348): WC_Shipping_Method->get_rates_for_package()
+#2 /var/www/test5/wp-content/plugins/woocommerce/includes/class-wc-shipping.php(260): WC_Shipping->calculate_shipping_for_package()
+#3 /var/www/test5/wp-content/plugins/woocommerce/includes/class-wc-cart.php(1423): WC_Shipping->calculate_shipping()
+#4 /var/www/test5/wp-content/plugins/woocommerce/includes/class-wc-cart-totals.php(339): WC_Cart->calculate_shipping()
+#5 /var/www/test5/wp-content/plugins/woocommerce/includes/class-wc-cart-totals.php(850): WC_Cart_Totals->get_shipping_from_cart()
+#6 /var/www/test5/wp-content/plugins/woocommerce/includes/class-wc-cart-totals.php(144): WC_Cart_Totals->calculate_shipping_totals()
+#7 /var/www/test5/wp-content/plugins/woocommerce/includes/class-wc-cart-totals.php(134): WC_Cart_Totals->calculate()
+#8 /var/www/test5/wp-content/plugins/woocommerce/includes/class-wc-cart.php(1401): WC_Cart_Totals->__construct()
+#9 /var/www/test5/wp-content/plugins/woocommerce/includes/shortcodes/class-wc-shortcode-cart.php(94): WC_Cart->calculate_totals()
+#10 /var/www/test5/wp-content/plugins/woocommerce/includes/class-wc-shortcodes.php(72): WC_Shortcode_Cart::output()
+#11 /var/www/test5/wp-content/plugins/woocommerce/includes/class-wc-shortcodes.php(85): WC_Shortcodes::shortcode_wrapper()
+#12 /var/www/test5/wp-includes/shortcodes.php(355): WC_Shortcodes::cart()
+#13 [internal function]: do_shortcode_tag()
+#14 /var/www/test5/wp-includes/shortcodes.php(227): preg_replace_callback()
+#15 /var/www/test5/wp-includes/class-wp-hook.php(308): do_shortcode()
+#16 /var/www/test5/wp-includes/plugin.php(205): WP_Hook->apply_filters()
+#17 /var/www/test5/wp-includes/post-template.php(255): apply_filters()
+#18 /var/www/test5/wp-content/themes/rotani/index.php(4): the_content()
+#19 /var/www/test5/wp-includes/template-loader.php(106): include('...')
+#20 /var/www/test5/wp-blog-header.php(19): require_once('...')
+#21 /var/www/test5/index.php(17): require('...')
+#22 {main}
+  thrown in /var/www/test5/wp-content/plugins/woo_arta_shipping/class-shipping.php on line 110
+
+2023-04-18T11:45:31+00:00 CRITICAL Uncaught TypeError: Cannot access offset of type string on string in /var/www/test5/wp-content/plugins/woo_arta_shipping/class-shipping.php:110
+Stack trace:
+#0 /var/www/test5/wp-content/plugins/woocommerce/includes/abstracts/abstract-wc-shipping-method.php(233): Arta_Shipping_Method->calculate_shipping()
+#1 /var/www/test5/wp-content/plugins/woocommerce/includes/class-wc-shipping.php(348): WC_Shipping_Method->get_rates_for_package()
+#2 /var/www/test5/wp-content/plugins/woocommerce/includes/class-wc-shipping.php(260): WC_Shipping->calculate_shipping_for_package()
+#3 /var/www/test5/wp-content/plugins/woocommerce/includes/class-wc-cart.php(1423): WC_Shipping->calculate_shipping()
+#4 /var/www/test5/wp-content/plugins/woocommerce/includes/class-wc-cart-totals.php(339): WC_Cart->calculate_shipping()
+#5 /var/www/test5/wp-content/plugins/woocommerce/includes/class-wc-cart-totals.php(850): WC_Cart_Totals->get_shipping_from_cart()
+#6 /var/www/test5/wp-content/plugins/woocommerce/includes/class-wc-cart-totals.php(144): WC_Cart_Totals->calculate_shipping_totals()
+#7 /var/www/test5/wp-content/plugins/woocommerce/includes/class-wc-cart-totals.php(134): WC_Cart_Totals->calculate()
+#8 /var/www/test5/wp-content/plugins/woocommerce/includes/class-wc-cart.php(1401): WC_Cart_Totals->__construct()
+#9 /var/www/test5/wp-content/plugins/woocommerce/includes/shortcodes/class-wc-shortcode-cart.php(94): WC_Cart->calculate_totals()
+#10 /var/www/test5/wp-content/plugins/woocommerce/includes/class-wc-shortcodes.php(72): WC_Shortcode_Cart::output()
+#11 /var/www/test5/wp-content/plugins/woocommerce/includes/class-wc-shortcodes.php(85): WC_Shortcodes::shortcode_wrapper()
+#12 /var/www/test5/wp-includes/shortcodes.php(355): WC_Shortcodes::cart()
+#13 [internal function]: do_shortcode_tag()
+#14 /var/www/test5/wp-includes/shortcodes.php(227): preg_replace_callback()
+#15 /var/www/test5/wp-includes/class-wp-hook.php(308): do_shortcode()
+#16 /var/www/test5/wp-includes/plugin.php(205): WP_Hook->apply_filters()
+#17 /var/www/test5/wp-includes/post-template.php(255): apply_filters()
+#18 /var/www/test5/wp-content/themes/rotani/index.php(4): the_content()
+#19 /var/www/test5/wp-includes/template-loader.php(106): include('...')
+#20 /var/www/test5/wp-blog-header.php(19): require_once('...')
+#21 /var/www/test5/index.php(17): require('...')
+#22 {main}
+  thrown in /var/www/test5/wp-content/plugins/woo_arta_shipping/class-shipping.php on line 110
+
+2023-04-18T11:46:11+00:00 CRITICAL Uncaught TypeError: Cannot access offset of type string on string in /var/www/test5/wp-content/plugins/woo_arta_shipping/class-shipping.php:110
+Stack trace:
+#0 /var/www/test5/wp-content/plugins/woocommerce/includes/abstracts/abstract-wc-shipping-method.php(233): Arta_Shipping_Method->calculate_shipping()
+#1 /var/www/test5/wp-content/plugins/woocommerce/includes/class-wc-shipping.php(348): WC_Shipping_Method->get_rates_for_package()
+#2 /var/www/test5/wp-content/plugins/woocommerce/includes/class-wc-shipping.php(260): WC_Shipping->calculate_shipping_for_package()
+#3 /var/www/test5/wp-content/plugins/woocommerce/includes/class-wc-cart.php(1423): WC_Shipping->calculate_shipping()
+#4 /var/www/test5/wp-content/plugins/woocommerce/includes/class-wc-cart-totals.php(339): WC_Cart->calculate_shipping()
+#5 /var/www/test5/wp-content/plugins/woocommerce/includes/class-wc-cart-totals.php(850): WC_Cart_Totals->get_shipping_from_cart()
+#6 /var/www/test5/wp-content/plugins/woocommerce/includes/class-wc-cart-totals.php(144): WC_Cart_Totals->calculate_shipping_totals()
+#7 /var/www/test5/wp-content/plugins/woocommerce/includes/class-wc-cart-totals.php(134): WC_Cart_Totals->calculate()
+#8 /var/www/test5/wp-content/plugins/woocommerce/includes/class-wc-cart.php(1401): WC_Cart_Totals->__construct()
+#9 /var/www/test5/wp-content/plugins/woocommerce/includes/shortcodes/class-wc-shortcode-cart.php(94): WC_Cart->calculate_totals()
+#10 /var/www/test5/wp-content/plugins/woocommerce/includes/class-wc-shortcodes.php(72): WC_Shortcode_Cart::output()
+#11 /var/www/test5/wp-content/plugins/woocommerce/includes/class-wc-shortcodes.php(85): WC_Shortcodes::shortcode_wrapper()
+#12 /var/www/test5/wp-includes/shortcodes.php(355): WC_Shortcodes::cart()
+#13 [internal function]: do_shortcode_tag()
+#14 /var/www/test5/wp-includes/shortcodes.php(227): preg_replace_callback()
+#15 /var/www/test5/wp-includes/class-wp-hook.php(308): do_shortcode()
+#16 /var/www/test5/wp-includes/plugin.php(205): WP_Hook->apply_filters()
+#17 /var/www/test5/wp-includes/post-template.php(255): apply_filters()
+#18 /var/www/test5/wp-content/themes/rotani/index.php(4): the_content()
+#19 /var/www/test5/wp-includes/template-loader.php(106): include('...')
+#20 /var/www/test5/wp-blog-header.php(19): require_once('...')
+#21 /var/www/test5/index.php(17): require('...')
+#22 {main}
+  thrown in /var/www/test5/wp-content/plugins/woo_arta_shipping/class-shipping.php on line 110
+

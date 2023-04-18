@@ -83,69 +83,151 @@ function start_arta_shipping_method() {
 			 * @return void
 			 */
 			public function calculate_shipping( $package = array() ) {
-				$txt  = '';
-				$cost = 0;
-
 				foreach ( $package['contents'] as $item_id => $values ){
-					$_product        = $values['data'];
-					$quantity        = $values['quantity'];
+					$_product         = $values['data'];
 
-					$width           = $_product->get_width();
-					$height          = $_product->get_height();
-					$length          = $_product->get_length();
-					$weight          = $_product->get_weight();
-					$product_country = carbon_get_post_meta( 44, 'product_country' );
-					$product_region  = carbon_get_post_meta( 44, 'product_region' );
-					$product_city    = carbon_get_post_meta( 44, 'product_city' );
-					$product_postal  = carbon_get_post_meta( 44, 'product_postal' );
-					$product_address = carbon_get_post_meta( 44, 'product_address' );
+					$width            = $_product->get_width();
+					$height           = $_product->get_height();
+					$length           = $_product->get_length();
+					$weight           = $_product->get_weight();
+					$product_quantity = $values['quantity'];
+					$product_price    = $_product->get_regular_price();
+					$product_country  = carbon_get_post_meta( $_product->get_id(), 'product_country' );
+					$product_postal   = carbon_get_post_meta( $_product->get_id(), 'product_postal' );
+					$product_region   = carbon_get_post_meta( $_product->get_id(), 'product_region' );
+					$product_city     = carbon_get_post_meta( $_product->get_id(), 'product_city' );
+					$product_address  = carbon_get_post_meta( $_product->get_id(), 'product_address' );
 
-					$cost += self::arta_request_cost( $width, $height, $length, $weight, $product_country, $product_region, $product_city, $product_postal, $product_address );
+					$dest_country     = $package[ 'destination' ]['country'];
+					$dest_region      = $package[ 'destination' ]['state'];
+					$dest_city        = $package[ 'destination' ]['city'];
+					$dest_postal      = $package[ 'destination' ]['postcode'];
+					$dest_addr        = $package[ 'destination' ]['address'];
+
+					$arr = self::arta_request_cost( $width, $height, $length, $weight, $product_price, $product_quantity, $product_country, $product_region, $product_city, $product_postal, $product_address, $dest_country, $dest_region, $dest_city, $dest_postal, $dest_addr );
+
+					//$txt = print_r( $arr, true );
+					//file_put_contents( '/var/www/arr_res.txt', $txt );
+
+					foreach( $arr['data'] as $arr_i ){
+						$this->add_rate( array(
+							'id'    => $arr_i['id'].'_'.$this->id,
+							'label' => $this->title.' ('.$arr_i['quote_type'].')',
+							'cost'  => $arr_i['total'],
+						) );
+					}
+
 				}
-
-				$rate = array(
-					'id'    => $this->id,
-					'label' => $this->title,
-					'cost'  => $cost,
-				);
-				$this->add_rate( $rate );
-
-				$rate = array(
-					'id'    => $this->id.'11',
-					'label' => $this->title,
-					'cost'  => $cost+10,
-				);
-				$this->add_rate( $rate );
 			}
 
-			public static function arta_request_cost( $width=0, $height=0, $length=0, $weight=0, $product_country='', $product_region='', $product_city='', $product_postal='', $product_address='' ){
-				$js_request = '';
+			public static function arta_request_cost( $product_width=0, $product_height=0, $length=0, $product_weight=0, $product_price=0, $quantity=1, $product_country='', $product_region='', $product_city='', $product_postal='', $product_address='', $dest_country='', $dest_region='', $dest_city='', $dest_postal='', $dest_addr='' ){
+				$res                  = array('err', 'data'=>array() );
+				$js_request           = '{"request":{"additional_services":["origin_condition_check"],"currency":"USD","destination":{"access_restrictions":["stairs_only"],"address_line_1":"x_destination_address_line_1","address_line_2":"x_destination_address_line_2","address_line_3":"x_destination_address_line_3","city":"x_destination_city","region":"x_destination_region","postal_code":"x_destination_postal_code","country":"x_destination_country","title":"x_destination_title","contacts":[{"name":"x_destination_contact_name","email_address":"x_destination_contact_email","phone_number":"x_destination_contact_phone"}]},"insurance":"arta_transit_insurance","internal_reference":"x_order_title","objects":[{"internal_reference":"x_objects_title","current_packing":["no_packing"],"depth":"3","details":{"materials":["canvas"],"creation_date":"x_objects_details_creation_date","creator":"x_objects_details_creator","notes":"x_objects_details_notes","title":"x_objects_details_title","is_fragile":false,"is_cites":false},"height":"x_objects_height","images":["x_objects_img"],"public_reference":"Round Smithson work","subtype":"painting_unframed","width":"x_objects_width","unit_of_measurement":"x_objects_dimension_unit","weight":"x_objects_weight_val","weight_unit":"x_objects_weight_unit","value":"x_objects_xvalue","value_currency":"x_objects_currency_xvalue"}],"origin":{"access_restrictions":["non_paved"],"address_line_1":"x_origin_address_line_1","address_line_2":"x_origin_address_line_2","address_line_3":"x_origin_address_line_3","city":"x_origin_city","region":"x_origin_region","postal_code":"x_origin_postal_code","country":"x_origin_country","title":"Warehouse","contacts":[{"name":"x_origin_contacts_name","email_address":"x_origin_contacts_email","phone_number":"x_origin_contacts_phone"}]},"preferred_quote_types":["parcel"],"public_reference":"Order #1437","shipping_notes":"New customer"}}';
 				$ARTA_Shipping_Method = new Arta_Shipping_Method();
-				$arta_api_url = 'https://api.arta.io/requests';
-				$width        = (float)$width;
-				$height       = (float)$height;
-				$length       = (float)$length;
-				$weight       = (float)$weight;
-				$arta_apikey  = $ARTA_Shipping_Method->settings['apikey'];
 
-				$response = wp_remote_post( $arta_api_url, array(
+				$url                      = 'https://api.arta.io/requests';
+				$product_width            = (float)$product_width;
+				$product_height           = (float)$product_height;
+				$length                   = (float)$length;
+				$product_weight           = (float)$product_weight;
+				$product_price            = (float)$product_price;
+				$quantity                 = (int)$quantity;
+				$product_country          = (string)$product_country;
+				$product_city             = (string)$product_city;
+				$product_postal           = (string)$product_postal;
+				$product_address          = (string)$product_address;
+
+				$dest_country             = (string)$dest_country;
+				$dest_region              = (string)$dest_region;
+				$dest_city                = (string)$dest_city;
+				$dest_postal              = (string)$dest_postal;
+				$dest_addr                = (string)$dest_addr;
+
+				$key                      = $ARTA_Shipping_Method->settings['apikey'];
+				$product_weight_unit      = substr( get_option('woocommerce_weight_unit'), 0, 2 );
+				$product_dimension_unit   = get_option('woocommerce_dimension_unit');
+				$product_currency_unit    = get_woocommerce_currency();
+
+				$js_request = str_replace( 'x_destination_country',              $dest_country,              $js_request );
+				$js_request = str_replace( 'x_destination_region',               $dest_region,               $js_request );
+				$js_request = str_replace( 'x_destination_city',                 $dest_city,                 $js_request );
+				$js_request = str_replace( 'x_destination_postal_code',          $dest_postal,               $js_request );
+				$js_request = str_replace( 'x_destination_address_line_1',       $dest_addr,                 $js_request );
+				$js_request = str_replace( 'x_destination_address_line_2',       '',                  $js_request );
+				$js_request = str_replace( 'x_destination_address_line_3',       '',                  $js_request );
+				$js_request = str_replace( 'x_destination_title',                'order',             $js_request );
+
+				$js_request = str_replace( 'x_destination_contact_name',         'xxx',               $js_request );
+				$js_request = str_replace( 'x_destination_contact_email',        'xxx',               $js_request );
+				$js_request = str_replace( 'x_destination_contact_phone',        'xxx',               $js_request );
+
+				$js_request = str_replace( 'x_order_title',                      'xxx',               $js_request );
+
+				$js_request = str_replace( 'x_objects_title',                    'product',           $js_request );
+				$js_request = str_replace( 'x_objects_width',                     $product_width,            $js_request );
+				$js_request = str_replace( 'x_objects_height',                    $product_height,           $js_request );
+				$js_request = str_replace( 'x_objects_weight_val',                $product_weight,           $js_request );
+				$js_request = str_replace( 'x_objects_weight_unit',               $product_weight_unit,      $js_request );
+				$js_request = str_replace( 'x_objects_dimension_unit',            $product_dimension_unit,   $js_request );
+				$js_request = str_replace( 'x_objects_img',                       '',                 $js_request );
+				$js_request = str_replace( 'x_objects_details_creation_date',     '',                 $js_request );
+				$js_request = str_replace( 'x_objects_details_creator',           '',                 $js_request );
+				$js_request = str_replace( 'x_objects_details_notes',             '',                 $js_request );
+				$js_request = str_replace( 'x_objects_details_title',             '',                 $js_request );
+				$js_request = str_replace( 'x_objects_xvalue',                    $product_price,            $js_request );
+				$js_request = str_replace( 'x_objects_currency_xvalue',           $product_currency_unit,    $js_request );
+
+				$js_request = str_replace( 'x_origin_country',                    $product_country,          $js_request );
+				$js_request = str_replace( 'x_origin_region',                     $product_region,           $js_request );
+				$js_request = str_replace( 'x_origin_city',                       $product_city,             $js_request );
+				$js_request = str_replace( 'x_origin_postal_code',                $product_postal,           $js_request );
+				$js_request = str_replace( 'x_origin_address_line_1',             $product_address,          $js_request );
+				$js_request = str_replace( 'x_origin_address_line_2',             '',                 $js_request );
+				$js_request = str_replace( 'x_origin_address_line_3',             '',                 $js_request );
+
+				$js_request = str_replace( 'x_origin_contacts_email',             get_option('admin_email'), $js_request );
+				$js_request = str_replace( 'x_origin_contacts_name',              get_option('xxx'),         $js_request );
+				$js_request = str_replace( 'x_origin_contacts_phone',             get_option('xxx'),         $js_request );
+
+				$response = wp_remote_post( $url, array(
 					'timeout'     => 6000,
 					'redirection' => 5,
 					'httpversion' => '1.0',
 					'blocking'    => true,
-					'headers'     => array('content-type'=>'application/json', 'Authorization'=>'ARTA_APIKey '.$arta_apikey, 'Arta-Quote-Timeout'=>6000, ),
+					'headers'     => array('content-type'=>'application/json', 'Authorization'=>'ARTA_APIKey '.$key, 'Arta-Quote-Timeout'=>6000, ),
 					'body'        => $js_request,
 					'cookies'     => array(),
 					'method'      => 'POST',
 					'data_format' => 'body',
 				) );
 				if ( is_wp_error( $response ) ) {
-					// $response->get_error_message();
+					echo $response->get_error_message();
 				} else {
-					$data = json_decode( $response['body'] );
+					$data = json_decode( $response['body'], true );
 				}
 
-				return (float)10;
+				//$txt = print_r( $data, true );
+				//file_put_contents( '/var/www/arr_data.txt', $txt );
+
+				if( isset( $data['disqualifications'] ) &&
+					count( $data['disqualifications'] ) > 0
+				){
+					foreach ( $data['disqualifications'] as $isqualification ){
+						$res['err'] .= $isqualification['reason'].'<br/>';
+					}
+				}elseif(  isset( $data['errors'] ) &&
+					count( $data['errors'] ) > 0
+				){
+					foreach ( $data['errors'] as $key=>$errors ){
+						$res['err'] .=  __( 'Error', 'woo_arta_shipping' ) . ': ' . $key . '<br/>';
+					}
+				}else{
+					foreach( $data['quotes'] as $quote_i ){
+						$res['data'][] = array( 'id'=>$quote_i['id'], 'quote_type'=>$quote_i['quote_type'],  'total'=>$quote_i['total'] );
+					}
+				}
+
+				return $res;
 			}
 		}
 	}

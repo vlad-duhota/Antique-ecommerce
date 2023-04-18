@@ -1,4 +1,9 @@
 <?php
+
+
+error_reporting(E_ALL ^ E_DEPRECATED );
+
+
 function base_scripts_styles() {
     $version   = 1;
     $in_footer = true;

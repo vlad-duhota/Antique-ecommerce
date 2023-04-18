@@ -1,0 +1,14 @@
+[18-Apr-2023 12:02:29 UTC] PHP Warning:  Undefined array key 0 in /var/www/test5/wp-content/themes/rotani/woocommerce/loop/add-to-cart.php on line 56
+[18-Apr-2023 12:02:29 UTC] PHP Warning:  Undefined array key 0 in /var/www/test5/wp-content/themes/rotani/woocommerce/loop/add-to-cart.php on line 56
+[18-Apr-2023 12:02:29 UTC] PHP Warning:  Undefined array key 0 in /var/www/test5/wp-content/themes/rotani/woocommerce/loop/add-to-cart.php on line 56
+[18-Apr-2023 12:02:29 UTC] PHP Warning:  Undefined array key 0 in /var/www/test5/wp-content/themes/rotani/woocommerce/loop/add-to-cart.php on line 56
+[18-Apr-2023 12:02:29 UTC] PHP Warning:  Undefined array key 0 in /var/www/test5/wp-content/themes/rotani/woocommerce/loop/add-to-cart.php on line 56
+[18-Apr-2023 12:02:29 UTC] PHP Warning:  Undefined array key 0 in /var/www/test5/wp-content/themes/rotani/woocommerce/loop/add-to-cart.php on line 56
+[18-Apr-2023 12:02:29 UTC] PHP Warning:  Undefined array key 0 in /var/www/test5/wp-content/themes/rotani/woocommerce/loop/add-to-cart.php on line 56
+[18-Apr-2023 12:02:29 UTC] PHP Warning:  Undefined array key 0 in /var/www/test5/wp-content/themes/rotani/woocommerce/loop/add-to-cart.php on line 56
+[18-Apr-2023 12:02:29 UTC] PHP Warning:  Undefined array key 0 in /var/www/test5/wp-content/themes/rotani/woocommerce/loop/add-to-cart.php on line 56
+[18-Apr-2023 12:02:29 UTC] PHP Warning:  Undefined array key 0 in /var/www/test5/wp-content/themes/rotani/woocommerce/loop/add-to-cart.php on line 56
+[18-Apr-2023 12:02:29 UTC] PHP Warning:  Undefined array key 0 in /var/www/test5/wp-content/themes/rotani/woocommerce/loop/add-to-cart.php on line 56
+[18-Apr-2023 12:02:29 UTC] PHP Warning:  Undefined array key 0 in /var/www/test5/wp-content/themes/rotani/woocommerce/loop/add-to-cart.php on line 56
+[18-Apr-2023 12:02:36 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /var/www/test5/wp-content/themes/rotani/woocommerce/content-single-product.php on line 19
+[18-Apr-2023 12:02:36 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /var/www/test5/wp-content/themes/rotani/woocommerce/single-product/short-description.php on line 21
