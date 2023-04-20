@@ -20,10 +20,16 @@
  */
 
 
-define( 'DB_NAME',     'test5' );
-define( 'DB_USER',     'user' );
-define( 'DB_PASSWORD', ';:RLZSm/LnkEm8E' );
-define( 'DB_HOST',     'localhost' );
+define( 'DB_NAME', 'hx459480_ronati' );
+
+/** Database username */
+define( 'DB_USER', 'hx459480_ronati' );
+
+/** Database password */
+define( 'DB_PASSWORD', '-Sf4c5s2;P' );
+
+/** Database hostname */
+define( 'DB_HOST', 'hx459480.mysql.tools' );
 define( 'DB_CHARSET',  'utf8mb4' );
 define( 'DB_COLLATE',  '' );
 
