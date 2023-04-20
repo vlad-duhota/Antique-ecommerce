@@ -57,13 +57,13 @@ defined( 'ABSPATH' ) || exit;
 						if ( ! $product_permalink ) {
 							echo $thumbnail; // PHPCS: XSS ok.
 						} else {
-							printf( '<a href="%s">%s</a>', esc_url( $product_permalink ), $thumbnail ); // PHPCS: XSS ok.
+							printf( '<a class="product__learn-btn" data-id="' . $product_id .'" href="%s">%s</a>', esc_url( $product_permalink ), $thumbnail ); // PHPCS: XSS ok.
 						}
 						?>
 						</div>
 
 						<div class="product-name" data-title="<?php esc_attr_e( 'Product', 'woocommerce' ); ?>">
-						<h2><?php echo wp_kses_post( apply_filters( 'woocommerce_cart_item_name', $_product->get_name() . ' X ' . $cart_item['quantity'], $cart_item, $cart_item_key ) . '&nbsp;' ); ?></h2>
+						<h2><a class="product__learn-btn" data-id="<?php echo $product_id?>" href="#"><?php echo wp_kses_post( apply_filters( 'woocommerce_cart_item_name', $_product->get_name() . ' X ' . $cart_item['quantity'], $cart_item, $cart_item_key ) . '&nbsp;' ); ?></a></h2>
 						<?php do_action( 'woocommerce_after_cart_item_name', $cart_item, $cart_item_key );
 						// Meta data.
 						echo wc_get_formatted_cart_item_data( $cart_item ); // PHPCS: XSS ok.
@@ -154,4 +154,10 @@ defined( 'ABSPATH' ) || exit;
 <?php do_action( 'woocommerce_after_cart' ); ?>
 </div>
 </div>
+</section>
+
+<section class="pop-up">
+	<div class="container">
+		
+	</div>
 </section>

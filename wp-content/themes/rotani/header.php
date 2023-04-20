@@ -24,10 +24,15 @@
                 <svg width="26" height="31" viewBox="0 0 26 31" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M18.28 14.6477C18.28 14.6477 18.28 13.7552 18.28 6.51772C18.28 -0.719737 7.56158 -0.957762 7.56158 6.51774V14.6477M4 8.93521H21.4919C23.116 8.93521 24.4451 10.2276 24.4907 11.8511L24.8269 23.8317C24.9217 27.21 22.2089 30 18.8293 30H7C3.68629 30 1 27.3137 1 24V11.9352C1 10.2784 2.34315 8.93521 4 8.93521Z" stroke="#323232" stroke-linecap="round"/>
                 </svg>
-
-                    <span class="header__cart-num">
-                        <?php echo count(WC()->cart->get_cart())?>
-                    </span>
+                    <?php if(count(WC()->cart->get_cart()) !== 0) {?>
+                        <span class="header__cart-num">
+                            <?php echo count(WC()->cart->get_cart())?>
+                        </span>
+                    <?php } else {?>
+                        <span class="header__cart-num hidden">
+                            <?php echo count(WC()->cart->get_cart())?>
+                        </span>
+                    <?php }?>
                 </a>
             </div>
         </header>

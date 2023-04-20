@@ -107,6 +107,9 @@ body {
         margin-left: auto;
         position: relative;
         &-num {
+            &.hidden {
+                display: none;
+            }
             position: absolute;
             top: -8px;
             right: -8px;
@@ -243,7 +246,7 @@ body {
                 color: #a0872a;
             }
             display: flex;
-            align-items: center;
+
             padding: 23px 0;
             @media (max-width: 768px) {
                 display: block;
@@ -327,7 +330,7 @@ body {
                 flex: 1 1 100%;
                 display: grid;
                 grid-template-columns: 284px 1fr;
-                align-items: center;
+
                 gap: 45px;
                 a {
                     display: block;
@@ -765,6 +768,7 @@ body {
                 & + .added_to_cart {
                     display: flex;
                     width: 100%;
+                    margin-left: 0;
                 }
             }
         }
@@ -1585,18 +1589,30 @@ body {
         gap: 25px;
         @media (min-width: 768px) {
             grid-template-columns: 1fr 350px;
+
             gap: 45px;
         }
         @media (min-width: 1099px) {
+            grid-template-rows: 1fr;
             grid-template-columns: 1fr 454px;
             gap: 70px;
         }
     }
     &__col {
+        &_1 {
+            @media (min-width: 1099px) {
+                padding-top: 43px;
+            }
+        }
         &_2 {
+            height: 100%;
             img {
                 width: 100%;
                 height: auto;
+                @media (min-width: 1099px) {
+                    min-height: 470px;
+                    object-fit: cover;
+                }
             }
         }
     }

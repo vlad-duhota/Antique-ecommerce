@@ -66,6 +66,22 @@ $('.product__learn-btn').click(function (e) {
       //     // Arta is ready. Enable the "Estimate Shipping" button (Optional)
       //   }
       // });
+      $('.single_add_to_cart_button').on('click', function (e) {
+        setTimeout(function () {
+          $.ajax({
+            url: '/wp-admin/admin-ajax.php',
+            type: 'GET',
+            data: {
+              action: 'cart_ajax_call',
+            },
+            success: function (res) {
+              $('.header__cart-num').removeClass('hidden')
+              $('.header__cart-num').text(res);
+            }
+          });
+        }, 4000)
+
+      })
     }
   });
 });
@@ -187,12 +203,15 @@ $('.product .add_to_cart_button').on('click', function (e) {
         action: 'cart_ajax_call',
       },
       success: function (res) {
+        $('.header__cart-num').removeClass('hidden')
         $('.header__cart-num').text(res);
       }
     });
   }, 4000)
 
 })
+
+
 
 $('.cart-sec .remove').on('click', function () {
   setTimeout(function () {
