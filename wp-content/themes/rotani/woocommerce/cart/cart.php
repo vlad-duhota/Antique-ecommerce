@@ -73,8 +73,10 @@ defined( 'ABSPATH' ) || exit;
 							echo wp_kses_post( apply_filters( 'woocommerce_cart_item_backorder_notification', '<p class="backorder_notification">' . esc_html__( 'Available on backorder', 'woocommerce' ) . '</p>', $product_id ) );
 						}
 						?>
+						<?php if(get_post_meta( $product_id , '_product_attributes' )) : ?>
 						<?php $firstAttr = array_shift(get_post_meta( $product_id , '_product_attributes' )[0])?>
 						<p class="product__atr"><?php echo $firstAttr['name']?> : <?php echo $firstAttr['value']?></p>
+						<?php endif;?>
 						</div>
 
 						<div class="product-total" data-title="<?php esc_attr_e( 'Subtotal', 'woocommerce' ); ?>">
