@@ -1,0 +1,41 @@
+<?php return array(
+    'root' => array(
+        'name' => 'octolize/shipping-cost-on-product-page',
+        'pretty_version' => '1.3.4',
+        'version' => '1.3.4.0',
+        'reference' => '0971207942174f4bf98ead3d85534db728c93d43',
+        'type' => 'library',
+        'install_path' => __DIR__ . '/../../',
+        'aliases' => array(),
+        'dev' => false,
+    ),
+    'versions' => array(
+        'octolize/shipping-cost-on-product-page' => array(
+            'pretty_version' => '1.3.4',
+            'version' => '1.3.4.0',
+            'reference' => '0971207942174f4bf98ead3d85534db728c93d43',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../../',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'psr/log' => array(
+            'pretty_version' => '1.1.4',
+            'version' => '1.1.4.0',
+            'reference' => 'd49695b909c3b7628b6289db5479a1c204601f11',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../psr/log',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'wpdesk/wp-wpdesk-helper-override' => array(
+            'pretty_version' => '1.1.0',
+            'version' => '1.1.0.0',
+            'reference' => '77844fc71da7ebb7645f10f0fc15f5294fed8542',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../wpdesk/wp-wpdesk-helper-override',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+    ),
+);

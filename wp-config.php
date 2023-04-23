@@ -34,7 +34,7 @@ define( 'DB_CHARSET',  'utf8mb4' );
 define( 'DB_COLLATE',  '' );
 
 define( 'WP_DEBUG',          true );
-define( 'WP_DEBUG_DISPLAY',  false );
+define( 'WP_DEBUG_DISPLAY',  true );
 define( 'WP_DEBUG_LOG',      true );
 
 define( 'WP_HOME',           'http://'.$_SERVER['HTTP_HOST'] );

@@ -10,6 +10,8 @@ function base_scripts_styles() {
 
     // styles
     wp_enqueue_style('swiper style', 'https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css', [] );
+
+	wp_enqueue_style('select 2', 'https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css', [] );
     wp_enqueue_style('main style', get_template_directory_uri() . '/css/style.css', [] );
     wp_enqueue_style('theme', get_stylesheet_uri(), [] );
 
@@ -17,7 +19,7 @@ function base_scripts_styles() {
 	wp_deregister_script( 'jquery' );
     wp_enqueue_script('jquery', 'https://code.jquery.com/jquery-3.6.3.min.js', [], $version, $in_footer );
     wp_enqueue_script('swiper script', 'https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js', [], $version, $in_footer );
-	// wp_enqueue_script('arta script', 'https://cdn.arta.io/artajs/1.0.0/arta.js', [], $version, $in_footer );
+	wp_enqueue_script('select 2', 'https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js', [], $version, $in_footer );
     wp_enqueue_script('main script', get_template_directory_uri() . '/js/main.js', [], $version, $in_footer );
 }
 add_action( 'wp_enqueue_scripts', 'base_scripts_styles' );
@@ -166,6 +168,8 @@ add_action('after_setup_theme', 'remove_admin_bar');
 function remove_admin_bar() {
   show_admin_bar(false);
 }
+
+
 function popup_ajax_call(){
 		setup_postdata($_POST['id']);
 		session_start();
@@ -254,7 +258,7 @@ function jk_woocommerce_breadcrumbs() {
 // }
 
 function cart_ajax_call(){
-	echo count(WC()->cart->get_cart());
+	echo count(YITH_WCWL()->get_products( [ 'wishlist_id' => 'all' ] ));
 wp_die();// this is required to terminate immediately and return a proper response
 }
 add_action('wp_ajax_cart_ajax_call', 'cart_ajax_call'); // for logged in users only
@@ -397,3 +401,5 @@ function sww_remove_wc_currency_symbols( $currency_symbol, $currency ) {
 	return $currency_symbol;
 }
 add_filter('woocommerce_currency_symbol', 'sww_remove_wc_currency_symbols', 10, 2);
+
+

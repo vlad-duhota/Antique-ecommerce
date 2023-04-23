@@ -1,0 +1,439 @@
+# Copyright (C) 2023 Octolize
+# This file is distributed under the same license as the Shipping Cost on Product Page plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: Shipping Cost on Product Page 1.3.4\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/octolize-shipping-cost-on-product-page\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2023-03-27T17:36:06+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.7.1\n"
+"X-Domain: octolize-shipping-cost-on-product-page\n"
+
+#. Plugin Name of the plugin
+#: src/Plugin.php:58
+#: vendor_prefixed/octolize/wp-shipping-cost-on-product-page/src/Octolize/Shipping/CostOnProductPage/WooCommerceSettings/GeneralSettingsFields.php:23
+#: vendor_prefixed/octolize/wp-shipping-cost-on-product-page/src/Octolize/Shipping/CostOnProductPage/WooCommerceSettings/WooCommerceSettingsPage.php:43
+msgid "Shipping Cost on Product Page"
+msgstr ""
+
+#. Plugin URI of the plugin
+msgid "https://wordpress.org/plugins/octolize-shipping-cost-on-product-page/"
+msgstr ""
+
+#. Description of the plugin
+msgid "Let your customers calculate and see the shipping cost on product pages based on the entered shipping destination and cart contents."
+msgstr ""
+
+#. Author of the plugin
+msgid "Octolize"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "https://octol.io/scpp-author"
+msgstr ""
+
+#: src/Metabox/UpsellMetabox.php:53
+msgid "Displaying the available shipping methods automatically based on the saved shipping address or WooCommerce settings"
+msgstr ""
+
+#: src/Metabox/UpsellMetabox.php:54
+msgid "Selecting the products to calculate the shipping cost for"
+msgstr ""
+
+#: src/Metabox/UpsellMetabox.php:55
+msgid "Hiding the shipping cost calculator on specific product pages"
+msgstr ""
+
+#: src/Metabox/UpsellMetabox.php:56
+msgid "Calculator placement management"
+msgstr ""
+
+#: src/Metabox/UpsellMetabox.php:57
+msgid "Placing the calculator with shortcodes"
+msgstr ""
+
+#: src/Metabox/UpsellMetabox.php:60
+msgid "Get Shipping Cost on Product Page PRO!"
+msgstr ""
+
+#: src/Metabox/UpsellMetabox.php:62
+msgid "Upgrade Now →"
+msgstr ""
+
+#: src/Metabox/UpsellMetabox.php:63
+msgid "https://octol.io/scpp-up-box"
+msgstr ""
+
+#. translators: open tag, close tag.
+#: src/Plugin.php:77
+#: vendor_prefixed/octolize/wp-shipping-cost-on-product-page/src/Octolize/Shipping/CostOnProductPage/WooCommerceSettings/GeneralSettingsFields.php:26
+msgid "https://octol.io/scpp-docs"
+msgstr ""
+
+#: src/Plugin.php:78
+msgid "https://octol.io/scpp-upgrade"
+msgstr ""
+
+#: src/Plugin.php:79
+msgid "https://octol.io/scpp-support"
+msgstr ""
+
+#: src/Plugin.php:85
+msgid "Settings"
+msgstr ""
+
+#: src/Plugin.php:86
+msgid "Docs"
+msgstr ""
+
+#: src/Plugin.php:87
+msgid "Support"
+msgstr ""
+
+#: src/Plugin.php:88
+msgid "Upgrade"
+msgstr ""
+
+#: vendor_prefixed/octolize/wp-octolize-tracker/src/OptInNotice/views/html-notice.php:12
+msgid "Help us improve Octolize plugins' experience"
+msgstr ""
+
+#: vendor_prefixed/octolize/wp-octolize-tracker/src/OptInNotice/views/html-notice.php:15
+msgid "Hi %1$s, with your helping hand we can build effective solutions, launch the new features and shape better plugins experience. By agreeing to anonymously share non-sensitive %2$susage data%3$s of our plugins, you will help us develop them in the right direction. No personal data is tracked or stored and you can opt-out any time. Will you give the thumbs up to our efforts?"
+msgstr ""
+
+#: vendor_prefixed/octolize/wp-octolize-tracker/src/OptInNotice/views/html-notice.php:22
+#: vendor_prefixed/wpdesk/wp-wpdesk-tracker/src/views/tracker-notice.php:41
+msgid "Allow"
+msgstr ""
+
+#: vendor_prefixed/octolize/wp-shipping-cost-on-product-page/src/Octolize/Shipping/CostOnProductPage/CalculatorAjaxAction.php:142
+msgctxt "Error message when user try to calculate cost for unknown products. Protection from cheaters."
+msgid "Product not found"
+msgstr ""
+
+#: vendor_prefixed/octolize/wp-shipping-cost-on-product-page/src/Octolize/Shipping/CostOnProductPage/CalculatorRenderer.php:60
+msgid "Calculate shipping price"
+msgstr ""
+
+#: vendor_prefixed/octolize/wp-shipping-cost-on-product-page/src/Octolize/Shipping/CostOnProductPage/CalculatorRenderer.php:63
+msgid "Please fill in the fields below with the shipping destination details in order to calculate the shipping cost."
+msgstr ""
+
+#: vendor_prefixed/octolize/wp-shipping-cost-on-product-page/src/Octolize/Shipping/CostOnProductPage/Integration/ShippingNotices.php:45
+msgctxt "Shipping Notices - location option"
+msgid "Product Page"
+msgstr ""
+
+#. translators: open tag, formatted destination, close tag.
+#: vendor_prefixed/octolize/wp-shipping-cost-on-product-page/src/Octolize/Shipping/CostOnProductPage/views/html-ajax-response-content.php:34
+msgid "Shipping this product and your current cart contents to %1$s%2$s%3$s costs:"
+msgstr ""
+
+#. translators: open tag, formatted destination, close tag.
+#: vendor_prefixed/octolize/wp-shipping-cost-on-product-page/src/Octolize/Shipping/CostOnProductPage/views/html-ajax-response-content.php:46
+msgid "Shipping this product to %1$s%2$s%3$s costs:"
+msgstr ""
+
+#. translators: destination address.
+#: vendor_prefixed/octolize/wp-shipping-cost-on-product-page/src/Octolize/Shipping/CostOnProductPage/views/html-ajax-response-content.php:75
+msgid "No shipping options were found for %s."
+msgstr ""
+
+#: vendor_prefixed/octolize/wp-shipping-cost-on-product-page/src/Octolize/Shipping/CostOnProductPage/views/html-ajax-response-content.php:87
+msgid "Enter a different address"
+msgstr ""
+
+#: vendor_prefixed/octolize/wp-shipping-cost-on-product-page/src/Octolize/Shipping/CostOnProductPage/views/html-shipping-calculator.php:51
+msgid "Select a country / region…"
+msgstr ""
+
+#: vendor_prefixed/octolize/wp-shipping-cost-on-product-page/src/Octolize/Shipping/CostOnProductPage/views/html-shipping-calculator.php:64
+#: vendor_prefixed/octolize/wp-shipping-cost-on-product-page/src/Octolize/Shipping/CostOnProductPage/views/html-shipping-calculator.php:70
+#: vendor_prefixed/octolize/wp-shipping-cost-on-product-page/src/Octolize/Shipping/CostOnProductPage/views/html-shipping-calculator.php:88
+msgid "State / County"
+msgstr ""
+
+#: vendor_prefixed/octolize/wp-shipping-cost-on-product-page/src/Octolize/Shipping/CostOnProductPage/views/html-shipping-calculator.php:73
+msgid "Select an option…"
+msgstr ""
+
+#: vendor_prefixed/octolize/wp-shipping-cost-on-product-page/src/Octolize/Shipping/CostOnProductPage/views/html-shipping-calculator.php:97
+msgid "City"
+msgstr ""
+
+#: vendor_prefixed/octolize/wp-shipping-cost-on-product-page/src/Octolize/Shipping/CostOnProductPage/views/html-shipping-calculator.php:103
+msgid "Postcode / ZIP"
+msgstr ""
+
+#: vendor_prefixed/octolize/wp-shipping-cost-on-product-page/src/Octolize/Shipping/CostOnProductPage/views/html-shipping-calculator.php:108
+msgid "Calculate"
+msgstr ""
+
+#. translators: open tag, close tag.
+#: vendor_prefixed/octolize/wp-shipping-cost-on-product-page/src/Octolize/Shipping/CostOnProductPage/WooCommerceSettings/GeneralSettingsFields.php:25
+msgid "These are the Shipping Cost on Product Page plugin general settings. In order to learn more about its configuration please refer to its %1$sdedicated documentation →%2$s"
+msgstr ""
+
+#: vendor_prefixed/octolize/wp-shipping-cost-on-product-page/src/Octolize/Shipping/CostOnProductPage/WooCommerceSettings/GeneralSettingsFields.php:28
+msgid "Enable/Disable"
+msgstr ""
+
+#: vendor_prefixed/octolize/wp-shipping-cost-on-product-page/src/Octolize/Shipping/CostOnProductPage/WooCommerceSettings/GeneralSettingsFields.php:28
+msgid "Turn on / off the shipping cost calculator on the product page"
+msgstr ""
+
+#: vendor_prefixed/octolize/wp-shipping-cost-on-product-page/src/Octolize/Shipping/CostOnProductPage/WooCommerceSettings/GeneralSettingsFields.php:28
+msgid "Virtual products"
+msgstr ""
+
+#: vendor_prefixed/octolize/wp-shipping-cost-on-product-page/src/Octolize/Shipping/CostOnProductPage/WooCommerceSettings/GeneralSettingsFields.php:28
+msgid "Turn off displaying the shipping cost calculator on the virtual products' product pages"
+msgstr ""
+
+#: vendor_prefixed/octolize/wp-shipping-cost-on-product-page/src/Octolize/Shipping/CostOnProductPage/WooCommerceSettings/GeneralSettingsFields.php:28
+msgid "Tick this checkbox if you want the shipping cost calculator to remain hidden on the product pages of the virtual products which do not require to be shipped."
+msgstr ""
+
+#: vendor_prefixed/wpdesk/wp-logs/src/deprecated/wpdesk-logger.php:59
+msgid "Disabled"
+msgstr ""
+
+#: vendor_prefixed/wpdesk/wp-logs/src/deprecated/wpdesk-logger.php:59
+msgid "Emergency"
+msgstr ""
+
+#: vendor_prefixed/wpdesk/wp-logs/src/deprecated/wpdesk-logger.php:59
+msgid "Alert"
+msgstr ""
+
+#: vendor_prefixed/wpdesk/wp-logs/src/deprecated/wpdesk-logger.php:59
+msgid "Critical"
+msgstr ""
+
+#: vendor_prefixed/wpdesk/wp-logs/src/deprecated/wpdesk-logger.php:59
+msgid "Error"
+msgstr ""
+
+#: vendor_prefixed/wpdesk/wp-logs/src/deprecated/wpdesk-logger.php:59
+msgid "Warning"
+msgstr ""
+
+#: vendor_prefixed/wpdesk/wp-logs/src/deprecated/wpdesk-logger.php:59
+msgid "Notice"
+msgstr ""
+
+#: vendor_prefixed/wpdesk/wp-logs/src/deprecated/wpdesk-logger.php:59
+msgid "Info"
+msgstr ""
+
+#: vendor_prefixed/wpdesk/wp-logs/src/deprecated/wpdesk-logger.php:59
+msgid "Debug"
+msgstr ""
+
+#. Translators: directory.
+#: vendor_prefixed/wpdesk/wp-logs/src/WP/WPCapture.php:23
+msgid "Can not enable WP Desk Debug log! Cannot create directory %s or this directory is not writeable!"
+msgstr ""
+
+#. Translators: directory.
+#: vendor_prefixed/wpdesk/wp-logs/src/WP/WPCapture.php:36
+msgid "Can not enable WP Desk Debug log! Cannot create file %s!"
+msgstr ""
+
+#. Translators: plugin name.
+#: vendor_prefixed/wpdesk/wp-wpdesk-rating-petition/src/RatingPetitionNotice.php:151
+msgid "Awesome, you've been using %s for more than 2 weeks. Could you please do me a BIG favor and give it a 5-star rating on WordPress? ~ Peter"
+msgstr ""
+
+#. Translators: link.
+#: vendor_prefixed/wpdesk/wp-wpdesk-rating-petition/src/RatingPetitionNotice.php:166
+msgid "%1$sOk, you deserved it%2$s"
+msgstr ""
+
+#. Translators: link.
+#: vendor_prefixed/wpdesk/wp-wpdesk-rating-petition/src/RatingPetitionNotice.php:172
+msgid "%1$sNope, maybe later%2$s"
+msgstr ""
+
+#. Translators: link.
+#: vendor_prefixed/wpdesk/wp-wpdesk-rating-petition/src/RatingPetitionNotice.php:178
+msgid "%1$sI already did%2$s"
+msgstr ""
+
+#: vendor_prefixed/wpdesk/wp-wpdesk-rating-petition/src/views/html-text-petition.php:15
+msgid "Created with %1$s by %2$s - If you like %3$s you can %4$srate us %5$s in plugins repository &rarr;%6$s"
+msgstr ""
+
+#: vendor_prefixed/wpdesk/wp-wpdesk-tracker-deactivation/src/WPDesk/Tracker/Deactivation/views/scripts.php:44
+msgid "Plugin deactivation"
+msgstr ""
+
+#: vendor_prefixed/wpdesk/wp-wpdesk-tracker-deactivation/src/WPDesk/Tracker/Deactivation/views/scripts.php:115
+#: vendor_prefixed/wpdesk/wp-wpdesk-tracker/src/views/tracker-deactivate.php:126
+msgid "Submit &amp; Deactivate"
+msgstr ""
+
+#: vendor_prefixed/wpdesk/wp-wpdesk-tracker-deactivation/src/WPDesk/Tracker/Deactivation/views/thickbox.php:20
+#: vendor_prefixed/wpdesk/wp-wpdesk-tracker/src/views/tracker-deactivate.php:11
+msgid "You are deactivating %s plugin."
+msgstr ""
+
+#: vendor_prefixed/wpdesk/wp-wpdesk-tracker-deactivation/src/WPDesk/Tracker/Deactivation/views/thickbox.php:29
+msgid "If you have a moment, please let us know why you are deactivating the plugin (anonymous feedback):"
+msgstr ""
+
+#: vendor_prefixed/wpdesk/wp-wpdesk-tracker-deactivation/src/WPDesk/Tracker/Deactivation/views/thickbox.php:38
+#: vendor_prefixed/wpdesk/wp-wpdesk-tracker/src/views/tracker-deactivate.php:28
+msgid "The plugin suddenly stopped working"
+msgstr ""
+
+#: vendor_prefixed/wpdesk/wp-wpdesk-tracker-deactivation/src/WPDesk/Tracker/Deactivation/views/thickbox.php:48
+#: vendor_prefixed/wpdesk/wp-wpdesk-tracker/src/views/tracker-deactivate.php:38
+msgid "The plugin broke my site"
+msgstr ""
+
+#: vendor_prefixed/wpdesk/wp-wpdesk-tracker-deactivation/src/WPDesk/Tracker/Deactivation/views/thickbox.php:58
+msgid "I have found a better plugin"
+msgstr ""
+
+#: vendor_prefixed/wpdesk/wp-wpdesk-tracker-deactivation/src/WPDesk/Tracker/Deactivation/views/thickbox.php:63
+#: vendor_prefixed/wpdesk/wp-wpdesk-tracker/src/views/tracker-deactivate.php:53
+msgid "What's the plugin's name?"
+msgstr ""
+
+#: vendor_prefixed/wpdesk/wp-wpdesk-tracker-deactivation/src/WPDesk/Tracker/Deactivation/views/thickbox.php:73
+#: vendor_prefixed/wpdesk/wp-wpdesk-tracker/src/views/tracker-deactivate.php:63
+msgid "I only needed the plugin for a short period"
+msgstr ""
+
+#: vendor_prefixed/wpdesk/wp-wpdesk-tracker-deactivation/src/WPDesk/Tracker/Deactivation/views/thickbox.php:83
+#: vendor_prefixed/wpdesk/wp-wpdesk-tracker/src/views/tracker-deactivate.php:73
+msgid "I no longer need the plugin"
+msgstr ""
+
+#: vendor_prefixed/wpdesk/wp-wpdesk-tracker-deactivation/src/WPDesk/Tracker/Deactivation/views/thickbox.php:93
+#: vendor_prefixed/wpdesk/wp-wpdesk-tracker/src/views/tracker-deactivate.php:83
+msgid "It's a temporary deactivation. I'm just debugging an issue."
+msgstr ""
+
+#: vendor_prefixed/wpdesk/wp-wpdesk-tracker-deactivation/src/WPDesk/Tracker/Deactivation/views/thickbox.php:103
+#: vendor_prefixed/wpdesk/wp-wpdesk-tracker/src/views/tracker-deactivate.php:93
+msgid "Other"
+msgstr ""
+
+#: vendor_prefixed/wpdesk/wp-wpdesk-tracker-deactivation/src/WPDesk/Tracker/Deactivation/views/thickbox.php:108
+msgid "Please let us know how we can improve our plugin"
+msgstr ""
+
+#: vendor_prefixed/wpdesk/wp-wpdesk-tracker-deactivation/src/WPDesk/Tracker/Deactivation/views/thickbox.php:117
+#: vendor_prefixed/wpdesk/wp-wpdesk-tracker/src/views/tracker-deactivate.php:107
+msgid "Cancel"
+msgstr ""
+
+#: vendor_prefixed/wpdesk/wp-wpdesk-tracker-deactivation/src/WPDesk/Tracker/Deactivation/views/thickbox.php:120
+#: vendor_prefixed/wpdesk/wp-wpdesk-tracker/src/views/tracker-deactivate.php:110
+msgid "Skip &amp; Deactivate"
+msgstr ""
+
+#: vendor_prefixed/wpdesk/wp-wpdesk-tracker/src/PSR/WPDesk/Tracker/OptOut.php:41
+msgid "You successfully opted out of collecting usage data by %1$s. If you change your mind, you can always opt in later in the plugin's quick links."
+msgstr ""
+
+#: vendor_prefixed/wpdesk/wp-wpdesk-tracker/src/PSR/WPDesk/Tracker/PluginActionLinks.php:50
+msgid "Opt-in"
+msgstr ""
+
+#: vendor_prefixed/wpdesk/wp-wpdesk-tracker/src/PSR/WPDesk/Tracker/PluginActionLinks.php:53
+msgid "Opt-out"
+msgstr ""
+
+#: vendor_prefixed/wpdesk/wp-wpdesk-tracker/src/PSR/WPDesk/Tracker/views/tracker-connect.php:23
+#: vendor_prefixed/wpdesk/wp-wpdesk-tracker/src/views/tracker-connect.php:15
+#: vendor_prefixed/wpdesk/wp-wpdesk-tracker/src/views/tracker-notice.php:19
+msgid "Hey %s,"
+msgstr ""
+
+#: vendor_prefixed/wpdesk/wp-wpdesk-tracker/src/PSR/WPDesk/Tracker/views/tracker-connect.php:26
+#: vendor_prefixed/wpdesk/wp-wpdesk-tracker/src/views/tracker-connect.php:18
+msgid "Please help us improve our plugins! If you opt-in, we will collect some non-sensitive data and usage information anonymously. If you skip this, that's okay! All plugins will work just fine."
+msgstr ""
+
+#: vendor_prefixed/wpdesk/wp-wpdesk-tracker/src/PSR/WPDesk/Tracker/views/tracker-connect.php:35
+#: vendor_prefixed/wpdesk/wp-wpdesk-tracker/src/views/tracker-connect.php:27
+msgid "Allow & Continue &rarr;"
+msgstr ""
+
+#: vendor_prefixed/wpdesk/wp-wpdesk-tracker/src/PSR/WPDesk/Tracker/views/tracker-connect.php:40
+#: vendor_prefixed/wpdesk/wp-wpdesk-tracker/src/views/tracker-connect.php:32
+msgid "Skip"
+msgstr ""
+
+#: vendor_prefixed/wpdesk/wp-wpdesk-tracker/src/PSR/WPDesk/Tracker/views/tracker-connect.php:47
+#: vendor_prefixed/wpdesk/wp-wpdesk-tracker/src/views/tracker-connect.php:39
+msgid "What permissions are being granted?"
+msgstr ""
+
+#: vendor_prefixed/wpdesk/wp-wpdesk-tracker/src/PSR/WPDesk/Tracker/views/tracker-connect.php:56
+#: vendor_prefixed/wpdesk/wp-wpdesk-tracker/src/views/tracker-connect.php:48
+msgid "Your Site Overview"
+msgstr ""
+
+#: vendor_prefixed/wpdesk/wp-wpdesk-tracker/src/PSR/WPDesk/Tracker/views/tracker-connect.php:59
+#: vendor_prefixed/wpdesk/wp-wpdesk-tracker/src/views/tracker-connect.php:51
+msgid "WP version, PHP info"
+msgstr ""
+
+#: vendor_prefixed/wpdesk/wp-wpdesk-tracker/src/PSR/WPDesk/Tracker/views/tracker-connect.php:67
+#: vendor_prefixed/wpdesk/wp-wpdesk-tracker/src/views/tracker-connect.php:59
+msgid "Plugin Usage"
+msgstr ""
+
+#: vendor_prefixed/wpdesk/wp-wpdesk-tracker/src/PSR/WPDesk/Tracker/views/tracker-connect.php:70
+msgid "Current settings and usage information of %1$s plugins"
+msgstr ""
+
+#: vendor_prefixed/wpdesk/wp-wpdesk-tracker/src/PSR/WPDesk/Tracker/views/tracker-connect.php:78
+#: vendor_prefixed/wpdesk/wp-wpdesk-tracker/src/views/tracker-connect.php:70
+msgid "Your Store Overview"
+msgstr ""
+
+#: vendor_prefixed/wpdesk/wp-wpdesk-tracker/src/PSR/WPDesk/Tracker/views/tracker-connect.php:81
+#: vendor_prefixed/wpdesk/wp-wpdesk-tracker/src/views/tracker-connect.php:73
+msgid "Anonymized and non-sensitive store usage information"
+msgstr ""
+
+#: vendor_prefixed/wpdesk/wp-wpdesk-tracker/src/PSR/WPDesk/Tracker/views/tracker-connect.php:91
+#: vendor_prefixed/wpdesk/wp-wpdesk-tracker/src/views/tracker-connect.php:83
+#: vendor_prefixed/wpdesk/wp-wpdesk-tracker/src/views/tracker-notice.php:27
+msgid "Find out more &raquo;"
+msgstr ""
+
+#: vendor_prefixed/wpdesk/wp-wpdesk-tracker/src/views/tracker-connect.php:62
+msgid "Current settings and usage information of WP Desk plugins"
+msgstr ""
+
+#: vendor_prefixed/wpdesk/wp-wpdesk-tracker/src/views/tracker-deactivate.php:19
+msgid " If you have a moment, please let us know why you are deactivating plugin (anonymous feedback):"
+msgstr ""
+
+#: vendor_prefixed/wpdesk/wp-wpdesk-tracker/src/views/tracker-deactivate.php:48
+msgid "I found a better plugin"
+msgstr ""
+
+#: vendor_prefixed/wpdesk/wp-wpdesk-tracker/src/views/tracker-deactivate.php:98
+msgid "Kindly tell us the reason so we can improve"
+msgstr ""
+
+#: vendor_prefixed/wpdesk/wp-wpdesk-tracker/src/views/tracker-notice.php:22
+msgid "We need your help to improve <strong>WP Desk plugins</strong>, so they are more useful for you and the rest of <strong>30,000+ users</strong>. By collecting data on how you use our plugins, you will help us a lot. We will not collect any sensitive data, so you can feel safe."
+msgstr ""
+
+#: vendor_prefixed/wpdesk/wp-wpdesk-tracker/src/views/tracker-opt-out-notice.php:11
+msgid "You successfully opted out of collecting usage data by WP Desk. If you change your mind, you can always opt in later in the plugin's quick links."
+msgstr ""

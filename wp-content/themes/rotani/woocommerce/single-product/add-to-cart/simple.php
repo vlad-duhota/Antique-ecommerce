@@ -16,8 +16,7 @@
  */
 
 defined( 'ABSPATH' ) || exit;
-
-global $product;
+$product = wc_get_product($_SESSION['postID']);
 
 if ( ! $product->is_purchasable() ) {
 	return;
@@ -54,12 +53,23 @@ if ( $product->is_in_stock() ) : ?>
 </svg>
 
 </button>
+
 	<?php }?>
-	
+	<div class="pop-up__wishlist">
+		
+	</div>
+	<div class="shipping-widget">
+		<div>
+			<h3>Shipping</h3>
+			<a href="">Calculate Shipping </a> 
+		</div>
+		<div class="shipping-widget-icon">
+
+		</div>
+	</div>
 <!-- <button type="button" onClick="Arta.open()">Estimate Shipping</button> -->
 		<?php do_action( 'woocommerce_after_add_to_cart_button' ); ?>
 	</form>
-	
 	<?php
     // Availability
     $availability = $product->get_availability();
@@ -68,5 +78,5 @@ if ( $product->is_in_stock() ) : ?>
     endif;
 ?>
 	<?php do_action( 'woocommerce_after_add_to_cart_form' ); ?>
-
+	<div class="delivery-variants"></div>
 <?php endif; ?>
