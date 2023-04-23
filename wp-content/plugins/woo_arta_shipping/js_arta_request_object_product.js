@@ -1,0 +1,30 @@
+{
+	"internal_reference":"",
+	"current_packing":[
+		"no_packing"
+	],
+	"depth":"3",
+	"details":{
+		"materials":[
+			"canvas"
+		],
+			"creation_date":"",
+			"creator":"",
+			"notes":"",
+			"title":"",
+			"is_fragile":false,
+			"is_cites":false
+	},
+	"height":"x_objects_height",
+	"images":[
+		""
+	],
+	"public_reference":"Round Smithson work",
+	"subtype":"painting_unframed",
+	"width":"",
+	"unit_of_measurement":"",
+	"weight":"",
+	"weight_unit":"",
+	"value":"",
+	"value_currency":""
+}

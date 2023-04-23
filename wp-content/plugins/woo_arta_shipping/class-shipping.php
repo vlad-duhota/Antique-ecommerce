@@ -121,7 +121,7 @@ function start_arta_shipping_method() {
 
 			public static function arta_request_cost( $key, $product_width=0, $product_height=0, $length=0, $product_weight=0, $product_price=0, $quantity=1, $product_country='', $product_region='', $product_city='', $product_postal='', $product_address='', $dest_country='', $dest_region='', $dest_city='', $dest_postal='', $dest_addr='' ){
 				$res                      = array('err'=>'', 'data'=>array() );
-				$js_request               = '{"request":{"additional_services":["origin_condition_check"],"currency":"USD","destination":{"access_restrictions":["stairs_only"],"address_line_1":"x_destination_address_line_1","address_line_2":"x_destination_address_line_2","address_line_3":"x_destination_address_line_3","city":"x_destination_city","region":"x_destination_region","postal_code":"x_destination_postal_code","country":"x_destination_country","title":"x_destination_title","contacts":[{"name":"x_destination_contact_name","email_address":"x_destination_contact_email","phone_number":"x_destination_contact_phone"}]},"insurance":"arta_transit_insurance","internal_reference":"x_order_title","objects":[{"internal_reference":"x_objects_title","current_packing":["no_packing"],"depth":"3","details":{"materials":["canvas"],"creation_date":"x_objects_details_creation_date","creator":"x_objects_details_creator","notes":"x_objects_details_notes","title":"x_objects_details_title","is_fragile":false,"is_cites":false},"height":"x_objects_height","images":["x_objects_img"],"public_reference":"Round Smithson work","subtype":"painting_unframed","width":"x_objects_width","unit_of_measurement":"x_objects_dimension_unit","weight":"x_objects_weight_val","weight_unit":"x_objects_weight_unit","value":"x_objects_xvalue","value_currency":"x_objects_currency_xvalue"}],"origin":{"access_restrictions":["non_paved"],"address_line_1":"x_origin_address_line_1","address_line_2":"x_origin_address_line_2","address_line_3":"x_origin_address_line_3","city":"x_origin_city","region":"x_origin_region","postal_code":"x_origin_postal_code","country":"x_origin_country","title":"Warehouse","contacts":[{"name":"x_origin_contacts_name","email_address":"x_origin_contacts_email","phone_number":"x_origin_contacts_phone"}]},"preferred_quote_types":["parcel"],"public_reference":"Order #1437","shipping_notes":"New customer"}}';
+				//$js_request               = '{"request":{"additional_services":["origin_condition_check"],"currency":"USD","destination":{"access_restrictions":["stairs_only"],"address_line_1":"x_destination_address_line_1","address_line_2":"x_destination_address_line_2","address_line_3":"x_destination_address_line_3","city":"x_destination_city","region":"x_destination_region","postal_code":"x_destination_postal_code","country":"x_destination_country","title":"x_destination_title","contacts":[{"name":"x_destination_contact_name","email_address":"x_destination_contact_email","phone_number":"x_destination_contact_phone"}]},"insurance":"arta_transit_insurance","internal_reference":"x_order_title","objects":[{"internal_reference":"x_objects_title","current_packing":["no_packing"],"depth":"3","details":{"materials":["canvas"],"creation_date":"x_objects_details_creation_date","creator":"x_objects_details_creator","notes":"x_objects_details_notes","title":"x_objects_details_title","is_fragile":false,"is_cites":false},"height":"x_objects_height","images":["x_objects_img"],"public_reference":"Round Smithson work","subtype":"painting_unframed","width":"x_objects_width","unit_of_measurement":"x_objects_dimension_unit","weight":"x_objects_weight_val","weight_unit":"x_objects_weight_unit","value":"x_objects_xvalue","value_currency":"x_objects_currency_xvalue"}],"origin":{"access_restrictions":["non_paved"],"address_line_1":"x_origin_address_line_1","address_line_2":"x_origin_address_line_2","address_line_3":"x_origin_address_line_3","city":"x_origin_city","region":"x_origin_region","postal_code":"x_origin_postal_code","country":"x_origin_country","title":"Warehouse","contacts":[{"name":"x_origin_contacts_name","email_address":"x_origin_contacts_email","phone_number":"x_origin_contacts_phone"}]},"preferred_quote_types":["parcel"],"public_reference":"Order #1437","shipping_notes":"New customer"}}';
 
 				$url                      = 'https://api.arta.io/requests';
 				$product_width            = (float)$product_width;
@@ -145,46 +145,45 @@ function start_arta_shipping_method() {
 				$product_dimension_unit   = get_option('woocommerce_dimension_unit');
 				$product_currency_unit    = get_woocommerce_currency();
 
-				$js_request = str_replace( 'x_destination_country',              $dest_country,              $js_request );
-				$js_request = str_replace( 'x_destination_region',               '',                  $js_request ); //$dest_region
-				$js_request = str_replace( 'x_destination_city',                 '',                  $js_request ); //$dest_city
-				$js_request = str_replace( 'x_destination_postal_code',          $dest_postal,               $js_request );
-				$js_request = str_replace( 'x_destination_address_line_1',       '',                  $js_request ); //$dest_addr
-				$js_request = str_replace( 'x_destination_address_line_2',       '',                  $js_request );
-				$js_request = str_replace( 'x_destination_address_line_3',       '',                  $js_request );
-				$js_request = str_replace( 'x_destination_title',                'order',             $js_request );
+				if( $js_request = file( __DIR__ . '/js_arta_request_object.js' ) ){
+					$js_request = implode( '', $js_request );
+					$js_request = json_decode( $js_request );
+				} else {
+					$js_request = array();
+				}
 
-				$js_request = str_replace( 'x_destination_contact_name',         '',                  $js_request );
-				$js_request = str_replace( 'x_destination_contact_email',        '',                  $js_request );
-				$js_request = str_replace( 'x_destination_contact_phone',        '',                  $js_request );
+				if( $js_request_product = file( __DIR__ . '/js_arta_request_object_product.js' ) ){
+					$js_request_product = implode( '', $js_request_product );
+					$js_request_product = json_decode( $js_request_product );
+				} else {
+					$js_request_product = array();
+				}
 
-				$js_request = str_replace( 'x_order_title',                      '',                  $js_request );
+				// data to request
+				$js_request->request->origin->country        = $product_country;
+				$js_request->request->origin->postal_code    = $product_postal;
 
-				$js_request = str_replace( 'x_objects_title',                    'product',           $js_request );
-				$js_request = str_replace( 'x_objects_width',                     $product_width,            $js_request );
-				$js_request = str_replace( 'x_objects_height',                    $product_height,           $js_request );
-				$js_request = str_replace( 'x_objects_weight_val',                $product_weight,           $js_request );
-				$js_request = str_replace( 'x_objects_weight_unit',               $product_weight_unit,      $js_request );
-				$js_request = str_replace( 'x_objects_dimension_unit',            $product_dimension_unit,   $js_request );
-				$js_request = str_replace( 'x_objects_img',                       '',                 $js_request );
-				$js_request = str_replace( 'x_objects_details_creation_date',     '',                 $js_request );
-				$js_request = str_replace( 'x_objects_details_creator',           '',                 $js_request );
-				$js_request = str_replace( 'x_objects_details_notes',             '',                 $js_request );
-				$js_request = str_replace( 'x_objects_details_title',             '',                 $js_request );
-				$js_request = str_replace( 'x_objects_xvalue',                    $product_price,            $js_request );
-				$js_request = str_replace( 'x_objects_currency_xvalue',           $product_currency_unit,    $js_request );
+				$js_request_product->internal_reference  = 'product';
+				$js_request_product->creation_date        = time();
+				$js_request_product->creator             = 'user';
+				$js_request_product->notes               = 'excerpt';
+				$js_request_product->title               = 'product';
+				$js_request_product->width               = $product_width;
+				$js_request_product->height              = $product_height;
+				$js_request_product->unit_of_measurement = $product_dimension_unit;
+				$js_request_product->weight              = $product_weight;
+				$js_request_product->weight_unit         = $product_weight_unit;
+				$js_request_product->value               = $product_price;
+				$js_request_product->value_currency      = $product_currency_unit;
+				$js_request_product->images              = array();
 
-				$js_request = str_replace( 'x_origin_country',                    $product_country,          $js_request );
-				$js_request = str_replace( 'x_origin_region',                     '',                 $js_request ); //$product_region
-				$js_request = str_replace( 'x_origin_city',                       '',                 $js_request ); //$product_city
-				$js_request = str_replace( 'x_origin_postal_code',                $product_postal,           $js_request );
-				$js_request = str_replace( 'x_origin_address_line_1',             '',                 $js_request ); //$product_address
-				$js_request = str_replace( 'x_origin_address_line_2',             '',                 $js_request );
-				$js_request = str_replace( 'x_origin_address_line_3',             '',                 $js_request );
+				for( $ii=0; $ii<$quantity; $ii++ ){
+					$js_request->request->objects[] = $js_request_product;
+				}
 
-				$js_request = str_replace( 'x_origin_contacts_email',             get_option('admin_email'), $js_request );
-				$js_request = str_replace( 'x_origin_contacts_name',              '',                 $js_request );
-				$js_request = str_replace( 'x_origin_contacts_phone',             '',                 $js_request );
+				$js_request->request->destination->country        = $dest_country;
+				$js_request->request->destination->postal_code    = $dest_postal;
+				// // data to request
 
 				$response = wp_remote_post( $url, array(
 					'timeout'     => 6000,
@@ -192,7 +191,7 @@ function start_arta_shipping_method() {
 					'httpversion' => '1.0',
 					'blocking'    => true,
 					'headers'     => array('content-type'=>'application/json', 'Authorization'=>'ARTA_APIKey '.$key, 'Arta-Quote-Timeout'=>6000, ),
-					'body'        => $js_request,
+					'body'        => json_encode( $js_request ),
 					'cookies'     => array(),
 					'method'      => 'POST',
 					'data_format' => 'body',
@@ -222,7 +221,7 @@ function start_arta_shipping_method() {
 					}
 				}else{
 					foreach( $data['quotes'] as $quote_i ){
-						$res['data'][] = array( 'id'=>$quote_i['id'], 'quote_type'=>$quote_i['quote_type'],  'total'=> ( $quote_i['total'] * $quantity ) );
+						$res['data'][] = array( 'id'=>$quote_i['id'], 'quote_type'=>$quote_i['quote_type'],  'total'=>$quote_i['total'] );
 					}
 				}
 
