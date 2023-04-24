@@ -380,9 +380,6 @@ body {
 .shop-sec .products .product__right .yith-wcwl-wishlistexistsbrowse .feedback {
   display: none;
 }
-.shop-sec .products .product__right .yith-wcwl-wishlistaddedbrowse a {
-  display: none;
-}
 .shop-sec .products .product__right .yith-wcwl-wishlistaddedbrowse .feedback {
   display: flex;
   align-items: center;
@@ -1101,9 +1098,6 @@ body {
   display: none;
 }
 .pop-up .yith-wcwl-wishlistexistsbrowse .feedback {
-  display: none;
-}
-.pop-up .yith-wcwl-wishlistaddedbrowse a {
   display: none;
 }
 .pop-up .yith-wcwl-wishlistaddedbrowse .feedback {
@@ -2279,4 +2273,8 @@ body {
 }
 .hero__tags p {
   font-size: 15px;
+}
+
+#yith-wcwl-popup-message {
+  display: none !important;
 }

@@ -22,7 +22,7 @@ if ( ! defined( 'YITH_WCWL' ) ) {
 
 <section class="cart-sec wooc-sec">
 	<div class="container">
-		<h1 class="h2">Your Wishlist</h1>
+		<h1 class="h2">Your Favorites</h1>
 		<?php if ( function_exists('woocommerce_breadcrumb') ) {
     woocommerce_breadcrumb();
 }?>

@@ -86,7 +86,7 @@ if ( ! defined( 'YITH_WCWL' ) ) {
 						do_action( 'yith_wcwl_table_before_product_thumbnail', $item, $wishlist );
 						?>
 
-						<a href="<?php echo esc_url( get_permalink( apply_filters( 'woocommerce_in_cart_product', $item->get_product_id() ) ) ); ?>">
+<a class="product__learn-btn" data-id="<?php echo $product -> get_ID()?>" href="#">
 							<?php echo wp_kses_post( $product->get_image() ); ?>
 						</a>
 

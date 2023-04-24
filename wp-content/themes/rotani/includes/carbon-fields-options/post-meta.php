@@ -10,7 +10,7 @@ use Carbon_Fields\Field;
 // =========== ABOUT PAGE ===========
 
 
-Container::make('post meta', 'Arta settings')
+Container::make('post meta', 'Product settings')
 ->where( 'post_type', '=', 'product' )
 ->add_fields( array(
    Field::make( "multiselect", "product_stars", "Condition Report" )

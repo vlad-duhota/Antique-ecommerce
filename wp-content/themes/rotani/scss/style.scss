@@ -351,9 +351,6 @@ body {
                     }
                 }
                 .yith-wcwl-wishlistaddedbrowse {
-                    a {
-                        display: none;
-                    }
                     .feedback {
                         display: flex;
                         align-items: center;
@@ -1002,9 +999,6 @@ body {
         }
     }
     .yith-wcwl-wishlistaddedbrowse {
-        a {
-            display: none;
-        }
         .feedback {
             display: flex;
             align-items: center;
@@ -2061,4 +2055,8 @@ body {
         letter-spacing: 0.03em;
         color: #a0872a;
     }
+}
+
+#yith-wcwl-popup-message {
+    display: none !important;
 }

@@ -78,7 +78,7 @@ if ( post_password_required() ) {
 		<?php echo get_post_field('post_content', $_SESSION['postID']); ?>
 	</div>
 	<div class="product-stars">
-		<h3 class="info-title">Condition Report</h3>
+		<h3 class="info-title">Condition</h3>
 		<ul class="product-stars__list">
 		<?php $stars = array(
 			0 => "Revive",
