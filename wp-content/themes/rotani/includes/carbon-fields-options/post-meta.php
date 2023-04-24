@@ -13,7 +13,7 @@ use Carbon_Fields\Field;
 Container::make('post meta', 'Product settings')
 ->where( 'post_type', '=', 'product' )
 ->add_fields( array(
-   Field::make( "multiselect", "product_stars", "Condition Report" )
+   Field::make( "select", "product_stars", "Condition Report" )
    ->add_options( array(
       "0" => "Revive", 
       "1" => "Fair",

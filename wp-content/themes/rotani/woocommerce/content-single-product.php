@@ -88,7 +88,7 @@ if ( post_password_required() ) {
 			4 => "Like New"
 		)?>
 		<?php for($i = 0; $i < 5; $i++) : ?>
-			<?php if($i !== carbon_get_post_meta($_SESSION['postID'], 'product_stars')[0]) { ?>
+			<?php if($i !== carbon_get_post_meta($_SESSION['postID'], 'product_stars')) { ?>
 			<li>
 				<svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
 					<circle cx="8.5" cy="8.5" r="8.5" fill="#D9D9D9"/>
@@ -106,7 +106,7 @@ if ( post_password_required() ) {
 		<?php $i = -1 ?>
 		<ul class="product-stars__text">
 			<?php foreach($stars as $star) : $i++;?>
-			<?php if($i !== carbon_get_post_meta($_SESSION['postID'], 'product_stars')[0]) { ?>
+			<?php if($i !== carbon_get_post_meta($_SESSION['postID'], 'product_stars')) { ?>
 				<li><?php echo $star?></li>
 			<?php } else {?>
 				<li class="active"><?php echo $star?></li>
