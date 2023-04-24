@@ -1438,3 +1438,5 @@ Stack trace:
 [23-Apr-2023 19:14:33 UTC] PHP Warning:  Undefined variable $column_count in /Users/duhotavlad/Sites/rotani/wp-content/themes/rotani/woocommerce/wishlist-view.php on line 207
 [23-Apr-2023 19:14:40 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /Users/duhotavlad/Sites/rotani/wp-content/themes/rotani/woocommerce/content-single-product.php on line 19
 [23-Apr-2023 19:14:40 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /Users/duhotavlad/Sites/rotani/wp-content/themes/rotani/woocommerce/single-product/price.php on line 23
+[23-Apr-2023 19:16:52 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /Users/duhotavlad/Sites/rotani/wp-content/themes/rotani/woocommerce/content-single-product.php on line 19
+[23-Apr-2023 19:16:52 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /Users/duhotavlad/Sites/rotani/wp-content/themes/rotani/woocommerce/single-product/price.php on line 23
