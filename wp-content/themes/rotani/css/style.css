@@ -99,6 +99,9 @@ body {
     height: auto;
   }
 }
+.header__logo_centered {
+  margin-right: auto;
+}
 .header__cart {
   margin-left: auto;
   position: relative;

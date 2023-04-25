@@ -41,9 +41,11 @@ get_header(  ); ?>
 	</div>
 </section>
 
+
 <section class="shop-sec">
 	<div class="container">	
 		<div>
+		<?php if (!carbon_get_theme_option('hp_checkbox')) {?>
 		<div class="shop__btns">
 			<button class="grid active">
 			<svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -63,7 +65,7 @@ get_header(  ); ?>
 			</button>
 		</div>
 <?php
-if ( woocommerce_product_loop() ) {
+if ( woocommerce_product_loop()) {
 
 
 	woocommerce_product_loop_start();
@@ -88,21 +90,17 @@ if ( woocommerce_product_loop() ) {
 	 *
 	 * @hooked woocommerce_pagination - 10
 	 */
-	do_action( 'woocommerce_after_shop_loop' ); ?>
+	do_action( 'woocommerce_after_shop_loop' ); 
+			}
+		}	
+	?>
 	</div>
 			<div class="shop-sec__time">
 					<h3 class="shop-sec__time-title">Sales ends soon!</h3>
 				<?php echo str_replace('<style type="text/css">', '', do_shortcode('[ycd_countdown id=16]')) ?>
 				</div>
 	
-<?php } else {
-	/**
-	 * Hook: woocommerce_no_products_found.
-	 *
-	 * @hooked wc_no_products_found - 10
-	 */
-	do_action( 'woocommerce_no_products_found' );
-}
+<?php
 
 /**
  * Hook: woocommerce_after_main_content.
@@ -112,6 +110,7 @@ if ( woocommerce_product_loop() ) {
 do_action( 'woocommerce_after_main_content' ); ?>
 	</div>
 </section>
+
 <section class="pop-up">
 	<div class="container">
 		

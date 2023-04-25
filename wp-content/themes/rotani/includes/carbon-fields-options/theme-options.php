@@ -8,6 +8,8 @@ use Carbon_Fields\Field;
 
 Container::make('theme_options', 'Theme options')
 ->add_fields( array(
+    Field::make( 'checkbox', 'hp_checkbox', 'Home Page Layout' )
+    ->set_help_text('If you check this, products on home page will be hidden'),
     Field::make( 'text', 'shop_uptitle', 'Shop uptitle'),
     Field::make( 'text', 'shop_title', 'Shop title'),
     Field::make( 'text', 'shop_subtitle', 'Shop subtitle'),
