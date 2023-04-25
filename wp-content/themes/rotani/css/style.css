@@ -676,6 +676,10 @@ body {
     width: 100%;
   }
 }
+.pop-up .pisol-ppscw-container button[type=submit][disabled=disabled] {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
 .pop-up .pisol-ppscw-container .select2 span {
   border: none;
   font-family: "Lato", sans-serif;
@@ -1112,6 +1116,7 @@ body {
 .pop-up .info-title {
   font-family: "Lato", sans-serif;
   font-size: 20px;
+  font-weight: 400;
   margin-bottom: 19px;
 }
 .pop-up .product-description {

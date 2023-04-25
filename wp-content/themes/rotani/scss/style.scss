@@ -636,6 +636,10 @@ body {
             border: none;
             font-weight: 500;
             font-size: 17px;
+            &[disabled="disabled"] {
+                opacity: 0.4;
+                cursor: not-allowed;
+            }
         }
         .select2 {
             span {
@@ -1012,6 +1016,7 @@ body {
     .info-title {
         font-family: "Lato", sans-serif;
         font-size: 20px;
+        font-weight: 400;
         margin-bottom: 19px;
     }
     .product-description {

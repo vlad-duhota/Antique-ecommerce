@@ -44,17 +44,12 @@ if ( $product->is_in_stock() ) : ?>
 
 	
 		?>
-		<?php if( in_array( $product->get_ID(), array_column( WC()->cart->get_cart(), 'product_id' ) ) ) { ?>
-	<a class="view-cart" href="<?php echo get_home_url()?>/cart">View Cart</a>
-<?php } else{ ?>
 		<?php 	do_action( 'woocommerce_after_add_to_cart_quantity' );?>
 		<button type="submit" name="add-to-cart" value="<?php echo esc_attr( $product->get_id() ); ?>" class="single_add_to_cart_button button alt<?php echo esc_attr( wc_wp_theme_get_element_class_name( 'button' ) ? ' ' . wc_wp_theme_get_element_class_name( 'button' ) : '' ); ?>"><?php echo esc_html( $product->single_add_to_cart_text() ); ?><svg width="22" height="24" viewBox="0 0 22 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M15.4 11.3534C15.4 11.3534 15.4 10.6763 15.4 5.18586C15.4 -0.304628 6.46798 -0.485199 6.46798 5.18587V11.3534M4 7.01981H17.5984C19.2193 7.01981 20.5471 8.30728 20.597 9.92737L20.8093 16.8151C20.9137 20.1997 18.1983 23 14.8122 23H7C3.68629 23 1 20.3137 1 17V10.0198C1 8.36296 2.34315 7.01981 4 7.01981Z" stroke="black" stroke-linecap="round"/>
 </svg>
 
 </button>
-
-	<?php }?>
 	<div class="pop-up__wishlist">
 		
 	</div>

@@ -106,6 +106,22 @@ $(document).ready(function () {
           $('.pisol-ppscw-container').toggleClass('active')
 
         })
+        $('.pisol-woocommerce-shipping-calculator button').attr('disabled', 'disabled');
+        $('.pisol-woocommerce-shipping-calculator input:not([type="hidden"])').keyup(function () {
+
+          var empty = false;
+          $('.pisol-woocommerce-shipping-calculator input:not([type="hidden"])').each(function () {
+            if ($(this).val() == '') {
+              empty = true;
+            }
+          });
+
+          if (empty) {
+            $('.pisol-woocommerce-shipping-calculator button').attr('disabled', 'disabled'); // updated according to http://stackoverflow.com/questions/7637790/how-to-remove-disabled-attribute-with-jquery-ie
+          } else {
+            $('.pisol-woocommerce-shipping-calculator button').removeAttr('disabled'); // updated according to http://stackoverflow.com/questions/7637790/how-to-remove-disabled-attribute-with-jquery-ie
+          }
+        });
       }
     });
   });

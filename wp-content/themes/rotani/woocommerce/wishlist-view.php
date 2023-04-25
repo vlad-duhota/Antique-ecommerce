@@ -191,7 +191,7 @@ if ( ! defined( 'YITH_WCWL' ) ) {
 		endforeach;
 	else :
 		?>
-		<tr>
+		<div class="woocommerce-cart-form__cart-item">
 			<?php
 			/**
 			 * APPLY_FILTERS: yith_wcwl_no_product_to_remove_message
@@ -204,8 +204,8 @@ if ( ! defined( 'YITH_WCWL' ) ) {
 			 * @return string
 			 */
 			?>
-			<td colspan="<?php echo esc_attr( $column_count ); ?>" class="wishlist-empty"><?php echo esc_html( apply_filters( 'yith_wcwl_no_product_to_remove_message', __( 'No products added to the wishlist', 'yith-woocommerce-wishlist' ), $wishlist ) ); ?></td>
-		</tr>
+			<div colspan="<?php echo esc_attr( $column_count ); ?>" class="wishlist-empty"><?php echo esc_html( apply_filters( 'yith_wcwl_no_product_to_remove_message', __( 'No products added to the favourites', 'yith-woocommerce-wishlist' ), $wishlist ) ); ?></div>
+	</div>
 		<?php
 	endif;
 
